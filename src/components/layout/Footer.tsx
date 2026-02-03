@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Linkedin, Twitter, Github, Heart } from 'lucide-react';
 import { FadeIn } from '../ui/fade-in';
 
@@ -31,18 +32,18 @@ export function Footer() {
                     <div>
                         <h4 className="font-bold text-lg text-white mb-6">Company</h4>
                         <ul className="space-y-4 text-gray-400">
-                            <li><a href="#vision" className="hover:text-primary transition-colors">About Us</a></li>
-                            <li><a href="#services" className="hover:text-primary transition-colors">Services</a></li>
-                            <li><a href="#work" className="hover:text-primary transition-colors">Our Work</a></li>
-                            <li><a href="#contact" className="hover:text-primary transition-colors">Contact</a></li>
+                            <li><a href="/#vision" className="hover:text-primary transition-colors">About Us</a></li>
+                            <li><a href="/#services" className="hover:text-primary transition-colors">Services</a></li>
+                            <li><a href="/#work" className="hover:text-primary transition-colors">Our Work</a></li>
+                            <li><a href="/#contact" className="hover:text-primary transition-colors">Contact</a></li>
                         </ul>
                     </div>
 
                     <div>
                         <h4 className="font-bold text-lg text-white mb-6">Legal</h4>
                         <ul className="space-y-4 text-gray-400">
-                            <li><a href="#" className="hover:text-primary transition-colors">Privacy Policy</a></li>
-                            <li><a href="#" className="hover:text-primary transition-colors">Terms of Service</a></li>
+                            <li><Link to="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link></li>
+                            <li><Link to="/terms-of-service" className="hover:text-primary transition-colors">Terms of Service</Link></li>
                         </ul>
                     </div>
 

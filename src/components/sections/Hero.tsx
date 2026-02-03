@@ -32,12 +32,18 @@ export function Hero() {
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <button className="px-8 py-4 bg-primary hover:bg-primary/90 text-white rounded-full font-bold text-lg transition-all transform hover:scale-105 flex items-center gap-2">
+                        <a
+                            href="#contact"
+                            className="px-8 py-4 bg-primary hover:bg-primary/90 text-white rounded-full font-bold text-lg transition-all transform hover:scale-105 flex items-center gap-2"
+                        >
                             Media Inquiry <Rocket size={20} />
-                        </button>
-                        <button className="px-8 py-4 bg-white/5 hover:bg-white/10 text-white border border-white/10 rounded-full font-bold text-lg transition-all flex items-center gap-2">
+                        </a>
+                        <a
+                            href="#work"
+                            className="px-8 py-4 bg-white/5 hover:bg-white/10 text-white border border-white/10 rounded-full font-bold text-lg transition-all flex items-center gap-2"
+                        >
                             View Our Work <Code2 size={20} />
-                        </button>
+                        </a>
                     </div>
                 </motion.div>
             </div>

@@ -1,12 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
 import { cn } from '../../lib/utils';
 import logo from '../../assets/logo.png';
 
 export function Navbar() {
     const [isOpen, setIsOpen] = React.useState(false);
     const [scrolled, setScrolled] = React.useState(false);
+    const location = useLocation();
+    const isHome = location.pathname === '/';
 
     React.useEffect(() => {
         const handleScroll = () => {
@@ -23,6 +26,13 @@ export function Navbar() {
         { name: 'Contact', href: '#contact' },
     ];
 
+    /* 
+       Helper to get correct href:
+       If home: "#services"
+       If not home: "/#services"
+    */
+    const getHref = (href: string) => isHome ? href : `/${href}`;
+
     return (
         <nav
             className={cn(
@@ -31,7 +41,8 @@ export function Navbar() {
             )}
         >
             <div className="container mx-auto px-6 flex items-center justify-between">
-                <a href="#" className="flex items-center gap-2 group">
+                <a href="/" className="flex items-center gap-2 group">
+                    {/* Logo Image */}
                     <img src={logo} alt="Zyfiro Logo" className="h-10 w-auto object-contain transition-transform group-hover:scale-105" />
                     <span className="text-2xl font-heading font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
                         ZYFIRO
@@ -43,15 +54,15 @@ export function Navbar() {
                     {navLinks.map((link) => (
                         <a
                             key={link.name}
-                            href={link.href}
+                            href={getHref(link.href)}
                             className="text-gray-300 hover:text-white transition-colors font-medium"
                         >
                             {link.name}
                         </a>
                     ))}
-                    <button className="px-6 py-2 bg-primary hover:bg-primary/90 text-white rounded-full font-medium transition-all transform hover:scale-105">
+                    <a href={getHref("#contact")} className="px-6 py-2 bg-primary hover:bg-primary/90 text-white rounded-full font-medium transition-all transform hover:scale-105">
                         Start Project
-                    </button>
+                    </a>
                 </div>
 
                 {/* Mobile Toggle */}
@@ -74,16 +85,20 @@ export function Navbar() {
                         {navLinks.map((link) => (
                             <a
                                 key={link.name}
-                                href={link.href}
+                                href={getHref(link.href)}
                                 className="text-gray-300 hover:text-white text-lg font-medium"
                                 onClick={() => setIsOpen(false)}
                             >
                                 {link.name}
                             </a>
                         ))}
-                        <button className="w-full py-3 bg-gradient-to-r from-primary to-secondary text-white rounded-lg font-bold">
+                        <a
+                            href={getHref("#contact")}
+                            className="w-full block text-center py-3 bg-gradient-to-r from-primary to-secondary text-white rounded-lg font-bold"
+                            onClick={() => setIsOpen(false)}
+                        >
                             Start Project
-                        </button>
+                        </a>
                     </div>
                 </motion.div>
             )}

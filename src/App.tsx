@@ -1,23 +1,24 @@
 import React from 'react';
-import { Navbar } from './components/layout/Navbar';
-import { Hero } from './components/sections/Hero';
-import { Services } from './components/sections/Services';
-import { Work } from './components/sections/Work';
-import { Founders } from './components/sections/Founders';
-import { Contact } from './components/sections/Contact';
-import { Footer } from './components/layout/Footer';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ScrollToTop from './components/layout/ScrollToTop';
+import SmoothScroll from './components/layout/SmoothScroll';
+import { WhatsAppButton } from './components/ui/whatsapp-button';
+import { Home } from './pages/Home';
+import { PrivacyPolicy } from './pages/PrivacyPolicy';
+import { TermsOfService } from './pages/TermsOfService';
 
 function App() {
     return (
-        <div className="min-h-screen bg-dark text-white selection:bg-primary/30 selection:text-white">
-            <Navbar />
-            <Hero />
-            <Services />
-            <Work />
-            <Founders />
-            <Contact />
-            <Footer />
-        </div>
+        <Router>
+            <ScrollToTop />
+            <SmoothScroll />
+            <WhatsAppButton />
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                <Route path="/terms-of-service" element={<TermsOfService />} />
+            </Routes>
+        </Router>
     );
 }
 

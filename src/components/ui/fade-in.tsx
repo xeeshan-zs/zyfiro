@@ -32,9 +32,9 @@ export function FadeIn({
             y: 0,
             x: 0,
             transition: {
-                duration,
+                duration: 0.7,
                 delay,
-                ease: "easeOut"
+                ease: [0.21, 0.47, 0.32, 0.98] as const,
             }
         }
     };
