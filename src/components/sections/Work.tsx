@@ -18,10 +18,10 @@ const projects = [
         link: 'https://iccsglobalized.com'
     },
     {
-        title: 'HealthSync App',
-        description: 'Flutter-based telemedicine platform for iOS & Android.',
-        tags: ['Flutter', 'Firebase', 'WebRTC'],
-        link: '#'
+        title: 'EduSync',
+        description: 'A synchronized education platform built with Flutter for seamless learning.',
+        tags: ['Flutter', 'Firebase', 'Live Web App'],
+        link: 'https://edu-sync.web.app'
     }
 ];
 
