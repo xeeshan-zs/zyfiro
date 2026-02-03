@@ -13,7 +13,6 @@ interface FadeInProps {
 export function FadeIn({
     children,
     delay = 0,
-    duration = 0.5,
     className = '',
     viewport = { once: true, margin: "-50px" },
     direction = 'up'

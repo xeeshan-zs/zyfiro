@@ -4,7 +4,7 @@ import { Input } from '../ui/input';
 import { Textarea } from '../ui/textarea';
 import { Label } from '../ui/label';
 import { FadeIn } from '../ui/fade-in';
-import { Send, Mail, MapPin, Phone } from 'lucide-react';
+import { Send, Mail, MapPin, Phone, MessageCircle } from 'lucide-react';
 
 export function Contact() {
     const handleSubmit = (e: React.FormEvent) => {
@@ -29,25 +29,37 @@ export function Contact() {
                                 Whether you have a groundbreaking idea or need to scale your existing platform, we are ready to help.
                             </p>
 
-                            <div className="space-y-8">
-                                <div className="flex items-start gap-4">
-                                    <div className="p-3 bg-white/5 rounded-full text-secondary">
+                            <div className="space-y-4">
+                                <div className="flex items-center gap-4 text-gray-300">
+                                    <div className="p-3 bg-white/5 rounded-full text-primary">
                                         <Mail size={24} />
                                     </div>
                                     <div>
-                                        <h4 className="text-white font-bold text-lg">Email Us</h4>
-                                        <p className="text-gray-400">zeeshan.sarfraz@atrons.net</p>
+                                        <h4 className="font-bold text-white">Email Us</h4>
+                                        <p>zeeshan.sarfraz@atrons.net</p>
                                     </div>
                                 </div>
 
-                                <div className="flex items-start gap-4">
-                                    <div className="p-3 bg-white/5 rounded-full text-purple-500">
+                                <div className="flex items-center gap-4 text-gray-300">
+                                    <div className="p-3 bg-white/5 rounded-full text-secondary">
                                         <MapPin size={24} />
                                     </div>
                                     <div>
-                                        <h4 className="text-white font-bold text-lg">HQ</h4>
-                                        <p className="text-gray-400">Mars</p>
+                                        <h4 className="font-bold text-white">HQ</h4>
+                                        <p>Mars 🪐</p>
                                     </div>
+                                </div>
+
+                                <div className="pt-4">
+                                    <a
+                                        href="https://wa.me/923109233844"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-2 px-6 py-3 bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-xl font-bold transition-all transform hover:scale-105"
+                                    >
+                                        <MessageCircle size={20} />
+                                        Chat on WhatsApp
+                                    </a>
                                 </div>
                             </div>
                         </FadeIn>

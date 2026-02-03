@@ -12,13 +12,10 @@ export default defineConfig({
     },
     build: {
         target: 'esnext',
-        clean: true,
-        minify: 'terser',
+        emptyOutDir: true,
+        minify: true,
         rollupOptions: {
             output: {
-                manualChunks: {
-                    vendor: ['react', 'react-dom', 'framer-motion'],
-                },
             },
         },
     },

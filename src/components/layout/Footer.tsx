@@ -1,7 +1,5 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
-import { Linkedin, Twitter, Github, Heart } from 'lucide-react';
-import { FadeIn } from '../ui/fade-in';
+import { Linkedin, Twitter, Github } from 'lucide-react';
 
 export function Footer() {
     return (
