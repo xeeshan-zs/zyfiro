@@ -6,25 +6,28 @@ import { Button } from '../ui/button';
 
 const projects = [
     {
-        title: 'E-Commerce Ultra',
-        description: 'Next.js 14 + Stripe full-stack powerhouse.',
-        tags: ['Next.js', 'Stripe', 'Tailwind'],
+        title: 'NUML Portal',
+        description: 'A comprehensive educational portal for student management and resources.',
+        tags: ['React', 'Vite', 'Firebase', 'Live Web App'],
+        link: 'https://portal-numl.web.app'
+    },
+    {
+        title: 'ICCS Globalized',
+        description: 'International conference and collaboration platform connecting global minds.',
+        tags: ['React', 'Vite', 'Tailwind', 'Corporate'],
+        link: 'https://iccsglobalized.com'
     },
     {
         title: 'HealthSync App',
         description: 'Flutter-based telemedicine platform for iOS & Android.',
         tags: ['Flutter', 'Firebase', 'WebRTC'],
-    },
-    {
-        title: 'FinTech Dashboard',
-        description: 'Real-time financial analytics with D3.js.',
-        tags: ['React', 'D3.js', 'Node.js'],
+        link: '#'
     }
 ];
 
 export function Work() {
     return (
-        <section id="work" className="py-32 bg-dark/50 relativ overflow-hidden">
+        <section id="work" className="py-32 bg-dark/50 relative overflow-hidden">
             <div className="container mx-auto px-6">
                 <FadeIn>
                     <div className="text-center mb-16">
@@ -57,8 +60,14 @@ export function Work() {
                                         <Button variant="outline" size="sm" className="rounded-full border-white/10 hover:bg-white/10 hover:text-white">
                                             <Github className="w-4 h-4 mr-2" /> Code
                                         </Button>
-                                        <Button size="sm" className="rounded-full bg-secondary hover:bg-secondary/90 text-white border-none">
-                                            <ExternalLink className="w-4 h-4 mr-2" /> Live
+                                        <Button
+                                            size="sm"
+                                            className="rounded-full bg-secondary hover:bg-secondary/90 text-white border-none"
+                                            asChild
+                                        >
+                                            <a href={project.link} target="_blank" rel="noopener noreferrer">
+                                                <ExternalLink className="w-4 h-4 mr-2" /> Live
+                                            </a>
                                         </Button>
                                     </div>
                                 </CardContent>
