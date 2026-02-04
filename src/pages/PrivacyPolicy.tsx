@@ -3,9 +3,15 @@ import { Navbar } from '../components/layout/Navbar';
 import { Footer } from '../components/layout/Footer';
 import { FadeIn } from '../components/ui/fade-in';
 
+import { Helmet } from 'react-helmet-async';
+
 export function PrivacyPolicy() {
     return (
         <div className="min-h-screen bg-dark text-white selection:bg-primary/30 selection:text-white">
+            <Helmet>
+                <title>Privacy Policy</title>
+                <meta name="description" content="Privacy Policy for Zyfiro. Learn how we collect, use, and protect your personal data." />
+            </Helmet>
             <Navbar />
             <div className="pt-32 pb-20 container mx-auto px-6 max-w-4xl">
                 <FadeIn>

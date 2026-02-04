@@ -1,101 +1,84 @@
-import React from 'react';
-import { Button } from '../ui/button';
-import { Input } from '../ui/input';
-import { Textarea } from '../ui/textarea';
-import { Label } from '../ui/label';
 import { FadeIn } from '../ui/fade-in';
-import { Send, Mail, MapPin, Phone, MessageCircle } from 'lucide-react';
+import { Mail, MapPin, MessageCircle, Calendar } from 'lucide-react';
+import { ProjectWizard } from '../features/ProjectWizard';
 
 export function Contact() {
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        // Handle form submission logic here
-        console.log("Form submitted");
-    };
-
     return (
-        <section id="contact" className="py-32 bg-dark relative border-t border-white/5">
-            <div className="container mx-auto px-6">
-                <div className="flex flex-col lg:flex-row gap-16">
+        <section id="contact" className="py-24 bg-dark relative overflow-hidden">
+            {/* Background Elements */}
+            <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-secondary/10 rounded-full blur-[120px]" />
+            <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-primary/10 rounded-full blur-[120px]" />
 
-                    {/* Text Content */}
-                    <div className="lg:w-1/2">
+            <div className="container mx-auto px-6 relative z-10">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+
+                    {/* Left Column: Info & Booking */}
+                    <div>
                         <FadeIn direction="right">
-                            <h2 className="text-4xl md:text-6xl font-heading font-bold mb-8">
-                                Let’s Start a <br />
-                                <span className="text-primary">Conversation</span>.
+                            <h2 className="text-5xl md:text-6xl font-heading font-bold mb-6">
+                                Let's Build Your <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">Dream App</span>.
                             </h2>
-                            <p className="text-gray-400 text-lg mb-12 max-w-lg leading-relaxed">
-                                Whether you have a groundbreaking idea or need to scale your existing platform, we are ready to help.
+                            <p className="text-xl text-gray-400 mb-12 leading-relaxed">
+                                We engineer robust digital solutions across Web, Desktop, and Android platforms. Partner with us for world-class development, backed by transparent pricing tailored for the local market.
                             </p>
 
-                            <div className="space-y-4">
-                                <div className="flex items-center gap-4 text-gray-300">
-                                    <div className="p-3 bg-white/5 rounded-full text-primary">
-                                        <Mail size={24} />
+                            <div className="space-y-8 mb-12">
+                                <div className="space-y-6">
+                                    <div className="flex items-center gap-4 text-gray-300">
+                                        <div className="p-3 bg-white/5 rounded-full text-primary border border-white/10">
+                                            <Mail size={24} />
+                                        </div>
+                                        <div>
+                                            <h4 className="font-bold text-white">Email Us</h4>
+                                            <p>zeeshan.sarfraz@atrons.net</p>
+                                            <p>meetjaveriajavaid@gmail.com</p>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <h4 className="font-bold text-white">Email Us</h4>
-                                        <p>zeeshan.sarfraz@atrons.net</p>
-                                    </div>
-                                </div>
 
-                                <div className="flex items-center gap-4 text-gray-300">
-                                    <div className="p-3 bg-white/5 rounded-full text-secondary">
-                                        <MapPin size={24} />
+                                    <div className="flex items-center gap-4 text-gray-300">
+                                        <div className="p-3 bg-white/5 rounded-full text-secondary border border-white/10">
+                                            <MapPin size={24} />
+                                        </div>
+                                        <div>
+                                            <h4 className="font-bold text-white">HQ</h4>
+                                            <p>Mars 🪐</p>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <h4 className="font-bold text-white">HQ</h4>
-                                        <p>Mars 🪐</p>
-                                    </div>
-                                </div>
 
-                                <div className="pt-4">
-                                    <a
-                                        href="https://wa.me/923109233844"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="inline-flex items-center gap-2 px-6 py-3 bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-xl font-bold transition-all transform hover:scale-105"
-                                    >
-                                        <MessageCircle size={20} />
-                                        Chat on WhatsApp
-                                    </a>
+                                    {/* Actions */}
+                                    <div className="pt-6 flex flex-wrap gap-4">
+                                        <a
+                                            href="https://wa.me/923109233844"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="inline-flex items-center gap-2 px-6 py-3 bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-full font-bold transition-all transform hover:scale-105 shadow-lg shadow-green-900/20"
+                                        >
+                                            <MessageCircle size={20} />
+                                            Chat on WhatsApp
+                                        </a>
+
+                                        <a
+                                            href="https://calendly.com"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="inline-flex items-center gap-2 px-6 py-3 bg-white hover:bg-gray-100 text-dark rounded-full font-bold transition-all transform hover:scale-105 shadow-lg"
+                                        >
+                                            <Calendar size={20} />
+                                            Book Strategy Call
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </FadeIn>
                     </div>
 
-                    {/* Contact Form */}
-                    <div className="lg:w-1/2">
-                        <FadeIn direction="left" delay={0.2}>
-                            <form onSubmit={handleSubmit} className="bg-white/5 p-8 md:p-10 rounded-3xl border border-white/10 backdrop-blur-sm">
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                                    <div className="space-y-2">
-                                        <Label htmlFor="name" className="text-gray-300 ml-1">Name</Label>
-                                        <Input id="name" placeholder="John Doe" className="bg-dark/50 border-white/10 text-white placeholder:text-gray-600 focus:border-primary/50 rounded-2xl h-12" />
-                                    </div>
-                                    <div className="space-y-2">
-                                        <Label htmlFor="email" className="text-gray-300 ml-1">Email</Label>
-                                        <Input id="email" type="email" placeholder="john@example.com" className="bg-dark/50 border-white/10 text-white placeholder:text-gray-600 focus:border-primary/50 rounded-2xl h-12" />
-                                    </div>
-                                </div>
-
-                                <div className="space-y-2 mb-6">
-                                    <Label htmlFor="subject" className="text-gray-300 ml-1">Subject</Label>
-                                    <Input id="subject" placeholder="Project Inquiry" className="bg-dark/50 border-white/10 text-white placeholder:text-gray-600 focus:border-primary/50 rounded-2xl h-12" />
-                                </div>
-
-                                <div className="space-y-2 mb-8">
-                                    <Label htmlFor="message" className="text-gray-300 ml-1">Message</Label>
-                                    <Textarea id="message" placeholder="Tell us about your project..." className="min-h-[150px] bg-dark/50 border-white/10 text-white placeholder:text-gray-600 focus:border-primary/50 rounded-2xl resize-none p-4" />
-                                </div>
-
-                                <Button type="submit" size="lg" className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-white font-bold text-lg py-6 rounded-xl transition-all hover:scale-[1.02]">
-                                    Send Message <Send className="ml-2 w-5 h-5" />
-                                </Button>
-                            </form>
+                    {/* Right Column: Project Wizard */}
+                    <div className="lg:mt-0 mt-8">
+                        <FadeIn delay={0.2} direction="left">
+                            <ProjectWizard />
                         </FadeIn>
                     </div>
+
                 </div>
             </div>
         </section>

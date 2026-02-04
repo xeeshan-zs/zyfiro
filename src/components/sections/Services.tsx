@@ -1,29 +1,27 @@
-import React from 'react';
 import { Globe, Smartphone, Cloud, Zap, Layout, Shield } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardContent } from '../ui/card';
 import { FadeIn } from '../ui/fade-in';
-import { cn } from '../../lib/utils';
 
 const services = [
     {
         icon: <Globe className="w-8 h-8 text-primary" />,
         title: 'Web Development',
-        description: 'High-performance React & Next.js applications tailored for scalability and SEO.',
+        description: 'High-performance applications tailored for scalability and SEO.',
     },
     {
         icon: <Smartphone className="w-8 h-8 text-secondary" />,
-        title: 'Mobile Solutions',
-        description: 'Cross-platform Flutter apps that feel native on iOS and Android.',
+        title: 'Android Apps',
+        description: 'Custom, high-performance Android applications built to your exact specifications.',
+    },
+    {
+        icon: <Layout className="w-8 h-8 text-blue-400" />,
+        title: 'Desktop Software',
+        description: 'Powerful cross-platform desktop applications built with Flutter.',
     },
     {
         icon: <Cloud className="w-8 h-8 text-purple-500" />,
         title: 'Firebase Backend',
         description: 'Secure, real-time serverless backends to power your applications instantly.',
-    },
-    {
-        icon: <Layout className="w-8 h-8 text-blue-400" />,
-        title: 'UI/UX Design',
-        description: 'World-class interfaces designed for engagement and conversion.',
     },
     {
         icon: <Zap className="w-8 h-8 text-yellow-400" />,

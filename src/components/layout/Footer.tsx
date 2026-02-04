@@ -12,7 +12,7 @@ export function Footer() {
                             ZYFIRO
                         </a>
                         <p className="text-gray-400 max-w-sm mb-6">
-                            Building the future of digital experiences with React, Flutter, and Firebase.
+                            Building the future with scalable Websites, Desktop Software, and Android Apps.
                         </p>
                         <div className="flex gap-4">
                             <a href="#" className="p-2 bg-white/5 rounded-full hover:bg-white/10 transition-colors text-white hover:text-primary">
