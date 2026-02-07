@@ -1,5 +1,5 @@
 import { FadeIn } from '../ui/fade-in';
-import { Mail, MapPin, MessageCircle, Calendar } from 'lucide-react';
+import { Mail, MapPin, MessageCircle } from 'lucide-react';
 import { ProjectWizard } from '../features/ProjectWizard';
 
 export function Contact() {
@@ -16,7 +16,7 @@ export function Contact() {
                     <div>
                         <FadeIn direction="right">
                             <h2 className="text-5xl md:text-6xl font-heading font-bold mb-6">
-                                Let's Build Your <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">Dream App</span>.
+                                Let's Build Your <span className="bg-clip-text text-transparent bg-gradient-to-r from-violet-300 to-cyan-300 drop-shadow-[0_0_10px_rgba(139,92,246,0.3)]">Dream App</span>.
                             </h2>
                             <p className="text-xl text-gray-400 mb-12 leading-relaxed">
                                 We engineer robust digital solutions across Web, Desktop, and Android platforms. Partner with us for world-class development, backed by transparent pricing tailored for the local market.
@@ -25,7 +25,7 @@ export function Contact() {
                             <div className="space-y-8 mb-12">
                                 <div className="space-y-6">
                                     <div className="flex items-center gap-4 text-gray-300">
-                                        <div className="p-3 bg-white/5 rounded-full text-primary border border-white/10">
+                                        <div className="p-3 skeuo-card rounded-full text-primary">
                                             <Mail size={24} />
                                         </div>
                                         <div>
@@ -36,7 +36,7 @@ export function Contact() {
                                     </div>
 
                                     <div className="flex items-center gap-4 text-gray-300">
-                                        <div className="p-3 bg-white/5 rounded-full text-secondary border border-white/10">
+                                        <div className="p-3 skeuo-card rounded-full text-secondary">
                                             <MapPin size={24} />
                                         </div>
                                         <div>
@@ -51,20 +51,10 @@ export function Contact() {
                                             href="https://wa.me/923109233844"
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="inline-flex items-center gap-2 px-6 py-3 bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-full font-bold transition-all transform hover:scale-105 shadow-lg shadow-green-900/20"
+                                            className="inline-flex items-center gap-2 px-8 py-4 skeuo-btn-success text-white font-bold text-lg"
                                         >
                                             <MessageCircle size={20} />
                                             Chat on WhatsApp
-                                        </a>
-
-                                        <a
-                                            href="https://calendly.com"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="inline-flex items-center gap-2 px-6 py-3 bg-white hover:bg-gray-100 text-dark rounded-full font-bold transition-all transform hover:scale-105 shadow-lg"
-                                        >
-                                            <Calendar size={20} />
-                                            Book Strategy Call
                                         </a>
                                     </div>
                                 </div>

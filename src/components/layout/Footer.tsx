@@ -15,13 +15,13 @@ export function Footer() {
                             Building the future with scalable Websites, Desktop Software, and Android Apps.
                         </p>
                         <div className="flex gap-4">
-                            <a href="#" className="p-2 bg-white/5 rounded-full hover:bg-white/10 transition-colors text-white hover:text-primary">
+                            <a href="#" className="p-2 skeuomorphic-light rounded-full hover:skeuomorphic transition-all transform hover:scale-110 text-white hover:text-primary">
                                 <Linkedin size={20} />
                             </a>
-                            <a href="#" className="p-2 bg-white/5 rounded-full hover:bg-white/10 transition-colors text-white hover:text-secondary">
+                            <a href="#" className="p-2 skeuomorphic-light rounded-full hover:skeuomorphic transition-all transform hover:scale-110 text-white hover:text-secondary">
                                 <Twitter size={20} />
                             </a>
-                            <a href="#" className="p-2 bg-white/5 rounded-full hover:bg-white/10 transition-colors text-white hover:text-purple-500">
+                            <a href="#" className="p-2 skeuomorphic-light rounded-full hover:skeuomorphic transition-all transform hover:scale-110 text-white hover:text-purple-500">
                                 <Github size={20} />
                             </a>
                         </div>

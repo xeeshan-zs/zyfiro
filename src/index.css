@@ -7,58 +7,54 @@
 @layer base {
   :root {
     /* Default - essentially unused in dark mode layout but good fallback */
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Premium Skeuomorphism Variables */
+    --bg-depth: linear-gradient(145deg, #1e293b, #0f172a);
+    --bg-raised: linear-gradient(145deg, #1e293b, #0f172a);
+    --bg-depressed: linear-gradient(145deg, #020617, #0f172a);
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    /* Complex Shadows for Depth */
+    --shadow-raised:
+      5px 5px 10px rgba(2, 6, 23, 0.5),
+      -2px -2px 6px rgba(255, 255, 255, 0.05);
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --shadow-floating:
+      10px 10px 20px rgba(2, 6, 23, 0.6),
+      -5px -5px 10px rgba(255, 255, 255, 0.03);
 
-    /* Vivid Violet Primary */
-    --primary: 262.1 83.3% 57.8%;
-    --primary-foreground: 210 40% 98%;
+    --shadow-depressed:
+      inset 5px 5px 10px rgba(2, 6, 23, 0.7),
+      inset -2px -2px 6px rgba(255, 255, 255, 0.03);
 
-    /* Electric Cyan Secondary */
-    --secondary: 189 94% 43%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --shadow-glow-primary: 0 0 15px rgba(124, 58, 237, 0.3);
+    --shadow-glow-secondary: 0 0 15px rgba(6, 182, 212, 0.3);
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 262.1 83.3% 57.8%;
+    /* Textures */
+    --noise-texture: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
   }
 
-  /* Force Dark Mode Default */
+  /* Refined Body Background */
   body {
-    @apply bg-background text-foreground font-body antialiased;
-    background-color: #020617;
-    /* Slate 950 - Deeper than straight Slate 900 */
-    color: #f8fafc;
+    @apply bg-slate-950 text-slate-100 font-body antialiased;
+    background-image:
+      radial-gradient(circle at 15% 50%, rgba(124, 58, 237, 0.08), transparent 25%),
+      radial-gradient(circle at 85% 30%, rgba(6, 182, 212, 0.08), transparent 25%);
+    background-attachment: fixed;
   }
 
-  /* Update headings to use the new font */
+  /* Heading Updates */
   h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
-    @apply font-heading text-white;
+    @apply font-heading text-white tracking-tight;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   }
 
   /* Custom Scrollbar */
   ::-webkit-scrollbar {
-    width: 10px;
+    width: 6px;
   }
 
   ::-webkit-scrollbar-track {
@@ -66,9 +62,8 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #1e293b;
-    border-radius: 5px;
-    border: 2px solid #020617;
+    background: #334155;
+    border-radius: 10px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
@@ -77,15 +72,233 @@
 }
 
 @layer utilities {
+
+  /* Modern Glass Utilities (Preserved but refined) */
   .glass {
-    @apply bg-white/5 backdrop-blur-lg border border-white/10 shadow-lg;
+    @apply bg-slate-900/40 backdrop-blur-xl border border-white/5 shadow-xl;
   }
 
-  .glass-hover {
-    @apply hover:bg-white/10 hover:border-white/20 hover:shadow-xl transition-all duration-300;
+  /* 
+    PREMIUM SKEUOMORPHISM SYSTEM 
+    "Cyber-Tactile" Design Language
+  */
+
+  /* Base Skeuo Card - The main building block */
+  .skeuo-card {
+    background: var(--bg-raised);
+    box-shadow: var(--shadow-raised);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    /* Very subtle top-light edge */
+    border-radius: 1rem;
+    /* 16px */
+    position: relative;
+    overflow: hidden;
+    /* For texture containment */
   }
 
-  .glass-card {
-    @apply bg-[#0f172a]/60 backdrop-blur-xl border border-white/10 shadow-xl;
+  .skeuo-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: var(--noise-texture);
+    pointer-events: none;
+    opacity: 0.4;
+    z-index: 0;
+  }
+
+  .skeuo-card>* {
+    position: relative;
+    /* Ensure content sits above texture */
+    z-index: 1;
+  }
+
+  /* Floating Layout Element (Navbar, Modals) */
+  .skeuo-floating {
+    background: rgba(15, 23, 42, 0.85);
+    /* Slate 900 with opacity */
+    backdrop-blur: 12px;
+    box-shadow: var(--shadow-floating);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  }
+
+  /* Interactive Elements */
+
+  /* Primary Button (Violet) */
+  .skeuo-btn-primary {
+    background: linear-gradient(145deg, rgba(124, 58, 237, 0.9), rgba(109, 40, 217, 0.8));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow:
+      0 4px 6px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    border-radius: 9999px;
+    /* Rounded full */
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  .skeuo-btn-primary:hover {
+    background: linear-gradient(145deg, rgba(139, 92, 246, 0.95), rgba(124, 58, 237, 0.9));
+    box-shadow:
+      0 8px 12px rgba(124, 58, 237, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    border-color: rgba(167, 139, 250, 0.5);
+  }
+
+  .skeuo-btn-primary:active {
+    transform: translateY(1px);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Success Button (Green/WhatsApp) */
+  .skeuo-btn-success {
+    background: linear-gradient(145deg, rgba(22, 163, 74, 0.9), rgba(21, 128, 61, 0.8));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow:
+      0 4px 6px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(74, 222, 128, 0.3);
+    border-radius: 9999px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    color: white;
+  }
+
+  .skeuo-btn-success:hover {
+    background: linear-gradient(145deg, rgba(34, 197, 94, 0.95), rgba(22, 163, 74, 0.9));
+    box-shadow:
+      0 8px 12px rgba(22, 163, 74, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    border-color: rgba(134, 239, 172, 0.5);
+  }
+
+  .skeuo-btn-success:active {
+    transform: translateY(1px);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  /* ICCS Button (Orange/Gold) */
+  .skeuo-btn-iccs {
+    background: linear-gradient(145deg, rgba(217, 119, 6, 0.9), rgba(180, 83, 9, 0.8));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow:
+      0 4px 6px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(251, 191, 36, 0.3);
+    border-radius: 9999px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    color: white;
+  }
+
+  .skeuo-btn-iccs:hover {
+    background: linear-gradient(145deg, rgba(245, 158, 11, 0.95), rgba(217, 119, 6, 0.9));
+    box-shadow:
+      0 8px 12px rgba(217, 119, 6, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    border-color: rgba(252, 211, 77, 0.5);
+  }
+
+  .skeuo-btn-iccs:active {
+    transform: translateY(1px);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Secondary Button (Cyan) */
+  .skeuo-btn-secondary {
+    background: linear-gradient(145deg, rgba(8, 145, 178, 0.9), rgba(14, 116, 144, 0.8));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow:
+      0 4px 6px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(34, 211, 238, 0.3);
+    border-radius: 9999px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  .skeuo-btn-secondary:hover {
+    background: linear-gradient(145deg, rgba(34, 211, 238, 0.95), rgba(8, 145, 178, 0.9));
+    box-shadow:
+      0 8px 12px rgba(34, 211, 238, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    border-color: rgba(103, 232, 249, 0.5);
+  }
+
+  .skeuo-btn-secondary:active {
+    transform: translateY(1px);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Default/Dark Button */
+  .skeuo-btn-default {
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow:
+      0 4px 6px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #e2e8f0;
+    border-radius: 9999px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .skeuo-btn-default:hover {
+    background: rgba(51, 65, 85, 0.8);
+    box-shadow:
+      0 8px 12px rgba(0, 0, 0, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    color: white;
+  }
+
+  .skeuo-btn-default:active {
+    transform: translateY(1px);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Input Fields (Depressed/Inset) */
+  .skeuo-input {
+    background: #0f172a;
+    /* Solid darkest base */
+    box-shadow: var(--shadow-depressed);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    /* Slight light catch at bottom */
+    border-radius: 0.5rem;
+    color: #f8fafc;
+    transition: all 0.2s ease;
+  }
+
+  .skeuo-input::placeholder {
+    color: #64748b;
+  }
+
+  .skeuo-input:focus {
+    outline: none;
+    box-shadow:
+      inset 3px 3px 6px rgba(0, 0, 0, 0.6),
+      0 0 0 2px rgba(124, 58, 237, 0.5),
+      /* Focus ring */
+      0 0 10px rgba(124, 58, 237, 0.2);
+    /* Glow */
+    background: #020617;
+  }
+
+  /* Text Effects */
+  .skeuo-text-emboss {
+    text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.05), 1px 1px 2px rgba(0, 0, 0, 0.8);
+    color: rgba(241, 245, 249, 0.9);
   }
 }

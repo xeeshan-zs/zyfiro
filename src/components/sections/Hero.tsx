@@ -25,6 +25,7 @@ export function Hero() {
                     className="absolute -bottom-[20%] -right-[10%] w-[60vw] h-[60vw] bg-secondary/10 rounded-full blur-[120px]"
                 />
                 <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-soft-light" />
+                <div className="absolute inset-0 paper-texture" />
             </div>
 
             <div className="container mx-auto px-6 relative z-10 text-center">
@@ -37,7 +38,7 @@ export function Hero() {
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: 0.2, duration: 0.5 }}
-                        className="inline-block py-1 px-3 rounded-full bg-white/5 border border-white/10 text-primary text-sm font-medium mb-6 backdrop-blur-sm"
+                        className="inline-block py-2 px-6 rounded-full skeuo-card text-violet-300 text-sm font-medium mb-6 border border-violet-500/20 shadow-[0_0_15px_rgba(139,92,246,0.15)]"
                     >
                         Building the Future of Tech
                     </motion.span>
@@ -45,8 +46,8 @@ export function Hero() {
                     <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6 leading-tight">
                         We Build Digital <br />
                         <span className="relative">
-                            <span className="absolute -inset-1 blur-2xl bg-gradient-to-r from-primary to-secondary opacity-30 animate-pulse-slow"></span>
-                            <span className="relative bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-purple-500 bg-300% animate-gradient">
+                            <span className="absolute -inset-1 blur-2xl bg-gradient-to-r from-violet-400 to-cyan-400 opacity-40 animate-pulse-slow"></span>
+                            <span className="relative bg-clip-text text-transparent bg-gradient-to-r from-violet-300 via-cyan-300 to-purple-300 bg-300% animate-gradient drop-shadow-[0_0_10px_rgba(139,92,246,0.3)]">
                                 Masterpieces
                             </span>
                         </span>
@@ -54,7 +55,7 @@ export function Hero() {
 
                     <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
                         Zyfiro is a next-gen tech agency crafting scalable Websites, Desktop Apps, and Custom Android Solutions.
-                        We deal exclusively in <span className="text-white font-medium">PKR</span> to empower local businesses.
+                        We engineer premium digital experiences that drive growth, efficiency, and long-term success.
                     </p>
 
                     <motion.div
@@ -65,19 +66,18 @@ export function Hero() {
                     >
                         <motion.a
                             href="#contact"
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            className="group px-8 py-4 bg-primary text-white rounded-full font-bold text-lg shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all flex items-center gap-2 relative overflow-hidden"
+                            whileHover={{ scale: 1.05, y: -2 }}
+                            whileTap={{ scale: 0.95, y: 0 }}
+                            className="group px-8 py-4 skeuo-btn-primary text-white rounded-full font-bold text-lg flex items-center gap-2"
                         >
-                            <span className="relative z-10 flex items-center gap-2">Media Inquiry <Rocket size={20} className="group-hover:rotate-12 transition-transform" /></span>
-                            <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                            <span className="flex items-center gap-2">Media Inquiry <Rocket size={20} className="group-hover:rotate-12 transition-transform" /></span>
                         </motion.a>
 
                         <motion.a
                             href="#work"
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            className="group px-8 py-4 glass text-white rounded-full font-bold text-lg hover:bg-white/10 transition-all flex items-center gap-2"
+                            whileHover={{ scale: 1.05, y: -2 }}
+                            whileTap={{ scale: 0.95, y: 0 }}
+                            className="group px-8 py-4 skeuo-btn-default text-white rounded-full font-bold text-lg flex items-center gap-2"
                         >
                             View Our Work <Code2 size={20} className="group-hover:text-secondary transition-colors" />
                         </motion.a>

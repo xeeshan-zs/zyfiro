@@ -97,7 +97,7 @@ ${data.name}
     };
 
     return (
-        <div className="w-full glass rounded-3xl p-6 md:p-8 overflow-hidden relative min-h-[500px] flex flex-col">
+        <div className="w-full skeuo-card p-6 md:p-8 overflow-hidden relative min-h-[500px] flex flex-col">
             {/* Progress Bar */}
             <div className="absolute top-0 left-0 right-0 h-1 bg-white/5">
                 <motion.div
@@ -135,13 +135,13 @@ ${data.name}
                                     className={cn(
                                         "p-6 rounded-2xl border text-left transition-all duration-300 group",
                                         data.service === s.id
-                                            ? "bg-primary/20 border-primary shadow-[0_0_30px_-10px_var(--primary)]"
-                                            : "glass-hover border-white/10 hover:border-white/20"
+                                            ? "bg-primary/20 border-primary shadow-[inset_0_0_20px_rgba(124,58,237,0.3)]"
+                                            : "skeuo-card hover:border-primary/50 hover:shadow-glow-primary"
                                     )}
                                 >
                                     <div className={cn(
                                         "p-3 rounded-lg w-fit mb-4 transition-colors",
-                                        data.service === s.id ? "bg-primary text-white" : "bg-white/10 text-gray-400 group-hover:text-white"
+                                        data.service === s.id ? "bg-primary text-white shadow-lg" : "bg-slate-800 text-gray-400 group-hover:text-white group-hover:bg-primary/80"
                                     )}>
                                         <s.icon size={24} />
                                     </div>
@@ -155,7 +155,8 @@ ${data.name}
                             <Button
                                 onClick={nextStep}
                                 disabled={!isStep1Valid}
-                                className="bg-white text-dark hover:bg-gray-200"
+                                variant="skeuomorphicPrimary"
+                                className="text-white"
                             >
                                 Next Step <ArrowRight className="ml-2 w-4 h-4" />
                             </Button>
@@ -189,10 +190,10 @@ ${data.name}
                                             key={b}
                                             onClick={() => updateData('budget', b)}
                                             className={cn(
-                                                "py-3 px-2 rounded-lg text-sm font-medium border transition-all",
+                                                "py-3 px-1 rounded-lg text-xs md:text-sm font-medium border transition-all whitespace-nowrap",
                                                 data.budget === b
-                                                    ? "bg-secondary/20 border-secondary text-white"
-                                                    : "bg-white/5 border-white/10 text-gray-400 hover:bg-white/10"
+                                                    ? "bg-secondary/20 border-secondary text-white shadow-[inset_0_0_10px_rgba(6,182,212,0.3)]"
+                                                    : "skeuo-card hover:border-secondary/50 text-gray-400 hover:text-white"
                                             )}
                                         >
                                             {b}
@@ -212,8 +213,8 @@ ${data.name}
                                             className={cn(
                                                 "py-3 px-2 rounded-lg text-sm font-medium border transition-all",
                                                 data.timeline === t
-                                                    ? "bg-purple-500/20 border-purple-500 text-white"
-                                                    : "bg-white/5 border-white/10 text-gray-400 hover:bg-white/10"
+                                                    ? "bg-primary/20 border-primary text-white shadow-[inset_0_0_10px_rgba(124,58,237,0.3)]"
+                                                    : "skeuo-card hover:border-primary/50 text-gray-400 hover:text-white"
                                             )}
                                         >
                                             {t}
@@ -224,13 +225,14 @@ ${data.name}
                         </div>
 
                         <div className="mt-auto flex justify-between">
-                            <Button variant="ghost" onClick={prevStep} className="text-gray-400 hover:text-white">
+                            <Button variant="skeuomorphic" onClick={prevStep} className="text-gray-400 hover:text-white">
                                 <ArrowLeft className="mr-2 w-4 h-4" /> Back
                             </Button>
                             <Button
                                 onClick={nextStep}
                                 disabled={!isStep2Valid}
-                                className="bg-white text-dark hover:bg-gray-200"
+                                variant="skeuomorphicPrimary"
+                                className="text-white"
                             >
                                 Next Step <ArrowRight className="ml-2 w-4 h-4" />
                             </Button>
@@ -260,10 +262,10 @@ ${data.name}
                                     <Label htmlFor="name">Name</Label>
                                     <Input
                                         id="name"
-                                        placeholder="John Doe"
+                                        placeholder="Tony Stark"
                                         value={data.name}
                                         onChange={(e) => updateData('name', e.target.value)}
-                                        className="bg-white/5 border-white/10 text-white placeholder:text-gray-500"
+                                        className="skeuo-input"
                                     />
                                 </div>
                                 <div className="space-y-2">
@@ -271,10 +273,10 @@ ${data.name}
                                     <Input
                                         id="email"
                                         type="email"
-                                        placeholder="john@company.com"
+                                        placeholder="tony@starkindustries.com"
                                         value={data.email}
                                         onChange={(e) => updateData('email', e.target.value)}
-                                        className="bg-white/5 border-white/10 text-white placeholder:text-gray-500"
+                                        className="skeuo-input"
                                     />
                                 </div>
                             </div>
@@ -285,19 +287,20 @@ ${data.name}
                                     placeholder="Tell us a bit more about your project..."
                                     value={data.details}
                                     onChange={(e) => updateData('details', e.target.value)}
-                                    className="bg-white/5 border-white/10 text-white placeholder:text-gray-500 min-h-[120px]"
+                                    className="skeuo-input min-h-[120px]"
                                 />
                             </div>
                         </div>
 
                         <div className="mt-auto flex justify-between">
-                            <Button variant="ghost" onClick={prevStep} className="text-gray-400 hover:text-white">
+                            <Button variant="skeuomorphic" onClick={prevStep} className="text-gray-400 hover:text-white">
                                 <ArrowLeft className="mr-2 w-4 h-4" /> Back
                             </Button>
                             <Button
                                 onClick={handleSubmit}
                                 disabled={!isStep3Valid}
-                                className="bg-gradient-to-r from-primary to-secondary text-white hover:opacity-90 w-auto px-8"
+                                variant="skeuomorphicSecondary"
+                                className="text-white w-auto px-8"
                             >
                                 Send Request <CheckCircle className="ml-2 w-4 h-4" />
                             </Button>
@@ -319,7 +322,7 @@ ${data.name}
                         <p className="text-gray-400 max-w-md mb-8">
                             Thanks, {data.name}! We've received your project details. Our team is reviewing them and will send a preliminary proposal to <strong>{data.email}</strong> within 24 hours.
                         </p>
-                        <Button onClick={() => setStep(1)} variant="outline" className="border-white/10 text-white hover:bg-white/5">
+                        <Button onClick={() => setStep(1)} variant="skeuomorphic" className="text-white">
                             Start New Project
                         </Button>
                     </motion.div>

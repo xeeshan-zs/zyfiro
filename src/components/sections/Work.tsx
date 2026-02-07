@@ -1,27 +1,15 @@
-import React from 'react';
+
 import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
 import { FadeIn } from '../ui/fade-in';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import { Button } from '../ui/button';
 
 const projects = [
     {
-        title: 'NUML Portal',
-        description: 'A comprehensive educational portal for student management and resources.',
-        tags: ['React', 'Vite', 'Firebase', 'Live Web App'],
-        link: 'https://portal-numl.web.app'
-    },
-    {
         title: 'ICCS Globalized',
-        description: 'International conference and collaboration platform connecting global minds.',
-        tags: ['React', 'Vite', 'Tailwind', 'Corporate'],
+        description: 'The official platform for the International Council of Criminology and Security (ICCS). We engineered this global hub to connect criminologists, legal experts, and security professionals worldwide. As our inaugural paid project built with React, Vite, and Firebase, it facilitates international cooperation, evidence-based policy research, and seamless member collaboration.',
+        tags: ['React', 'Vite', 'Firebase', 'Tailwind'],
         link: 'https://iccsglobalized.com'
-    },
-    {
-        title: 'EduSync',
-        description: 'A synchronized education platform built with Flutter for seamless learning.',
-        tags: ['Flutter', 'Firebase', 'Live Web App'],
-        link: 'https://edu-sync.web.app'
     }
 ];
 
@@ -40,38 +28,44 @@ export function Work() {
                     </div>
                 </FadeIn>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="flex justify-center gap-8">
                     {projects.map((project, index) => (
-                        <FadeIn key={index} delay={index * 0.1}>
-                            <Card className="bg-white/5 border-white/10 hover:border-primary/50 transition-all duration-300 group h-full flex flex-col">
-                                <CardHeader>
-                                    <CardTitle className="text-2xl font-bold text-white mb-2">{project.title}</CardTitle>
-                                    <div className="flex flex-wrap gap-2 mb-4">
-                                        {project.tags.map(tag => (
-                                            <span key={tag} className="text-xs font-mono px-2 py-1 rounded-full bg-primary/20 text-primary border border-primary/20">
-                                                {tag}
-                                            </span>
-                                        ))}
-                                    </div>
-                                </CardHeader>
-                                <CardContent className="flex-grow flex flex-col justify-between">
-                                    <p className="text-gray-400 mb-6">{project.description}</p>
-                                    <div className="flex gap-4 opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-                                        <Button variant="outline" size="sm" className="rounded-full border-white/10 hover:bg-white/10 hover:text-white">
-                                            <Github className="w-4 h-4 mr-2" /> Code
-                                        </Button>
-                                        <Button
-                                            size="sm"
-                                            className="rounded-full bg-secondary hover:bg-secondary/90 text-white border-none"
-                                            asChild
-                                        >
-                                            <a href={project.link} target="_blank" rel="noopener noreferrer">
-                                                <ExternalLink className="w-4 h-4 mr-2" /> Live
-                                            </a>
-                                        </Button>
-                                    </div>
-                                </CardContent>
-                            </Card>
+                        <FadeIn key={index} delay={index * 0.1} className="w-full max-w-md">
+                            <a href={project.link} target="_blank" rel="noopener noreferrer" className="block h-full group">
+                                <Card variant="skeuomorphic" className="h-full flex flex-col transition-all duration-300 hover:-translate-y-2 hover:bg-[#0B1121] hover:border-[#f59e0b]/50 group-hover:shadow-[0_0_30px_rgba(245,158,11,0.15)] relative overflow-hidden">
+                                    {/* ICCS Grid Pattern Overlay on Hover */}
+                                    <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')] mix-blend-overlay"></div>
+
+                                    <CardHeader className="relative z-10">
+                                        <div className="mb-2">
+                                            <CardTitle className="text-2xl font-bold text-white group-hover:font-serif group-hover:text-3xl transition-all duration-300">
+                                                <span className="group-hover:hidden">{project.title}</span>
+                                                <span className="hidden group-hover:block leading-tight">
+                                                    International Council of <br />
+                                                    <span className="text-[#f59e0b]">Criminology and Security</span>
+                                                </span>
+                                            </CardTitle>
+                                        </div>
+                                        <div className="flex flex-wrap gap-2 mb-4 group-hover:opacity-0 transition-opacity duration-200">
+                                            {project.tags.map(tag => (
+                                                <span key={tag} className="text-xs font-mono px-2 py-1 rounded-full skeuo-card text-primary">
+                                                    {tag}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    </CardHeader>
+                                    <CardContent className="flex-grow flex flex-col justify-between relative z-10">
+                                        <p className="text-gray-400 mb-6 group-hover:text-gray-300 transition-colors">{project.description}</p>
+                                        <div className="flex gap-4 opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                                            <Button
+                                                className="skeuo-btn-iccs rounded-full px-6"
+                                            >
+                                                <ExternalLink className="w-4 h-4 mr-2" /> Visit Site
+                                            </Button>
+                                        </div>
+                                    </CardContent>
+                                </Card>
+                            </a>
                         </FadeIn>
                     ))}
                 </div>

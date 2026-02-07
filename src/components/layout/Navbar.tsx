@@ -4,6 +4,7 @@ import { Menu, X } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
 import { cn } from '../../lib/utils';
 import logo from '../../assets/logo.png';
+import { buttonVariants } from '../ui/button';
 
 export function Navbar() {
     const [isOpen, setIsOpen] = React.useState(false);
@@ -36,15 +37,15 @@ export function Navbar() {
     return (
         <nav
             className={cn(
-                'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-                scrolled ? 'bg-dark/80 backdrop-blur-md border-b border-white/10 py-4' : 'bg-transparent py-6'
+                'fixed top-4 left-4 right-4 z-50 transition-all duration-300 rounded-2xl',
+                scrolled ? 'skeuo-floating py-3 px-2' : 'bg-transparent py-4'
             )}
         >
             <div className="container mx-auto px-6 flex items-center justify-between">
                 <a href="/" className="flex items-center gap-2 group">
                     {/* Logo Image */}
                     <img src={logo} alt="Zyfiro Logo" className="h-10 w-auto object-contain transition-transform group-hover:scale-105" />
-                    <span className="text-2xl font-heading font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
+                    <span className="text-2xl font-heading font-bold bg-clip-text text-transparent bg-gradient-to-r from-violet-400 to-cyan-400 drop-shadow-md">
                         ZYFIRO
                     </span>
                 </a>
@@ -60,7 +61,7 @@ export function Navbar() {
                             {link.name}
                         </a>
                     ))}
-                    <a href={getHref("#contact")} className="px-6 py-2 bg-primary hover:bg-primary/90 text-white rounded-full font-medium transition-all transform hover:scale-105">
+                    <a href={getHref("#contact")} className={cn(buttonVariants({ variant: "default" }), "hover:scale-105 transition-transform")}>
                         Start Project
                     </a>
                 </div>
@@ -94,7 +95,7 @@ export function Navbar() {
                         ))}
                         <a
                             href={getHref("#contact")}
-                            className="w-full block text-center py-3 bg-gradient-to-r from-primary to-secondary text-white rounded-lg font-bold"
+                            className={cn(buttonVariants({ variant: "default" }), "w-full")}
                             onClick={() => setIsOpen(false)}
                         >
                             Start Project

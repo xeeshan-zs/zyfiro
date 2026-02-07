@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { motion, useScroll, useTransform, Variants } from 'framer-motion';
 
 export function Founders() {
@@ -63,8 +63,8 @@ export function Founders() {
                         className="lg:w-1/2"
                     >
                         <motion.h2 variants={itemVariants} className="text-4xl md:text-6xl font-heading font-bold mb-8 leading-tight">
-                            Driven by <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-400">Vision</span>,<br />
-                            Powered by <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-cyan-300">Faith</span>.
+                            Driven by <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-300 to-purple-300 drop-shadow-[0_0_8px_rgba(167,139,250,0.3)]">Vision</span>,<br />
+                            Powered by <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-300 drop-shadow-[0_0_8px_rgba(34,211,238,0.3)]">Faith</span>.
                         </motion.h2>
 
                         <motion.p variants={itemVariants} className="text-gray-300 text-xl leading-relaxed mb-8 font-light">
@@ -81,9 +81,9 @@ export function Founders() {
                         <motion.div variants={itemVariants} className="flex gap-6">
                             <motion.div
                                 whileHover={{ y: -5 }}
-                                className="p-6 glass rounded-3xl w-full transition-all duration-300 group cursor-default shadow-lg hover:shadow-primary/20"
+                                className="p-6 skeuo-card rounded-3xl w-full transition-all duration-300 group cursor-default"
                             >
-                                <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mb-4 group-hover:bg-primary/30 transition-colors">
+                                <div className="w-12 h-12 rounded-full skeuo-card flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                                     <span className="text-primary font-bold text-lg">Z</span>
                                 </div>
                                 <h4 className="font-bold text-white text-lg mb-1 group-hover:text-primary transition-colors">Zeeshan</h4>
@@ -92,9 +92,9 @@ export function Founders() {
 
                             <motion.div
                                 whileHover={{ y: -5 }}
-                                className="p-6 glass rounded-3xl w-full transition-all duration-300 group cursor-default shadow-lg hover:shadow-secondary/20"
+                                className="p-6 skeuo-card rounded-3xl w-full transition-all duration-300 group cursor-default"
                             >
-                                <div className="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center mb-4 group-hover:bg-secondary/30 transition-colors">
+                                <div className="w-12 h-12 rounded-full skeuo-card flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                                     <span className="text-secondary font-bold text-lg">J</span>
                                 </div>
                                 <h4 className="font-bold text-white text-lg mb-1 group-hover:text-secondary transition-colors">Javeria</h4>

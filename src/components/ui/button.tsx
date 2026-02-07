@@ -5,26 +5,33 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
         default:
-          "bg-primary text-primary-foreground shadow hover:bg-primary/90 hover:shadow-primary/25 hover:shadow-lg transition-all duration-300",
+          "skeuo-btn-primary text-white hover:translate-y-[1px] active:translate-y-[2px]",
         destructive:
           "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
         outline:
-          "border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground",
+          "skeuo-btn-default hover:text-white",
         secondary:
-          "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
+          "skeuo-btn-secondary text-white hover:translate-y-[1px] active:translate-y-[2px]",
+        ghost: "hover:bg-slate-800/50 hover:text-white",
         link: "text-primary underline-offset-4 hover:underline",
+        // Backward compatibility mappings
+        skeuomorphic:
+          "skeuo-btn-default text-white",
+        skeuomorphicPrimary:
+          "skeuo-btn-primary text-white",
+        skeuomorphicSecondary:
+          "skeuo-btn-secondary text-white",
       },
       size: {
-        default: "h-10 px-6 py-2",
-        sm: "h-9 rounded-full px-4 text-xs",
-        lg: "h-12 rounded-full px-10 text-base",
-        icon: "h-10 w-10",
+        default: "h-11 px-6 py-2",
+        sm: "h-9 px-4 text-xs",
+        lg: "h-14 px-10 text-base",
+        icon: "h-11 w-11",
       },
     },
     defaultVariants: {
