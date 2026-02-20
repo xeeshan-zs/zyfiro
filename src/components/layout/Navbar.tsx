@@ -71,31 +71,30 @@ export function Navbar() {
                 </button>
             </div>
 
-            {/* Mobile Menu */}
+            {/* Mobile Menu - Positioned absolutely relative to the nav pill */}
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
-                        initial={{ opacity: 0, y: -20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
-                        transition={{ duration: 0.2 }}
+                        initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                        transition={{ duration: 0.2, ease: "easeOut" }}
                         className={styles.mobileMenuContainer}
                     >
-                        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                            {navLinks.map((link) => (
-                                <a
-                                    key={link.name}
-                                    href={getHref(link.href)}
-                                    className={styles.mobileNavLink}
-                                    onClick={() => setIsOpen(false)}
-                                >
-                                    {link.name}
-                                </a>
-                            ))}
+                        {navLinks.map((link) => (
+                            <a
+                                key={link.name}
+                                href={getHref(link.href)}
+                                className={styles.mobileNavLink}
+                                onClick={() => setIsOpen(false)}
+                            >
+                                {link.name}
+                            </a>
+                        ))}
+                        <div className={styles.mobileCtaButton}>
                             <a
                                 href={getHref("#contact")}
                                 className={styles.ctaButton}
-                                style={{ width: '100%', textAlign: 'center' }}
                                 onClick={() => setIsOpen(false)}
                             >
                                 Start Project
