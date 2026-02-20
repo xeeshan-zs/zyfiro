@@ -1,0 +1,221 @@
+/* Founders.module.css */
+
+.section {
+    background: var(--bg-primary);
+    padding: var(--space-3xl) 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+    align-items: center;
+}
+
+@media (min-width: 992px) {
+    .layout {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-3xl);
+    }
+}
+
+/* Left: text content */
+.textContent {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.sectionTag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.4rem 1rem;
+    background: rgba(124, 92, 255, 0.1);
+    border: 1px solid rgba(124, 92, 255, 0.2);
+    border-radius: 9999px;
+    color: var(--accent-primary);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    width: fit-content;
+}
+
+.heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+}
+
+@media (min-width: 768px) {
+    .heading {
+        font-size: 3.25rem;
+    }
+}
+
+.gradientViolet {
+    background: linear-gradient(90deg, #a78bfa, #c4b5fd);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.gradientCyan {
+    background: linear-gradient(90deg, #22d3ee, #93c5fd);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.leadText {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.leadText strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.bodyText {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+/* Founder Cards */
+.founderCards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-sm);
+    margin-top: var(--space-sm);
+}
+
+.founderCard {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 16px;
+    padding: var(--space-md);
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.founderCard:hover {
+    transform: translateY(-4px);
+    border-color: var(--border-highlight);
+    background: var(--bg-surface-elevated);
+}
+
+.founderAvatar {
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 50%;
+    background: rgba(124, 92, 255, 0.1);
+    border: 1px solid rgba(124, 92, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--accent-primary);
+    margin-bottom: var(--space-sm);
+}
+
+.founderAvatar.secondary {
+    background: rgba(91, 168, 255, 0.1);
+    border-color: rgba(91, 168, 255, 0.2);
+    color: var(--accent-secondary);
+}
+
+.founderName {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.founderRole {
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+}
+
+/* Right: Visual panel */
+.visualPanel {
+    position: relative;
+}
+
+.visualCard {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 24px;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.visualGradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(124, 92, 255, 0.15) 0%, transparent 50%, rgba(91, 168, 255, 0.1) 100%);
+}
+
+.visualContent {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: var(--space-xl);
+}
+
+.visualIcon {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-subtle);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-md);
+    color: var(--text-primary);
+    transition: transform 0.5s ease;
+}
+
+.visualCard:hover .visualIcon {
+    transform: rotate(12deg);
+}
+
+.visualTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+}
+
+.visualSubtitle {
+    font-size: 0.9375rem;
+    color: var(--text-muted);
+}
+
+.visualGlow {
+    position: absolute;
+    inset: -2rem;
+    background: radial-gradient(circle, rgba(124, 92, 255, 0.15) 0%, transparent 70%);
+    z-index: -1;
+    border-radius: 50%;
+}
