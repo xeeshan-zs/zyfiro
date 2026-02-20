@@ -12,14 +12,13 @@
   z-index: 1000;
   padding: 1rem 2rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  background: rgba(15, 23, 42, 0.6);
-  /* Semi-transparent dark base */
+  background: rgba(20, 20, 30, 0.6);
+  /* Glassmorphism base */
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-radius: 24px;
+  border-radius: 20px;
   /* Rounded pill shape */
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  /* Subtle border */
+  border: 1px solid var(--border-subtle);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
   /* Floating shadow */
   display: flex;
@@ -27,9 +26,9 @@
 }
 
 .navbarScrolled {
-  background: rgba(15, 23, 42, 0.85);
+  background: rgba(20, 20, 30, 0.85);
   /* Darker on scroll */
-  border-color: rgba(255, 255, 255, 0.12);
+  border-color: var(--border-highlight);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
   padding: 0.8rem 2rem;
   /* Slightly compact on scroll */
@@ -56,7 +55,6 @@
 
 .logoImage {
   height: 2.25rem;
-  /* Slightly smaller for pill balance */
   width: auto;
   object-fit: contain;
 }
@@ -65,12 +63,8 @@
   font-family: 'Space Grotesk', sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--text-primary);
   letter-spacing: -0.02em;
-  background: linear-gradient(to right, #a78bfa, #22d3ee);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
 }
 
 /* Desktop Navigation */
@@ -87,7 +81,7 @@
 }
 
 .navLink {
-  color: rgba(255, 255, 255, 0.75);
+  color: var(--text-secondary);
   font-family: 'Inter', sans-serif;
   font-weight: 500;
   font-size: 0.95rem;
@@ -97,7 +91,7 @@
 }
 
 .navLink:hover {
-  color: #fff;
+  color: var(--text-primary);
 }
 
 .navLink::after {
@@ -108,7 +102,7 @@
   transform: translateX(-50%);
   width: 0;
   height: 2px;
-  background: linear-gradient(to right, #a78bfa, #22d3ee);
+  background: var(--accent-primary);
   transition: width 0.2s ease;
   border-radius: 2px;
 }
@@ -118,7 +112,7 @@
 }
 
 .ctaButton {
-  background: linear-gradient(135deg, #7c3aed 0%, #06b6d4 100%);
+  background: var(--accent-primary);
   color: white;
   padding: 0.6rem 1.25rem;
   border-radius: 9999px;
@@ -126,7 +120,7 @@
   font-size: 0.9rem;
   text-decoration: none;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 15px rgba(124, 92, 255, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.1);
   display: inline-flex;
   align-items: center;
@@ -135,7 +129,7 @@
 
 .ctaButton:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(124, 58, 237, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 25px rgba(124, 92, 255, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.3);
   filter: brightness(1.1);
 }
 
@@ -150,7 +144,7 @@
   justify-content: center;
   background: transparent;
   border: none;
-  color: white;
+  color: var(--text-primary);
   cursor: pointer;
   padding: 0.5rem;
   transition: color 0.2s ease;
@@ -163,23 +157,20 @@
 }
 
 .mobileToggle:hover {
-  color: #a78bfa;
+  color: var(--accent-primary);
 }
 
 /* Mobile Menu */
-/* Positioned relative to the navbar container, popping out below */
 .mobileMenuContainer {
   position: absolute;
   top: calc(100% + 0.75rem);
-  /* Space below the navbar pill */
   left: 0;
   right: 0;
-  background: rgba(15, 23, 42, 0.95);
+  background: rgba(20, 20, 30, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-radius: 1.5rem;
-  /* Match pill roundness logic */
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-subtle);
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -195,7 +186,7 @@
 }
 
 .mobileNavLink {
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--text-secondary);
   font-family: 'Space Grotesk', sans-serif;
   font-size: 1.15rem;
   font-weight: 500;
@@ -208,7 +199,7 @@
 }
 
 .mobileNavLink:hover {
-  color: #fff;
+  color: var(--text-primary);
   background: rgba(255, 255, 255, 0.05);
 }
 

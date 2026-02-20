@@ -1,35 +1,35 @@
 import { Globe, Smartphone, Cloud, Zap, Layout, Shield } from 'lucide-react';
-import { Card, CardHeader, CardTitle, CardContent } from '../ui/card';
 import { FadeIn } from '../ui/fade-in';
+import styles from '../ui/Card.module.css';
 
 const services = [
     {
-        icon: <Globe className="w-8 h-8 text-primary" />,
+        icon: <Globe className={styles.icon} size={24} />,
         title: 'Web Development',
         description: 'High-performance applications tailored for scalability and SEO.',
     },
     {
-        icon: <Smartphone className="w-8 h-8 text-secondary" />,
+        icon: <Smartphone className={styles.icon} size={24} />,
         title: 'Android Apps',
         description: 'Custom, high-performance Android applications built to your exact specifications.',
     },
     {
-        icon: <Layout className="w-8 h-8 text-blue-400" />,
+        icon: <Layout className={styles.icon} size={24} />,
         title: 'Desktop Software',
         description: 'Powerful cross-platform desktop applications built with Flutter.',
     },
     {
-        icon: <Cloud className="w-8 h-8 text-purple-500" />,
+        icon: <Cloud className={styles.icon} size={24} />,
         title: 'Firebase Backend',
         description: 'Secure, real-time serverless backends to power your applications instantly.',
     },
     {
-        icon: <Zap className="w-8 h-8 text-yellow-400" />,
+        icon: <Zap className={styles.icon} size={24} />,
         title: 'Rapid MVP',
         description: 'Launch your startup idea in weeks, not months, with our agile process.',
     },
     {
-        icon: <Shield className="w-8 h-8 text-green-400" />,
+        icon: <Shield className={styles.icon} size={24} />,
         title: 'Enterprise Security',
         description: 'Bank-grade security standards built into every line of code.',
     },
@@ -37,16 +37,16 @@ const services = [
 
 export function Services() {
     return (
-        <section id="services" className="py-32 bg-dark relative">
-            <div className="container mx-auto px-6">
+        <section id="services" className="py-32 bg-dark relative" style={{ background: 'var(--bg-primary)', padding: 'var(--space-3xl) 0' }}>
+            <div className="container mx-auto px-6" style={{ maxWidth: '1200px' }}>
                 <div className="text-center mb-20">
                     <FadeIn>
-                        <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6">
+                        <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                             Our Expertise
                         </h2>
                     </FadeIn>
                     <FadeIn delay={0.2}>
-                        <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+                        <p className="text-gray-400 max-w-2xl mx-auto text-lg" style={{ color: 'var(--text-secondary)' }}>
                             We don't just write code; we engineer digital ecosystems using the latest technologies.
                         </p>
                     </FadeIn>
@@ -55,21 +55,13 @@ export function Services() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {services.map((service, index) => (
                         <FadeIn key={index} delay={index * 0.1}>
-                            <Card variant="skeuomorphic" className="h-full hover:-translate-y-2 transition-all duration-300 group overflow-hidden">
-                                <CardHeader>
-                                    <div className="mb-4 p-4 skeuo-card rounded-2xl w-fit group-hover:scale-110 transition-transform duration-300">
-                                        {service.icon}
-                                    </div>
-                                    <CardTitle className="text-xl font-bold text-white group-hover:text-primary transition-colors">
-                                        {service.title}
-                                    </CardTitle>
-                                </CardHeader>
-                                <CardContent>
-                                    <p className="text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors">
-                                        {service.description}
-                                    </p>
-                                </CardContent>
-                            </Card>
+                            <div className={styles.card}>
+                                <div className={styles.cardContent}>
+                                    <div>{service.icon}</div>
+                                    <h3 className={styles.title}>{service.title}</h3>
+                                    <p className={styles.description}>{service.description}</p>
+                                </div>
+                            </div>
                         </FadeIn>
                     ))}
                 </div>
