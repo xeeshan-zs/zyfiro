@@ -1,27 +1,58 @@
 import { Link } from 'react-router-dom';
-import { Linkedin, Twitter, Github } from 'lucide-react';
+import { Linkedin, Twitter, Github, MessageCircle, ArrowRight } from 'lucide-react';
 import styles from './Footer.module.css';
 
 export function Footer() {
     return (
         <footer className={styles.footer}>
+            {/* CTA Banner */}
+            <div className={styles.ctaBanner}>
+                <div className={styles.ctaContainer}>
+                    <div className={styles.ctaContent}>
+                        <div className={styles.ctaBadge}>● Available for New Projects</div>
+                        <h2 className={styles.ctaHeading}>
+                            Ready to build your <br className={styles.ctaBr} />
+                            <span className={styles.ctaAccent}>next digital product?</span>
+                        </h2>
+                        <p className={styles.ctaSubtext}>
+                            Let's turn your idea into a high-performance reality. Fast, secure, and built to last.
+                        </p>
+                        <div className={styles.ctaActions}>
+                            <a href="#contact" className={styles.ctaBtn}>
+                                Start a Project <ArrowRight size={16} />
+                            </a>
+                            <a
+                                href="https://wa.me/923109233844"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={styles.ctaBtnSecondary}
+                            >
+                                <MessageCircle size={16} />
+                                Chat on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* Footer body */}
             <div className={styles.container}>
                 <div className={styles.grid}>
                     {/* Brand */}
                     <div className={styles.brand}>
                         <a href="/" className={styles.brandName}>ZYFIRO</a>
                         <p className={styles.brandTagline}>
-                            Building the future with scalable Websites, Desktop Software, and Android Apps.
+                            Building scalable Websites, Desktop Software, and Android Apps — from Pakistan, for the world.
                         </p>
                         <div className={styles.socials}>
                             <a href="#" className={styles.socialLink} aria-label="LinkedIn">
-                                <Linkedin size={16} />
+                                <Linkedin size={15} />
                             </a>
                             <a href="#" className={styles.socialLink} aria-label="Twitter">
-                                <Twitter size={16} />
+                                <Twitter size={15} />
                             </a>
                             <a href="#" className={styles.socialLink} aria-label="GitHub">
-                                <Github size={16} />
+                                <Github size={15} />
                             </a>
                         </div>
                     </div>

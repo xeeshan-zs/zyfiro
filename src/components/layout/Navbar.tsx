@@ -5,54 +5,65 @@ import { useLocation } from 'react-router-dom';
 import logo from '../../assets/logo.png';
 import styles from './Navbar.module.css';
 
+const NAV_LINKS = [
+    { name: 'Services', href: '#services', section: 'services' },
+    { name: 'Vision', href: '#vision', section: 'vision' },
+    { name: 'Work', href: '#work', section: 'work' },
+    { name: 'Contact', href: '#contact', section: 'contact' },
+];
+
 export function Navbar() {
     const [isOpen, setIsOpen] = React.useState(false);
     const [scrolled, setScrolled] = React.useState(false);
+    const [activeSection, setActiveSection] = React.useState('');
     const location = useLocation();
     const isHome = location.pathname === '/';
 
     React.useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(window.scrollY > 20);
-        };
-        window.addEventListener('scroll', handleScroll);
+        const handleScroll = () => setScrolled(window.scrollY > 20);
+        window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const navLinks = [
-        { name: 'Services', href: '#services' },
-        { name: 'Vision', href: '#vision' },
-        { name: 'Work', href: '#work' },
-        { name: 'Contact', href: '#contact' },
-    ];
+    // Track active section with IntersectionObserver
+    React.useEffect(() => {
+        if (!isHome) return;
+        const sectionIds = NAV_LINKS.map(l => l.section);
+        const observers: IntersectionObserver[] = [];
 
-    /* 
-       Helper to get correct href:
-       If home: "#services"
-       If not home: "/#services"
-    */
+        sectionIds.forEach(id => {
+            const el = document.getElementById(id);
+            if (!el) return;
+            const obs = new IntersectionObserver(
+                ([entry]) => {
+                    if (entry.isIntersecting) setActiveSection(id);
+                },
+                { rootMargin: '-40% 0px -50% 0px', threshold: 0 }
+            );
+            obs.observe(el);
+            observers.push(obs);
+        });
+
+        return () => observers.forEach(o => o.disconnect());
+    }, [isHome]);
+
     const getHref = (href: string) => isHome ? href : `/${href}`;
 
     return (
-        <nav
-            className={`${styles.navbar} ${scrolled ? styles.navbarScrolled : ''}`}
-        >
+        <nav className={`${styles.navbar} ${scrolled ? styles.navbarScrolled : ''}`}>
             <div className={styles.container}>
                 <a href="/" className={styles.logoLink}>
-                    {/* Logo Image */}
                     <img src={logo} alt="Zyfiro Logo" className={styles.logoImage} />
-                    <span className={styles.logoText}>
-                        ZYFIRO
-                    </span>
+                    <span className={styles.logoText}>ZYFIRO</span>
                 </a>
 
                 {/* Desktop Nav */}
                 <div className={styles.desktopNav}>
-                    {navLinks.map((link) => (
+                    {NAV_LINKS.map((link) => (
                         <a
                             key={link.name}
                             href={getHref(link.href)}
-                            className={styles.navLink}
+                            className={`${styles.navLink} ${activeSection === link.section ? styles.navLinkActive : ''}`}
                         >
                             {link.name}
                         </a>
@@ -66,26 +77,27 @@ export function Navbar() {
                 <button
                     className={styles.mobileToggle}
                     onClick={() => setIsOpen(!isOpen)}
+                    aria-label={isOpen ? 'Close menu' : 'Open menu'}
                 >
-                    {isOpen ? <X size={24} /> : <Menu size={24} />}
+                    {isOpen ? <X size={22} /> : <Menu size={22} />}
                 </button>
             </div>
 
-            {/* Mobile Menu - Positioned absolutely relative to the nav pill */}
+            {/* Mobile Menu */}
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
-                        initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                        initial={{ opacity: 0, y: -10, scale: 0.97 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                        exit={{ opacity: 0, y: -10, scale: 0.97 }}
                         transition={{ duration: 0.2, ease: "easeOut" }}
                         className={styles.mobileMenuContainer}
                     >
-                        {navLinks.map((link) => (
+                        {NAV_LINKS.map((link) => (
                             <a
                                 key={link.name}
                                 href={getHref(link.href)}
-                                className={styles.mobileNavLink}
+                                className={`${styles.mobileNavLink} ${activeSection === link.section ? styles.mobileNavLinkActive : ''}`}
                                 onClick={() => setIsOpen(false)}
                             >
                                 {link.name}

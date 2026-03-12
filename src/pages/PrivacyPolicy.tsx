@@ -1,60 +1,306 @@
-import React from 'react';
+import { motion, Variants } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
+import {
+    ArrowLeft, ArrowRight, Shield, Database, Settings, Share2,
+    Lock, Cookie, UserCheck, Mail, Calendar, Clock
+} from 'lucide-react';
 import { Navbar } from '../components/layout/Navbar';
 import { Footer } from '../components/layout/Footer';
-import { FadeIn } from '../components/ui/fade-in';
+import styles from './LegalPage.module.css';
 
-import { Helmet } from 'react-helmet-async';
+const sections = [
+    {
+        id: 'introduction',
+        num: '01',
+        icon: <Shield size={18} />,
+        iconClass: 'iconViolet',
+        title: 'Introduction',
+        content: (
+            <>
+                <p>
+                    Welcome to Zyfiro ("we," "our," or "us"). We respect your privacy and are committed to protecting
+                    your personal data. This Privacy Policy explains how we collect, use, and safeguard your information
+                    when you visit our website or engage our services.
+                </p>
+                <p>
+                    By using our website or services, you agree to the practices described in this policy.
+                    If you disagree with any part of it, please discontinue use of our services.
+                </p>
+                <div className={styles.highlight}>
+                    We believe privacy is a fundamental right. We only collect what we absolutely need, and we never sell your data.
+                </div>
+            </>
+        ),
+    },
+    {
+        id: 'data-collection',
+        num: '02',
+        icon: <Database size={18} />,
+        iconClass: 'iconBlue',
+        title: 'Data We Collect',
+        content: (
+            <>
+                <p>
+                    We may collect the following types of personal data when you interact with our website or project inquiry form:
+                </p>
+                <ul className={styles.sectionList}>
+                    <li><span><strong>Identity Data</strong> — your name and any identifiers you provide in our contact forms.</span></li>
+                    <li><span><strong>Contact Data</strong> — email address and phone number, used solely to respond to your inquiries.</span></li>
+                    <li><span><strong>Project Data</strong> — project details, budget range, and timeline you share through our Project Wizard.</span></li>
+                    <li><span><strong>Technical Data</strong> — IP address, browser type and version, time zone, operating system, and basic device info collected automatically via standard web logs.</span></li>
+                    <li><span><strong>Usage Data</strong> — pages visited, time spent, referral sources, and click patterns to help us improve the website experience.</span></li>
+                </ul>
+                <p>
+                    We do <strong>not</strong> collect sensitive personal data such as financial account details, government IDs,
+                    or health information through this website.
+                </p>
+            </>
+        ),
+    },
+    {
+        id: 'data-use',
+        num: '03',
+        icon: <Settings size={18} />,
+        iconClass: 'iconCyan',
+        title: 'How We Use Your Data',
+        content: (
+            <>
+                <p>We use the personal data we collect for the following purposes:</p>
+                <ul className={styles.sectionList}>
+                    <li><span>To respond to your project inquiries and provide quotes or proposals.</span></li>
+                    <li><span>To communicate about the scope, timeline, and progress of your project.</span></li>
+                    <li><span>To improve our website content, performance, and user experience.</span></li>
+                    <li><span>To comply with applicable legal obligations.</span></li>
+                    <li><span>To send important service-related notifications (never unsolicited marketing).</span></li>
+                </ul>
+                <p>
+                    We will never use your data for automated decision-making that significantly affects you,
+                    or for any purpose incompatible with what is listed above.
+                </p>
+            </>
+        ),
+    },
+    {
+        id: 'data-sharing',
+        num: '04',
+        icon: <Share2 size={18} />,
+        iconClass: 'iconOrange',
+        title: 'Data Sharing & Third Parties',
+        content: (
+            <>
+                <p>
+                    We do <strong>not sell</strong> your personal data. We may share limited data with trusted third-party
+                    service providers strictly to operate our business:
+                </p>
+                <ul className={styles.sectionList}>
+                    <li><span><strong>Email services</strong> — to send and receive project-related communications (e.g., Gmail / Google Workspace).</span></li>
+                    <li><span><strong>Analytics providers</strong> — to understand website usage patterns anonymously.</span></li>
+                    <li><span><strong>Hosting providers</strong> — to serve the website and store data securely.</span></li>
+                </ul>
+                <p>
+                    All third-party providers are contractually required to protect your data and may only process it on our behalf.
+                    We never allow them to use your data for their own purposes.
+                </p>
+            </>
+        ),
+    },
+    {
+        id: 'data-security',
+        num: '05',
+        icon: <Lock size={18} />,
+        iconClass: 'iconEmerald',
+        title: 'Data Security',
+        content: (
+            <>
+                <p>
+                    We take data security seriously. We have implemented appropriate technical and organizational measures to
+                    protect your personal data against accidental loss, unauthorized access, alteration, or disclosure.
+                </p>
+                <ul className={styles.sectionList}>
+                    <li><span>All data is transmitted over HTTPS (TLS encryption).</span></li>
+                    <li><span>Access to personal data is strictly limited to authorized personnel who need it for service delivery.</span></li>
+                    <li><span>We regularly review our security practices to maintain protection against emerging threats.</span></li>
+                </ul>
+                <div className={styles.highlight}>
+                    While we strive for the highest security standards, no system is 100% impenetrable.
+                    If you suspect a security breach, please contact us immediately at <a className={styles.emailLink} href="mailto:zeeshan.sarfraz@atrons.net">zeeshan.sarfraz@atrons.net</a>.
+                </div>
+            </>
+        ),
+    },
+    {
+        id: 'cookies',
+        num: '06',
+        icon: <Cookie size={18} />,
+        iconClass: 'iconAmber',
+        title: 'Cookies',
+        content: (
+            <>
+                <p>
+                    Our website may use cookies — small text files stored on your device — to improve your browsing experience.
+                    We use the following types:
+                </p>
+                <ul className={styles.sectionList}>
+                    <li><span><strong>Strictly Necessary</strong> — required for the website to function correctly.</span></li>
+                    <li><span><strong>Analytics</strong> — help us understand how visitors interact with our website (anonymized data only).</span></li>
+                </ul>
+                <p>
+                    You can control or disable cookies through your browser settings at any time. Disabling certain cookies may
+                    affect the functionality of the website.
+                </p>
+            </>
+        ),
+    },
+    {
+        id: 'your-rights',
+        num: '07',
+        icon: <UserCheck size={18} />,
+        iconClass: 'iconRose',
+        title: 'Your Rights',
+        content: (
+            <>
+                <p>
+                    Depending on your jurisdiction, you may have the following rights regarding your personal data:
+                </p>
+                <ul className={styles.sectionList}>
+                    <li><span><strong>Right to Access</strong> — request a copy of the personal data we hold about you.</span></li>
+                    <li><span><strong>Right to Rectification</strong> — request correction of inaccurate or incomplete data.</span></li>
+                    <li><span><strong>Right to Erasure</strong> — request deletion of your personal data where it is no longer necessary.</span></li>
+                    <li><span><strong>Right to Object</strong> — object to processing based on legitimate interests.</span></li>
+                    <li><span><strong>Right to Data Portability</strong> — request a portable copy of your data in a common format.</span></li>
+                </ul>
+                <p>
+                    To exercise any of these rights, contact us at the email below. We will respond within 30 days.
+                </p>
+            </>
+        ),
+    },
+    {
+        id: 'contact',
+        num: '08',
+        icon: <Mail size={18} />,
+        iconClass: 'iconSlate',
+        title: 'Contact Us',
+        content: (
+            <>
+                <p>
+                    If you have any questions about this Privacy Policy, how we handle your data, or wish to exercise
+                    any of your rights, please reach out to us:
+                </p>
+                <ul className={styles.sectionList}>
+                    <li><span><strong>Zeeshan Sarfraz</strong> — <a className={styles.emailLink} href="mailto:zeeshan.sarfraz@atrons.net">zeeshan.sarfraz@atrons.net</a></span></li>
+                    <li><span><strong>Javeria Javaid</strong> — <a className={styles.emailLink} href="mailto:meetjaveriajavaid@gmail.com">meetjaveriajavaid@gmail.com</a></span></li>
+                </ul>
+                <p>
+                    We are committed to resolving any concerns promptly and transparently.
+                </p>
+            </>
+        ),
+    },
+];
 
-export function PrivacyPolicy() {
+const fadeUp: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (i: number) => ({
+        opacity: 1, y: 0,
+        transition: { duration: 0.5, delay: i * 0.06, ease: 'easeOut' }
+    }),
+};
+
+export const PrivacyPolicy = () => {
     return (
-        <div className="min-h-screen bg-dark text-white selection:bg-primary/30 selection:text-white">
+        <div className={styles.page}>
             <Helmet>
-                <title>Privacy Policy</title>
+                <title>Privacy Policy — Zyfiro</title>
                 <meta name="description" content="Privacy Policy for Zyfiro. Learn how we collect, use, and protect your personal data." />
             </Helmet>
             <Navbar />
-            <div className="pt-32 pb-20 container mx-auto px-6 max-w-4xl">
-                <FadeIn>
-                    <h1 className="text-4xl md:text-5xl font-heading font-bold mb-8">
-                        Privacy <span className="text-primary">Policy</span>.
-                    </h1>
-                    <p className="text-gray-400 mb-12">Last Updated: February 2026</p>
 
-                    <div className="prose prose-invert prose-lg max-w-none">
-                        <h3 className="text-2xl font-bold text-white mb-4">1. Introduction</h3>
-                        <p className="text-gray-400 mb-8">
-                            Welcome to Zyfiro ("we," "our," or "us"). We respect your privacy and are committed to protecting your personal data.
-                            This privacy policy will inform you as to how we look after your personal data when you visit our website (regardless of where you visit it from)
-                            and tell you about your privacy rights and how the law protects you.
-                        </p>
-
-                        <h3 className="text-2xl font-bold text-white mb-4">2. Data We Collect</h3>
-                        <p className="text-gray-400 mb-8">
-                            We may collect, use, store and transfer different kinds of personal data about you which we have grouped together follows:
-                            <br /><br />
-                            - <strong>Identity Data</strong> includes first name, maiden name, last name, username or similar identifier.<br />
-                            - <strong>Contact Data</strong> includes billing address, delivery address, email address and telephone numbers.<br />
-                            - <strong>Technical Data</strong> includes internet protocol (IP) address, your login data, browser type and version, time zone setting and location.
-                        </p>
-
-                        <h3 className="text-2xl font-bold text-white mb-4">3. How We Use Your Data</h3>
-                        <p className="text-gray-400 mb-8">
-                            We will only use your personal data when the law allows us to. Most commonly, we will use your personal data in the following circumstances:
-                            <br /><br />
-                            - Where we need to perform the contract we are about to enter into or have entered into with you.<br />
-                            - Where it is necessary for our legitimate interests (or those of a third party) and your interests and fundamental rights do not override those interests.<br />
-                            - Where we need to comply with a legal or regulatory obligation.
-                        </p>
-
-                        <h3 className="text-2xl font-bold text-white mb-4">4. Data Security</h3>
-                        <p className="text-gray-400 mb-8">
-                            We have put in place appropriate security measures to prevent your personal data from being accidentally lost, used or accessed in an unauthorized way, altered or disclosed.
-                            In addition, we limit access to your personal data to those employees, agents, contractors and other third parties who have a business need to know.
-                        </p>
+            {/* Hero */}
+            <div className={styles.hero}>
+                <div className={styles.heroInner}>
+                    <Link to="/" className={styles.backLink}>
+                        <ArrowLeft size={14} /> Back to Home
+                    </Link>
+                    <div className={styles.heroBadge}>
+                        <Shield size={11} /> Legal
                     </div>
-                </FadeIn>
+                    <h1 className={styles.heroTitle}>
+                        Privacy <span className={styles.heroAccent}>Policy</span>.
+                    </h1>
+                    <div className={styles.heroMeta}>
+                        <span className={styles.metaChip}><Calendar size={13} /> Last Updated: February 2026</span>
+                        <span className={styles.metaSep}>·</span>
+                        <span className={styles.metaChip}><Clock size={13} /> 5 min read</span>
+                    </div>
+                </div>
             </div>
+
+            {/* Body */}
+            <div className={styles.body}>
+                {/* Main content */}
+                <main className={styles.content}>
+                    {sections.map((s, i) => (
+                        <motion.div
+                            key={s.id}
+                            id={s.id}
+                            className={styles.section}
+                            custom={i}
+                            variants={fadeUp}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, margin: '-60px' }}
+                        >
+                            <div className={styles.sectionHeader}>
+                                <span className={styles.sectionNum}>{s.num}</span>
+                                <div className={`${styles.sectionIcon} ${styles[s.iconClass as keyof typeof styles]}`}>
+                                    {s.icon}
+                                </div>
+                                <div className={styles.sectionTitleWrap}>
+                                    <h2 className={styles.sectionTitle}>{s.title}</h2>
+                                </div>
+                            </div>
+                            <div className={styles.sectionBody}>{s.content}</div>
+                        </motion.div>
+                    ))}
+
+                    {/* Bottom note */}
+                    <div className={styles.bottomNote}>
+                        <span className={styles.bottomNoteText}>
+                            This policy may be updated periodically. Continued use of our services constitutes acceptance.
+                        </span>
+                        <Link to="/terms-of-service" className={styles.bottomNoteLink}>
+                            Terms of Service <ArrowRight size={13} />
+                        </Link>
+                    </div>
+                </main>
+
+                {/* TOC sidebar */}
+                <aside className={styles.toc}>
+                    <div className={styles.tocCard}>
+                        <div className={styles.tocHeader}>Contents</div>
+                        <ul className={styles.tocList}>
+                            {sections.map(s => (
+                                <li key={s.id} className={styles.tocItem}>
+                                    <a href={`#${s.id}`} className={styles.tocLink}>
+                                        <span className={styles.tocNum}>{s.num}</span>
+                                        {s.title}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                        <hr className={styles.tocDivider} />
+                        <div className={styles.tocFooter}>
+                            <Link to="/terms-of-service" className={styles.tocOtherLink}>
+                                Terms of Service <ArrowRight size={12} />
+                            </Link>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+
             <Footer />
         </div>
     );
-}
+};

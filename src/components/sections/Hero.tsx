@@ -1,12 +1,28 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Code2 } from 'lucide-react';
+import { ArrowRight, CheckCircle, Zap, Shield } from 'lucide-react';
 import styles from './Hero.module.css';
+
+const codeLines = [
+    { tokens: [{ type: 'keyword', text: 'const' }, { type: 'var', text: ' project' }, { type: 'op', text: ' = {' }] },
+    { tokens: [{ type: 'indent', text: '  ' }, { type: 'key', text: 'stack' }, { type: 'op', text: ': ' }, { type: 'str', text: "'React + Firebase'" }, { type: 'op', text: ',' }] },
+    { tokens: [{ type: 'indent', text: '  ' }, { type: 'key', text: 'quality' }, { type: 'op', text: ': ' }, { type: 'str', text: "'enterprise-grade'" }, { type: 'op', text: ',' }] },
+    { tokens: [{ type: 'indent', text: '  ' }, { type: 'key', text: 'delivery' }, { type: 'op', text: ': ' }, { type: 'str', text: "'always on-time'" }, { type: 'op', text: ',' }] },
+    { tokens: [{ type: 'indent', text: '  ' }, { type: 'key', text: 'clients' }, { type: 'op', text: ': ' }, { type: 'num', text: "'happy ∞'" }, { type: 'op', text: ',' }] },
+    { tokens: [{ type: 'op', text: '}' }] },
+];
+
+const stats = [
+    { number: '15+', label: 'Projects Shipped' },
+    { number: '100%', label: 'Client Satisfaction' },
+    { number: '24h', label: 'Response Time' },
+];
 
 export function Hero() {
     return (
         <section className={styles.hero}>
             <div className={styles.background}>
                 <div className={styles.glow} />
+                <div className={styles.glowSecondary} />
                 <div className={styles.gridPattern} />
             </div>
 
@@ -22,54 +38,131 @@ export function Hero() {
                         className={styles.pill}
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: 0.2, duration: 0.5 }}
+                        transition={{ delay: 0.1, duration: 0.5 }}
                     >
-                        <span className="w-2 h-2 rounded-full bg-violet-500 animate-pulse" />
-                        Building the Future of Tech
+                        <span className={styles.pillDot} />
+                        Next-Gen Tech Agency
                     </motion.div>
 
-                    <h1 className={styles.heading}>
+                    <motion.h1
+                        className={styles.heading}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.2, duration: 0.7 }}
+                    >
                         We build <br />
-                        <span className={styles.gradientText}>high-performance</span> <br />
+                        <span className={styles.gradientText}>high-performance</span>
+                        <br />
                         digital products.
-                    </h1>
+                    </motion.h1>
 
-                    <p className={styles.description}>
-                        Zyfiro is a next-gen tech agency crafting scalable Software, AI Solutions, and Premium Websites.
-                        We engineer digital experiences that drive growth.
-                    </p>
+                    <motion.p
+                        className={styles.description}
+                        initial={{ opacity: 0, y: 15 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.35, duration: 0.6 }}
+                    >
+                        Zyfiro crafts scalable Software, AI Solutions, and Premium Websites.
+                        We engineer digital experiences that drive real growth.
+                    </motion.p>
 
                     <motion.div
                         className={styles.actions}
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.4, duration: 0.6 }}
+                        transition={{ delay: 0.5, duration: 0.6 }}
                     >
                         <a href="#contact" className={styles.primaryBtn}>
-                            Start Project <ArrowRight size={20} />
+                            Start Your Project <ArrowRight size={18} />
                         </a>
                         <a href="#work" className={styles.secondaryBtn}>
-                            View Work <Code2 size={20} />
+                            See Our Work
                         </a>
+                    </motion.div>
+
+                    {/* Trust chips */}
+                    <motion.div
+                        className={styles.trustChips}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.7, duration: 0.5 }}
+                    >
+                        <span className={styles.trustChip}><CheckCircle size={13} /> On-Time Delivery</span>
+                        <span className={styles.trustChip}><Zap size={13} /> Rapid MVP</span>
+                        <span className={styles.trustChip}><Shield size={13} /> Enterprise Security</span>
                     </motion.div>
                 </motion.div>
 
-                {/* Right Visual - Glowing Cube */}
+                {/* Right Visual — Code Dashboard Panel */}
                 <motion.div
                     className={styles.visual}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.4, duration: 1, ease: "easeOut" }}
+                    initial={{ opacity: 0, x: 40 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.3, duration: 0.9, ease: "easeOut" }}
                 >
-                    <div className={styles.cubeContainer}>
-                        <div className={styles.core} />
-                        <div className={styles.cube}>
-                            <div className={`${styles.face} ${styles.faceFront}`} />
-                            <div className={`${styles.face} ${styles.faceBack}`} />
-                            <div className={`${styles.face} ${styles.faceRight}`} />
-                            <div className={`${styles.face} ${styles.faceLeft}`} />
-                            <div className={`${styles.face} ${styles.faceTop}`} />
-                            <div className={`${styles.face} ${styles.faceBottom}`} />
+                    {/* Floating badges */}
+                    <motion.div
+                        className={`${styles.floatingBadge} ${styles.badge1}`}
+                        animate={{ y: [0, -8, 0] }}
+                        transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+                    >
+                        <span className={styles.badgeDot} style={{ background: '#22c55e' }} />
+                        Live — iccsglobalized.com
+                    </motion.div>
+
+                    <motion.div
+                        className={`${styles.floatingBadge} ${styles.badge2}`}
+                        animate={{ y: [0, 8, 0] }}
+                        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                    >
+                        <span className={styles.badgeDot} style={{ background: '#7c5cff' }} />
+                        React · Firebase · Flutter
+                    </motion.div>
+
+                    {/* Dashboard panel */}
+                    <div className={styles.dashboardPanel}>
+                        {/* Window chrome */}
+                        <div className={styles.windowChrome}>
+                            <div className={styles.chromeDots}>
+                                <span className={styles.dotRed} />
+                                <span className={styles.dotYellow} />
+                                <span className={styles.dotGreen} />
+                            </div>
+                            <span className={styles.chromeTitle}>zyfiro.build.ts</span>
+                        </div>
+
+                        {/* Code block */}
+                        <div className={styles.codeBody}>
+                            {codeLines.map((line, i) => (
+                                <motion.div
+                                    key={i}
+                                    className={styles.codeLine}
+                                    initial={{ opacity: 0, x: -10 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ delay: 0.6 + i * 0.1, duration: 0.4 }}
+                                >
+                                    <span className={styles.lineNum}>{i + 1}</span>
+                                    {line.tokens.map((token, j) => (
+                                        <span key={j} className={styles[`code_${token.type}`]}>{token.text}</span>
+                                    ))}
+                                </motion.div>
+                            ))}
+                        </div>
+
+                        {/* Stats bar */}
+                        <div className={styles.statsBar}>
+                            {stats.map((s, i) => (
+                                <motion.div
+                                    key={i}
+                                    className={styles.statItem}
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 1.2 + i * 0.1 }}
+                                >
+                                    <span className={styles.statNumber}>{s.number}</span>
+                                    <span className={styles.statLabel}>{s.label}</span>
+                                </motion.div>
+                            ))}
                         </div>
                     </div>
                 </motion.div>

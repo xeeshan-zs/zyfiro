@@ -99,6 +99,31 @@
     max-width: 500px;
 }
 
+/* Trust points */
+.trustList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.trustItem {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.trustIcon {
+    color: #34d399;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
 /* Contact Info Items */
 .contactItems {
     display: flex;
@@ -145,6 +170,12 @@
     font-size: 0.9375rem;
     color: var(--text-secondary);
     line-height: 1.5;
+}
+
+.contactIcon.tertiary {
+    background: rgba(16, 185, 129, 0.08);
+    border-color: rgba(16, 185, 129, 0.15);
+    color: #34d399;
 }
 
 /* WhatsApp Button */

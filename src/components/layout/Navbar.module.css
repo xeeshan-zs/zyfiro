@@ -137,6 +137,19 @@
   transform: translateY(1px);
 }
 
+.navLinkActive {
+    color: var(--text-primary) !important;
+}
+
+.navLinkActive::after {
+    width: 100% !important;
+}
+
+.mobileNavLinkActive {
+    color: var(--text-primary) !important;
+    background: rgba(124, 92, 255, 0.08) !important;
+}
+
 /* Mobile Toggle */
 .mobileToggle {
   display: flex;

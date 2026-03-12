@@ -1,66 +1,76 @@
 import { Globe, Smartphone, Cloud, Zap, Layout, Shield } from 'lucide-react';
 import { FadeIn } from '../ui/fade-in';
-import styles from '../ui/Card.module.css';
+import styles from './Services.module.css';
 
 const services = [
     {
-        icon: <Globe className={styles.icon} size={24} />,
+        icon: <Globe size={22} />,
+        color: 'violet',
         title: 'Web Development',
-        description: 'High-performance applications tailored for scalability and SEO.',
+        description: 'High-performance web apps built for scalability, SEO, and lightning-fast load times.',
     },
     {
-        icon: <Smartphone className={styles.icon} size={24} />,
+        icon: <Smartphone size={22} />,
+        color: 'blue',
         title: 'Android Apps',
-        description: 'Custom, high-performance Android applications built to your exact specifications.',
+        description: 'Custom, high-performance native Android apps built to your exact specifications.',
     },
     {
-        icon: <Layout className={styles.icon} size={24} />,
+        icon: <Layout size={22} />,
+        color: 'cyan',
         title: 'Desktop Software',
-        description: 'Powerful cross-platform desktop applications built with Flutter.',
+        description: 'Powerful cross-platform desktop applications built with Flutter for every OS.',
     },
     {
-        icon: <Cloud className={styles.icon} size={24} />,
+        icon: <Cloud size={22} />,
+        color: 'orange',
         title: 'Firebase Backend',
-        description: 'Secure, real-time serverless backends to power your applications instantly.',
+        description: 'Real-time, secure serverless backends powering your apps from day one.',
     },
     {
-        icon: <Zap className={styles.icon} size={24} />,
+        icon: <Zap size={22} />,
+        color: 'emerald',
         title: 'Rapid MVP',
-        description: 'Launch your startup idea in weeks, not months, with our agile process.',
+        description: 'Launch your startup idea in weeks, not months, with our agile delivery process.',
     },
     {
-        icon: <Shield className={styles.icon} size={24} />,
+        icon: <Shield size={22} />,
+        color: 'rose',
         title: 'Enterprise Security',
-        description: 'Bank-grade security standards built into every line of code.',
+        description: 'Bank-grade security standards woven into every line of code we write.',
     },
 ];
 
 export function Services() {
     return (
-        <section id="services" className="py-32 bg-dark relative" style={{ background: 'var(--bg-primary)', padding: 'var(--space-3xl) 0' }}>
-            <div className="container mx-auto px-6" style={{ maxWidth: '1200px' }}>
-                <div className="text-center mb-20">
+        <section id="services" className={styles.section}>
+            <div className={styles.container}>
+                <div className={styles.header}>
                     <FadeIn>
-                        <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-                            Our Expertise
-                        </h2>
+                        <div className={styles.sectionTag}>
+                            <span>●</span> What We Do
+                        </div>
+                        <h2 className={styles.heading}>Our Expertise</h2>
                     </FadeIn>
-                    <FadeIn delay={0.2}>
-                        <p className="text-gray-400 max-w-2xl mx-auto text-lg" style={{ color: 'var(--text-secondary)' }}>
-                            We don't just write code; we engineer digital ecosystems using the latest technologies.
+                    <FadeIn delay={0.15}>
+                        <p className={styles.subheading}>
+                            We don't just write code — we engineer complete digital ecosystems using the latest technologies.
                         </p>
                     </FadeIn>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className={styles.grid}>
                     {services.map((service, index) => (
-                        <FadeIn key={index} delay={index * 0.1}>
+                        <FadeIn key={index} delay={index * 0.08}>
                             <div className={styles.card}>
-                                <div className={styles.cardContent}>
-                                    <div>{service.icon}</div>
-                                    <h3 className={styles.title}>{service.title}</h3>
-                                    <p className={styles.description}>{service.description}</p>
+                                <span className={styles.cardNumber}>
+                                    {String(index + 1).padStart(2, '0')}
+                                </span>
+                                <div className={`${styles.iconWrap} ${styles[service.color as keyof typeof styles]}`}>
+                                    {service.icon}
                                 </div>
+                                <h3 className={styles.cardTitle}>{service.title}</h3>
+                                <p className={styles.cardDescription}>{service.description}</p>
                             </div>
                         </FadeIn>
                     ))}

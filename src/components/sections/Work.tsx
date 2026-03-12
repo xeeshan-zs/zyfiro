@@ -1,14 +1,15 @@
 import { FadeIn } from '../ui/fade-in';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Clock } from 'lucide-react';
 import styles from './Work.module.css';
 
 const projects = [
     {
         title: 'ICCS Globalized',
         bannerLabel: 'ICCS',
-        description: 'The official platform for the International Council of Criminology and Security (ICCS). We engineered this global hub to connect criminologists, legal experts, and security professionals worldwide. As our inaugural paid project built with React, Vite, and Firebase, it facilitates international cooperation, evidence-based policy research, and seamless member collaboration.',
+        description: 'The official platform for the International Council of Criminology and Security. We engineered this global hub to connect criminologists, legal experts, and security professionals worldwide — facilitating international cooperation, evidence-based policy research, and seamless member collaboration.',
         tags: ['React', 'Vite', 'Firebase', 'Tailwind'],
-        link: 'https://iccsglobalized.com'
+        link: 'https://iccsglobalized.com',
+        status: 'live'
     }
 ];
 
@@ -31,6 +32,7 @@ export function Work() {
                 </FadeIn>
 
                 <div className={styles.grid}>
+                    {/* Live project */}
                     {projects.map((project, index) => (
                         <FadeIn key={index} delay={index * 0.1}>
                             <a
@@ -39,15 +41,17 @@ export function Work() {
                                 rel="noopener noreferrer"
                                 className={styles.projectCard}
                             >
-                                {/* Banner */}
                                 <div className={styles.cardBanner}>
                                     <span className={styles.cardBannerLabel}>{project.bannerLabel}</span>
+                                    <span className={styles.liveBadge}>
+                                        <span className={styles.liveDot} /> Live
+                                    </span>
                                 </div>
 
                                 <div className={styles.cardBody}>
                                     <div className={styles.cardTop}>
                                         <h3 className={styles.projectTitle}>{project.title}</h3>
-                                        <ExternalLink size={18} className={styles.externalIcon} />
+                                        <ExternalLink size={17} className={styles.externalIcon} />
                                     </div>
 
                                     <div className={styles.tags}>
@@ -59,12 +63,35 @@ export function Work() {
                                     <p className={styles.projectDescription}>{project.description}</p>
 
                                     <span className={styles.visitBtn}>
-                                        Visit Site <ExternalLink size={14} />
+                                        Visit Site <ExternalLink size={13} />
                                     </span>
                                 </div>
                             </a>
                         </FadeIn>
                     ))}
+
+                    {/* Coming Soon teaser */}
+                    <FadeIn delay={0.15}>
+                        <div className={styles.comingSoonCard}>
+                            <div className={styles.comingSoonInner}>
+                                <div className={styles.comingSoonIcon}>
+                                    <Clock size={28} />
+                                </div>
+                                <h3 className={styles.comingSoonTitle}>Next Project</h3>
+                                <p className={styles.comingSoonText}>
+                                    Something exciting is in the works. Follow our journey.
+                                </p>
+                                <a
+                                    href="https://wa.me/923109233844"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={styles.comingSoonCta}
+                                >
+                                    Start yours →
+                                </a>
+                            </div>
+                        </div>
+                    </FadeIn>
                 </div>
             </div>
         </section>
