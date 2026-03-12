@@ -2,7 +2,7 @@ import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
-import logo from '../../assets/logo.png';
+import logo from '../../assets/logo.svg';
 import styles from './Navbar.module.css';
 
 const NAV_LINKS = [

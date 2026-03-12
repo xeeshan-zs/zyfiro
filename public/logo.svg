@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+    <defs>
+        <!-- Main brand gradient: electric violet → soft blue → bright cyan -->
+        <linearGradient id="zGrad" x1="5%" y1="5%" x2="95%" y2="95%">
+            <stop offset="0%"   stop-color="#9B7CFF" />
+            <stop offset="50%"  stop-color="#5BA8FF" />
+            <stop offset="100%" stop-color="#22D9F0" />
+        </linearGradient>
+        <!-- Glow duplicate gradient (semi-transparent) -->
+        <linearGradient id="zGlowGrad" x1="5%" y1="5%" x2="95%" y2="95%">
+            <stop offset="0%"   stop-color="#9B7CFF" stop-opacity="0.65" />
+            <stop offset="50%"  stop-color="#5BA8FF" stop-opacity="0.45" />
+            <stop offset="100%" stop-color="#22D9F0" stop-opacity="0.65" />
+        </linearGradient>
+        <!-- Ambient background radial -->
+        <radialGradient id="bgAmbient" cx="50%" cy="50%" r="50%">
+            <stop offset="0%"   stop-color="#7C5CFF" stop-opacity="0.13" />
+            <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"    />
+        </radialGradient>
+        <!-- Blur for glow layer -->
+        <filter id="strokeGlow" x="-30%" y="-30%" width="160%" height="160%">
+            <feGaussianBlur stdDeviation="20" result="blur" />
+        </filter>
+        <!-- Blur+merge for corner node glow -->
+        <filter id="dotGlow" x="-200%" y="-200%" width="500%" height="500%">
+            <feGaussianBlur stdDeviation="8" result="blur" />
+            <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+            </feMerge>
+        </filter>
+    </defs>
+
+    <!-- Ambient depth circle -->
+    <circle cx="200" cy="200" r="195" fill="url(#bgAmbient)" />
+
+    <!-- Glow layer (blurred Z behind the crisp one) -->
+    <path d="M 88 106 L 312 106 L 88 294 L 312 294"
+        stroke="url(#zGlowGrad)"
+        stroke-width="74"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        fill="none"
+        filter="url(#strokeGlow)" />
+
+    <!-- Crisp main Z stroke -->
+    <path d="M 88 106 L 312 106 L 88 294 L 312 294"
+        stroke="url(#zGrad)"
+        stroke-width="50"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        fill="none" />
+
+    <!-- Circuit-board corner nodes -->
+    <circle cx="88"  cy="106" r="21" fill="#9B7CFF" filter="url(#dotGlow)" />
+    <circle cx="312" cy="106" r="17" fill="#60A5FF" filter="url(#dotGlow)" />
+    <circle cx="88"  cy="294" r="17" fill="#40B4FF" filter="url(#dotGlow)" />
+    <circle cx="312" cy="294" r="21" fill="#22D9F0" filter="url(#dotGlow)" />
+</svg>
