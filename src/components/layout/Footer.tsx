@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Linkedin, Twitter, Github, MessageCircle, ArrowRight } from 'lucide-react';
+import { Linkedin, Twitter, Github, MessageCircle, ArrowRight, Instagram, Facebook } from 'lucide-react';
 import styles from './Footer.module.css';
 
 export function Footer() {
@@ -45,14 +45,17 @@ export function Footer() {
                             Building scalable Websites, Desktop Software, and Android Apps — from Pakistan, for the world.
                         </p>
                         <div className={styles.socials}>
-                            <a href="#" className={styles.socialLink} aria-label="LinkedIn">
+                            <a href="https://www.linkedin.com/company/zyfiro" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="LinkedIn">
                                 <Linkedin size={15} />
                             </a>
-                            <a href="#" className={styles.socialLink} aria-label="Twitter">
-                                <Twitter size={15} />
-                            </a>
-                            <a href="#" className={styles.socialLink} aria-label="GitHub">
+                            <a href="https://github.com/zyfiro-dev" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="GitHub">
                                 <Github size={15} />
+                            </a>
+                            <a href="https://instagram.com/zyfiro.dev" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="Instagram">
+                                <Instagram size={15} />
+                            </a>
+                            <a href="https://www.facebook.com/profile.php?id=61574251996966" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="Facebook">
+                                <Facebook size={15} />
                             </a>
                         </div>
                     </div>
