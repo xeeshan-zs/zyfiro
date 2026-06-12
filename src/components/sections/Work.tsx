@@ -1,5 +1,5 @@
 import { FadeIn } from '../ui/fade-in';
-import { ExternalLink, Clock } from 'lucide-react';
+import { ExternalLink, Rocket } from 'lucide-react';
 import styles from './Work.module.css';
 
 const projects = [
@@ -70,25 +70,21 @@ export function Work() {
                         </FadeIn>
                     ))}
 
-                    {/* Coming Soon teaser */}
+                    {/* Own Product — Coming Soon */}
                     <FadeIn delay={0.15}>
                         <div className={styles.comingSoonCard}>
                             <div className={styles.comingSoonInner}>
                                 <div className={styles.comingSoonIcon}>
-                                    <Clock size={28} />
+                                    <Rocket size={28} />
                                 </div>
-                                <h3 className={styles.comingSoonTitle}>Next Project</h3>
+                                <span className={styles.stealthBadge}>🔒 Stealth Mode</span>
+                                <h3 className={styles.comingSoonTitle}>Our Own Product</h3>
                                 <p className={styles.comingSoonText}>
-                                    Something exciting is in the works. Follow our journey.
+                                    We're building something of our own — a product crafted from the ground up by the Zyfiro team. Launch incoming.
                                 </p>
-                                <a
-                                    href="https://wa.me/923109233844"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className={styles.comingSoonCta}
-                                >
-                                    Start yours →
-                                </a>
+                                <span className={styles.comingSoonCta} style={{ cursor: 'default' }}>
+                                    Coming Soon ✦
+                                </span>
                             </div>
                         </div>
                     </FadeIn>

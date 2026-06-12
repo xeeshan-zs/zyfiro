@@ -164,6 +164,21 @@
 }
 
 /* Coming Soon card */
+.stealthBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.25rem 0.75rem;
+    background: rgba(251, 146, 60, 0.1);
+    border: 1px solid rgba(251, 146, 60, 0.25);
+    border-radius: 9999px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #fb923c;
+}
+
 .comingSoonCard {
     width: 100%;
     background: var(--bg-surface);

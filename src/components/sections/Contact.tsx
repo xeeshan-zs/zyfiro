@@ -50,8 +50,7 @@ export function Contact() {
                                     <div>
                                         <div className={styles.contactLabel}>Email Us</div>
                                         <div className={styles.contactValue}>
-                                            zeeshan.sarfraz@atrons.net<br />
-                                            meetjaveriajavaid@gmail.com
+                                            zyfiro@gmail.com
                                         </div>
                                     </div>
                                 </div>
@@ -72,7 +71,7 @@ export function Contact() {
                                     </div>
                                     <div>
                                         <div className={styles.contactLabel}>HQ</div>
-                                        <div className={styles.contactValue}>Mars 🪐 (Pakistan, Earth)</div>
+                                        <div className={styles.contactValue}>Mars 🪐</div>
                                     </div>
                                 </div>
                             </div>

@@ -1,4 +1,4 @@
-import { Globe, Smartphone, Cloud, Zap, Layout, Shield } from 'lucide-react';
+import { Globe, Smartphone, Cloud, Zap, Layout } from 'lucide-react';
 import { FadeIn } from '../ui/fade-in';
 import styles from './Services.module.css';
 
@@ -33,12 +33,7 @@ const services = [
         title: 'Rapid MVP',
         description: 'Launch your startup idea in weeks, not months, with our agile delivery process.',
     },
-    {
-        icon: <Shield size={22} />,
-        color: 'rose',
-        title: 'Enterprise Security',
-        description: 'Bank-grade security standards woven into every line of code we write.',
-    },
+
 ];
 
 export function Services() {
