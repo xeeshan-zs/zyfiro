@@ -49,14 +49,20 @@
 
     /* Premium Frame System */
     --bg-frame: #EBE5DF;           /* Hero inner frame — slightly deeper than canvas */
-    --radius-xl: 2.5rem;           /* Hero frame, large containers */
-    --radius-2xl: 2rem;            /* Cards, service items */
+    --radius-xl: 16px;             /* Hero frame, large containers */
+    --radius-2xl: 16px;            /* Cards, service items */
+    --radius-card: 16px;           /* Card radius standard */
+    --radius-inner: 8px;           /* Inner elements (inputs, inner icons) standard */
+
+    /* Section Spacing Standards */
+    --section-py-mobile: 4rem;     /* py-16 */
+    --section-py-desktop: 7rem;    /* py-28 */
 
     /* Skeuomorphic Fallbacks */
     --bg-raised: var(--bg-surface);
     --shadow-raised: 0 4px 12px rgba(28, 25, 23, 0.03);
     --shadow-depressed: inset 2px 2px 5px rgba(0, 0, 0, 0.05);
-    --radius: 20px;
+    --radius: 16px;
 
     /* Tailwind Mappings */
     --background: 36 25% 94%;       /* HSL equivalent of #F4F0EB */
@@ -136,6 +142,77 @@
 }
 
 @layer utilities {
+
+  /* Unified layout container class */
+  .container-layout {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+    width: 100%;
+  }
+
+  /* Standardized buttons */
+  .btn-primary-standard {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    padding: 0.75rem 1.75rem;
+    border-radius: 9999px;
+    background: var(--accent-primary) !important;
+    color: var(--bg-primary) !important;
+    border: 1px solid var(--accent-primary);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+    white-space: nowrap;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+  }
+
+  .btn-primary-standard:hover {
+    background: var(--accent-secondary) !important;
+    border-color: var(--accent-secondary);
+    color: #FFFFFF !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.25);
+  }
+
+  .btn-primary-standard:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.1);
+  }
+
+  .btn-secondary-standard {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    padding: 0.75rem 1.75rem;
+    border-radius: 9999px;
+    background: transparent !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-highlight);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    white-space: nowrap;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+  }
+
+  .btn-secondary-standard:hover {
+    background: rgba(15, 23, 42, 0.05) !important;
+    border-color: var(--text-primary);
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary-standard:active {
+    transform: translateY(0);
+  }
 
   /* Modern Glass Utilities (Refined to warm-light mode glass) */
   .glass {
@@ -302,10 +379,6 @@
   }
   
   /* Text overrides */
-  .text-white {
-    color: var(--text-primary) !important;
-  }
-
   .text-gray-400 {
     color: var(--text-muted) !important;
   }
@@ -314,11 +387,7 @@
     color: var(--text-secondary) !important;
   }
 
-  /* Re-force pure white text inside dark backgrounds / actual black buttons */
-  button.text-white,
-  a.text-white,
-  .text-white.bg-primary,
-  .text-white.bg-secondary,
+  /* Ensure primary and dark buttons always have white text */
   .skeuo-btn-primary,
   .skeuo-btn-success,
   .skeuo-btn-iccs,
@@ -332,9 +401,9 @@
   }
 
   /* Make sure icons keep their original color properties if nested */
-  button.text-white svg,
-  a.text-white svg,
-  .skeuo-btn-primary svg {
+  .skeuo-btn-primary svg,
+  [class*="primaryBtn"] svg,
+  [class*="ctaBtn"] svg {
     stroke: currentColor;
     color: inherit;
   }

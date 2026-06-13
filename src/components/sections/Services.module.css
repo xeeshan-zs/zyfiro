@@ -2,9 +2,15 @@
 
 .section {
     background: var(--bg-secondary);
-    padding: var(--space-3xl) 0;
+    padding: var(--section-py-mobile) 0;
     position: relative;
     overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .section {
+        padding: var(--section-py-desktop) 0;
+    }
 }
 
 .section::before {
@@ -18,7 +24,14 @@
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 var(--space-md);
+    padding: 0 1rem;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding: 0 var(--space-md);
+    }
 }
 
 /* Section header */
@@ -141,8 +154,8 @@
     position: relative;
     background: var(--bg-surface);
     border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-2xl);
-    padding: 2rem 1.75rem 1.75rem;
+    border-radius: var(--radius-card);
+    padding: 2rem;
     overflow: hidden;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: default;
