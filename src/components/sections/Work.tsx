@@ -15,7 +15,7 @@ const projects = [
 
 export function Work() {
     return (
-        <section id="work" className={styles.section}>
+        <section id="work" className={`${styles.section} darkSection`}>
             <div className={styles.container}>
                 <FadeIn>
                     <div className={styles.header}>

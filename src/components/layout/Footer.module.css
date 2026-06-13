@@ -7,10 +7,22 @@
   background: var(--bg-secondary);
   border-top: 1px solid var(--border-subtle);
   border-bottom: 1px solid var(--border-subtle);
-  padding: var(--space-4xl) 0;
+  padding: 5rem 0; /* Mobile py-20 */
   position: relative;
   overflow: hidden;
   margin-bottom: var(--space-2xl);
+}
+
+@media (min-width: 992px) {
+  .ctaBanner {
+    padding: 8rem 0; /* Desktop py-32 */
+  }
+}
+
+@media (min-width: 1280px) {
+  .ctaBanner {
+    padding: 10rem 0; /* Large desktop py-40 */
+  }
 }
 
 .ctaBanner::before {
@@ -36,7 +48,6 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 2rem; /* Increased spacing */
 }
 
 .ctaBadge {
@@ -51,7 +62,6 @@
   font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 0.04em;
-  margin-bottom: 0.5rem; /* Extra space below badge */
 }
 
 .ctaHeading {
@@ -61,6 +71,7 @@
   color: var(--text-primary);
   letter-spacing: -0.02em;
   line-height: 1.25;
+  margin-top: 1.5rem; /* mt-6 */
 }
 
 @media (min-width: 768px) {
@@ -87,21 +98,28 @@
   font-size: 1.125rem; /* Slightly larger */
   color: var(--text-secondary);
   max-width: 520px;
-  line-height: 1.7;
+  line-height: 1.8; /* leading-relaxed/loose */
+  margin-top: 2rem; /* mt-8 */
 }
 
 .ctaActions {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem; /* gap-6 */
   align-items: center;
-  margin-top: 1.5rem; /* Increased margin above buttons */
+  margin-top: 3rem; /* mt-12 */
 }
 
 @media (min-width: 500px) {
   .ctaActions {
     flex-direction: row;
     justify-content: center;
+  }
+}
+
+@media (min-width: 992px) {
+  .ctaActions {
+    margin-top: 4rem; /* mt-16 */
   }
 }
 

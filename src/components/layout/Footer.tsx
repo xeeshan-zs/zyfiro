@@ -5,7 +5,7 @@ import styles from './Footer.module.css';
 
 export function Footer() {
     return (
-        <footer className={styles.footer}>
+        <footer className={`${styles.footer} darkSection`}>
             {/* CTA Banner */}
             <div className={styles.ctaBanner}>
                 <div className={styles.ctaContainer}>

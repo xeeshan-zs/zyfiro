@@ -49,7 +49,7 @@ export function Services() {
     };
 
     return (
-        <section id="services" className={styles.section}>
+        <section id="services" className={`${styles.section} darkSection`}>
             <div className={styles.container}>
                 <div className={styles.header}>
                     <FadeIn>

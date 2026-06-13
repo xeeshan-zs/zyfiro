@@ -12,22 +12,22 @@
       Reference: Warm Sand Theme (Option A)
     */
 
-    /* Base Colors */
-    --bg-primary: #F4F0EB;       /* Warm Sand background */
-    --bg-secondary: #EAE3D9;     /* Slightly darker warm sand for header/section dividers */
-    --bg-surface: #FDFCFB;       /* Card backgrounds - clean off-white */
-    --bg-surface-elevated: #F8F6F2; /* Slightly warmer elevated card/dropdown background */
+    /* Base Colors - Light Theme */
+    --bg-primary: #FFFFFF;       /* Pure white */
+    --bg-secondary: #F8FAFC;     /* Slate 50 */
+    --bg-surface: #F8FAFC;       /* Surface */
+    --bg-surface-elevated: #FFFFFF; 
 
     /* Accent & Highlight Colors */
-    --accent-primary: #0C0B0A;   /* Deep charcoal/black for primary brand elements */
-    --accent-secondary: #44403C; /* Stone 700 for secondary elements */
-    --accent-glow: #78716C;      /* Stone 500 */
-    --accent-highlight: #D97706; /* Amber-600 for subtle accents/badges */
+    --accent-primary: #0F172A;   /* Deep Navy */
+    --accent-secondary: #06B6D4; /* Cyan */
+    --accent-glow: #0EA5E9;      /* Sky Blue */
+    --accent-highlight: #38BDF8; /* Sky 400 */
 
     /* Text Colors */
-    --text-primary: #0C0B0A;     /* Deep charcoal/black */
-    --text-secondary: #44403C;   /* Stone 700 for body text */
-    --text-muted: #78716C;       /* Muted stone-500 */
+    --text-primary: #0F172A;     /* Navy / Black */
+    --text-secondary: #334155;   /* Slate 700 */
+    --text-muted: #64748B;       /* Slate 500 */
 
     /* Spacing System */
     --space-xs: 8px;
@@ -109,6 +109,29 @@
     font-weight: 600;
     line-height: 1.25;
     letter-spacing: -0.01em;
+  }
+
+  /* Dark Section Override Class */
+  .darkSection {
+    --bg-primary: #0F172A;       /* Deep Navy */
+    --bg-secondary: #1E293B;     /* Slate 800 */
+    --bg-surface: #1E293B;       /* Slate 800 */
+    --bg-surface-elevated: #334155; /* Slate 700 */
+    
+    --text-primary: #F8FAFC;     /* Light Slate */
+    --text-secondary: #CBD5E1;   /* Slate 300 */
+    --text-muted: #94A3B8;       /* Slate 400 */
+    
+    --accent-primary: #06B6D4;   /* Cyan buttons on dark bg */
+    --accent-secondary: #F8FAFC; /* White for secondary text/icons */
+    
+    --border-subtle: rgba(255, 255, 255, 0.1);
+    --border-highlight: rgba(255, 255, 255, 0.2);
+    
+    --shadow-raised: 0 4px 12px rgba(0, 0, 0, 0.2);
+    
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
   }
 }
 
