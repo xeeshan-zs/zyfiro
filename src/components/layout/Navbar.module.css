@@ -54,17 +54,24 @@
 }
 
 .logoImage {
-  height: 3rem;
+  height: 2.8rem;
   width: auto;
+  max-width: 200px;
   object-fit: contain;
-  background: rgba(20, 20, 30, 0.6);
-  border-radius: 16px;
+  background: none;
+  border-radius: 0;
   padding: 0;
   box-shadow: none;
   border: none;
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
-  transition: box-shadow 0.2s, background 0.2s;
+  transition: opacity 0.2s ease, filter 0.2s ease;
+  filter: drop-shadow(0 0 8px rgba(0, 174, 239, 0.35));
+}
+
+.logoLink:hover .logoImage {
+  opacity: 0.9;
+  filter: drop-shadow(0 0 14px rgba(0, 174, 239, 0.6));
 }
 
 .logoText {

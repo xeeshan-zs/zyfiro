@@ -53,8 +53,7 @@ export function Navbar() {
         <nav className={`${styles.navbar} ${scrolled ? styles.navbarScrolled : ''}`}>
             <div className={styles.container}>
                 <a href="/" className={styles.logoLink}>
-                    <img src={logo} alt="Zyfiro Logo" className={styles.logoImage} />
-                    <span className={styles.logoText}>ZYFIRO</span>
+                    <img src={logo} alt="Zyfiro" className={styles.logoImage} />
                 </a>
 
                 {/* Desktop Nav */}

@@ -83,6 +83,11 @@
     }
 }
 
+.fullWidthCard {
+    grid-column: 1 / -1;
+    width: 100%;
+}
+
 .projectCard {
     display: block;
     text-decoration: none;

@@ -108,14 +108,20 @@
     border: 1px solid var(--border-subtle);
     border-radius: 16px;
     padding: var(--space-md);
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: default;
 }
 
 .founderCard:hover {
-    transform: translateY(-4px);
-    border-color: var(--border-highlight);
+    transform: translateY(-6px);
+    border-color: rgba(124, 92, 255, 0.4);
     background: var(--bg-surface-elevated);
+    box-shadow: 0 16px 40px rgba(124, 92, 255, 0.15), 0 0 0 1px rgba(124, 92, 255, 0.1);
+}
+
+.founderCard.secondary:hover {
+    border-color: rgba(91, 168, 255, 0.4);
+    box-shadow: 0 16px 40px rgba(91, 168, 255, 0.15), 0 0 0 1px rgba(91, 168, 255, 0.1);
 }
 
 .founderAvatar {

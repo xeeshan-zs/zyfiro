@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, CheckCircle, Zap, Shield } from 'lucide-react';
+import { ArrowRight, CheckCircle, Zap, MapPin } from 'lucide-react';
+import logo from '../../assets/logo.svg';
 import styles from './Hero.module.css';
 
 const codeLines = [
@@ -34,14 +35,14 @@ export function Hero() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
                 >
+                    {/* Logo brand mark */}
                     <motion.div
-                        className={styles.pill}
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: 0.1, duration: 0.5 }}
+                        className={styles.heroBrandRow}
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.05, duration: 0.5 }}
                     >
-                        <span className={styles.pillDot} />
-                        Next-Gen Tech Agency
+                        <img src={logo} alt="Zyfiro" className={styles.heroBrandLogo} />
                     </motion.div>
 
                     <motion.h1
@@ -50,10 +51,8 @@ export function Hero() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2, duration: 0.7 }}
                     >
-                        We build <br />
-                        <span className={styles.gradientText}>high-performance</span>
-                        <br />
-                        digital products.
+                        Small team.{' '}<br />
+                        <span className={styles.gradientText}>Serious work.</span>
                     </motion.h1>
 
                     <motion.p
@@ -62,8 +61,8 @@ export function Hero() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.35, duration: 0.6 }}
                     >
-                        Zyfiro crafts scalable Software, AI Solutions, and Premium Websites.
-                        We engineer digital experiences that drive real growth.
+                        We build apps and websites that hold up — for people who care about quality.
+                        Web, Android, Desktop. Made to last.
                     </motion.p>
 
                     <motion.div
@@ -80,16 +79,15 @@ export function Hero() {
                         </a>
                     </motion.div>
 
-                    {/* Trust chips */}
                     <motion.div
                         className={styles.trustChips}
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.7, duration: 0.5 }}
                     >
-                        <span className={styles.trustChip}><CheckCircle size={13} /> On-Time Delivery</span>
-                        <span className={styles.trustChip}><Zap size={13} /> Rapid MVP</span>
-                        <span className={styles.trustChip}><Shield size={13} /> Enterprise Security</span>
+                        <span className={styles.trustChip}><CheckCircle size={13} /> ICCS Globalized — live since 2024</span>
+                        <span className={styles.trustChip}><Zap size={13} /> Reply within 24 hours</span>
+                        <span className={styles.trustChip}><MapPin size={13} /> Based in Pakistan</span>
                     </motion.div>
                 </motion.div>
 

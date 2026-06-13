@@ -58,9 +58,6 @@ export function Services() {
                     {services.map((service, index) => (
                         <FadeIn key={index} delay={index * 0.08}>
                             <div className={styles.card}>
-                                <span className={styles.cardNumber}>
-                                    {String(index + 1).padStart(2, '0')}
-                                </span>
                                 <div className={`${styles.iconWrap} ${styles[service.color as keyof typeof styles]}`}>
                                     {service.icon}
                                 </div>

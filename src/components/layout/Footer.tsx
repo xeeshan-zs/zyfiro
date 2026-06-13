@@ -9,13 +9,14 @@ export function Footer() {
             <div className={styles.ctaBanner}>
                 <div className={styles.ctaContainer}>
                     <div className={styles.ctaContent}>
-                        <div className={styles.ctaBadge}>● Available for New Projects</div>
+                        <div className={styles.ctaBadge}>● Still thinking it over?</div>
                         <h2 className={styles.ctaHeading}>
-                            Ready to build your <br className={styles.ctaBr} />
-                            <span className={styles.ctaAccent}>next digital product?</span>
+                            Let's talk. No pitch,{' '}
+                            <br className={styles.ctaBr} />
+                            <span className={styles.ctaAccent}>no pressure.</span>
                         </h2>
                         <p className={styles.ctaSubtext}>
-                            Let's turn your idea into a high-performance reality. Fast, secure, and built to last.
+                            We reply within 24 hours. Tell us what you're building and we'll give you an honest take.
                         </p>
                         <div className={styles.ctaActions}>
                             <a href="#contact" className={styles.ctaBtn}>
