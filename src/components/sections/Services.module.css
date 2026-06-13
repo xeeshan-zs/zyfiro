@@ -191,7 +191,6 @@
     opacity: 1;
 }
 
-/* Background watermark number */
 .cardNumber {
     position: absolute;
     top: 1.25rem;
@@ -199,7 +198,7 @@
     font-family: 'Playfair Display', serif;
     font-size: 3.5rem;
     font-weight: 800;
-    color: rgba(12, 11, 10, 0.025);
+    color: rgba(255, 255, 255, 0.08); /* Increased visibility for dark mode */
     line-height: 1;
     pointer-events: none;
     transition: color 0.3s ease;

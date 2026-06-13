@@ -128,21 +128,21 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.9rem 1.8rem;
-  background: var(--accent-primary);
-  color: var(--bg-primary) !important;
+  background: #0F172A; /* Explicit Deep Navy */
+  color: #F8FAFC !important;
   font-weight: 600;
   font-size: 0.95rem;
   border-radius: 9999px;
   text-decoration: none;
   transition: all 0.25s ease;
   box-shadow: 0 4px 12px rgba(12, 11, 10, 0.15);
-  border: 1px solid var(--accent-primary);
+  border: 1px solid #0F172A;
 }
 
 .ctaBtn:hover {
   transform: translateY(-2px);
-  background: var(--accent-secondary);
-  border-color: var(--accent-secondary);
+  background: #1E293B; /* Slate 800 */
+  border-color: #1E293B;
   box-shadow: 0 6px 18px rgba(12, 11, 10, 0.25);
 }
 
