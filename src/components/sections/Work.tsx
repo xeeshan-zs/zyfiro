@@ -1,5 +1,5 @@
 import { FadeIn } from '../ui/fade-in';
-import { ExternalLink, Rocket } from 'lucide-react';
+import { ArrowRight, Rocket, ChevronDown } from 'lucide-react';
 import styles from './Work.module.css';
 
 const projects = [
@@ -31,6 +31,19 @@ export function Work() {
                     </div>
                 </FadeIn>
 
+                {/* Filter Strip (Decorative) */}
+                <div className={styles.filterStrip}>
+                    <div className={styles.filterGroup}>
+                        <span className={styles.filterLabel}>Filter By:</span>
+                        <button className={styles.filterDropdown}>
+                            All Regions <ChevronDown size={14} />
+                        </button>
+                        <button className={styles.filterDropdown}>
+                            All Services <ChevronDown size={14} />
+                        </button>
+                    </div>
+                </div>
+
                 <div className={styles.grid}>
                     {/* Live project */}
                     {projects.map((project, index) => (
@@ -51,7 +64,9 @@ export function Work() {
                                 <div className={styles.cardBody}>
                                     <div className={styles.cardTop}>
                                         <h3 className={styles.projectTitle}>{project.title}</h3>
-                                        <ExternalLink size={17} className={styles.externalIcon} />
+                                        <div className={styles.arrowButton}>
+                                            <ArrowRight size={18} />
+                                        </div>
                                     </div>
 
                                     <div className={styles.tags}>
@@ -61,10 +76,6 @@ export function Work() {
                                     </div>
 
                                     <p className={styles.projectDescription}>{project.description}</p>
-
-                                    <span className={styles.visitBtn}>
-                                        Visit Site <ExternalLink size={13} />
-                                    </span>
                                 </div>
                             </a>
                         </FadeIn>

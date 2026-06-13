@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,28 +7,27 @@
 @layer base {
   :root {
     /* 
-      Dark Premium Design System 
-      Style: Linear / Vercel / Modern AI
+      Premium Editorial Design System 
+      Style: Luxury / Asymmetric / Clean Warm
+      Reference: Warm Sand Theme (Option A)
     */
 
     /* Base Colors */
-    --bg-primary: #0B0B0F;
-    --bg-secondary: #111118;
-    --bg-surface: #15151D;
-    --bg-surface-elevated: #1B1B24;
+    --bg-primary: #F4F0EB;       /* Warm Sand background */
+    --bg-secondary: #EAE3D9;     /* Slightly darker warm sand for header/section dividers */
+    --bg-surface: #FDFCFB;       /* Card backgrounds - clean off-white */
+    --bg-surface-elevated: #F8F6F2; /* Slightly warmer elevated card/dropdown background */
 
-    /* Accent Colors */
-    --accent-primary: #7C5CFF;
-    /* Electric Violet */
-    --accent-secondary: #5BA8FF;
-    /* Soft Blue */
-    --accent-glow: #FF6B9A;
-    /* Pink Glow */
+    /* Accent & Highlight Colors */
+    --accent-primary: #0C0B0A;   /* Deep charcoal/black for primary brand elements */
+    --accent-secondary: #44403C; /* Stone 700 for secondary elements */
+    --accent-glow: #78716C;      /* Stone 500 */
+    --accent-highlight: #D97706; /* Amber-600 for subtle accents/badges */
 
     /* Text Colors */
-    --text-primary: #F5F5F7;
-    --text-secondary: #A1A1AA;
-    --text-muted: #6B6B76;
+    --text-primary: #0C0B0A;     /* Deep charcoal/black */
+    --text-secondary: #44403C;   /* Stone 700 for body text */
+    --text-muted: #78716C;       /* Muted stone-500 */
 
     /* Spacing System */
     --space-xs: 8px;
@@ -40,19 +39,60 @@
     --space-3xl: 96px;
 
     /* Shadows & Glows */
-    --glow-primary: 0 0 30px rgba(124, 92, 255, 0.3);
-    --shadow-card: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
+    --glow-primary: 0 0 30px rgba(12, 11, 10, 0.05);
+    --shadow-card: 0 10px 40px -10px rgba(28, 25, 23, 0.06), 0 1px 3px rgba(28, 25, 23, 0.02);
+    --shadow-floating: 0 12px 40px rgba(28, 25, 23, 0.08);
 
     /* Borders */
-    --border-subtle: rgba(255, 255, 255, 0.08);
-    --border-highlight: rgba(255, 255, 255, 0.15);
+    --border-subtle: rgba(28, 25, 23, 0.08);
+    --border-highlight: rgba(28, 25, 23, 0.15);
+
+    /* Premium Frame System */
+    --bg-frame: #EBE5DF;           /* Hero inner frame — slightly deeper than canvas */
+    --radius-xl: 2.5rem;           /* Hero frame, large containers */
+    --radius-2xl: 2rem;            /* Cards, service items */
+
+    /* Skeuomorphic Fallbacks */
+    --bg-raised: var(--bg-surface);
+    --shadow-raised: 0 4px 12px rgba(28, 25, 23, 0.03);
+    --shadow-depressed: inset 2px 2px 5px rgba(0, 0, 0, 0.05);
+    --radius: 20px;
+
+    /* Tailwind Mappings */
+    --background: 36 25% 94%;       /* HSL equivalent of #F4F0EB */
+    --foreground: 24 9% 5%;         /* HSL equivalent of #0C0B0A */
+    
+    --card: 30 20% 98%;             /* #FDFCFB */
+    --card-foreground: 24 9% 5%;
+    
+    --popover: 30 20% 98%;
+    --popover-foreground: 24 9% 5%;
+    
+    --primary: 24 9% 5%;            /* #0C0B0A */
+    --primary-foreground: 36 25% 94%;
+    
+    --secondary: 36 20% 89%;        /* #EAE3D9 */
+    --secondary-foreground: 24 9% 5%;
+    
+    --muted: 24 5% 45%;             /* #78716C */
+    --muted-foreground: 24 5% 45%;
+    
+    --accent: 36 20% 89%;
+    --accent-foreground: 24 9% 5%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 24 10% 90%;           /* Border color */
+    --input: 24 10% 90%;
+    --ring: 24 9% 5%;
   }
 
   /* Typography Defaults */
   body {
     background-color: var(--bg-primary);
     color: var(--text-primary);
-    font-family: 'Inter', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     line-height: 1.6;
@@ -64,243 +104,221 @@
   h4,
   h5,
   h6 {
-    font-family: 'Space Grotesk', sans-serif;
-    /* Fallback/Choice - User suggested Sora or Inter Tight, keeping Space Grotesk/Inter as consistent defaults from project */
+    font-family: 'Playfair Display', serif;
     color: var(--text-primary);
     font-weight: 600;
-    line-height: 1.2;
-    letter-spacing: -0.02em;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
   }
 }
 
 @layer utilities {
 
-  /* Modern Glass Utilities (Preserved but refined) */
+  /* Modern Glass Utilities (Refined to warm-light mode glass) */
   .glass {
-    @apply bg-slate-900/40 backdrop-blur-xl border border-white/5 shadow-xl;
+    background: rgba(253, 252, 251, 0.7) !important;
+    backdrop-filter: blur(16px) saturate(140%) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(140%) !important;
+    border: 1px solid rgba(12, 11, 10, 0.08) !important;
+    box-shadow: 0 10px 30px rgba(12, 11, 10, 0.04) !important;
   }
-
-  /* 
-    PREMIUM SKEUOMORPHISM SYSTEM 
-    "Cyber-Tactile" Design Language
-  */
 
   /* Base Skeuo Card - The main building block */
   .skeuo-card {
-    background: var(--bg-raised);
+    background: var(--bg-surface);
     box-shadow: var(--shadow-raised);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    /* Very subtle top-light edge */
-    border-radius: 1rem;
-    /* 16px */
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius);
     position: relative;
     overflow: hidden;
-    /* For texture containment */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .skeuo-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: var(--noise-texture);
-    pointer-events: none;
-    opacity: 0.4;
-    z-index: 0;
-  }
-
-  .skeuo-card>* {
-    position: relative;
-    /* Ensure content sits above texture */
-    z-index: 1;
+  .skeuo-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(28, 25, 23, 0.08);
+    border-color: var(--border-highlight);
   }
 
   /* Floating Layout Element (Navbar, Modals) */
   .skeuo-floating {
-    background: rgba(15, 23, 42, 0.85);
-    /* Slate 900 with opacity */
-    backdrop-blur: 12px;
+    background: rgba(253, 252, 251, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     box-shadow: var(--shadow-floating);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border-subtle);
   }
 
-  /* Interactive Elements */
+  /* Interactive Buttons */
 
-  /* Primary Button (Violet) */
+  /* Primary Button (Dark Slate/Black) */
   .skeuo-btn-primary {
-    background: linear-gradient(145deg, rgba(124, 58, 237, 0.9), rgba(109, 40, 217, 0.8));
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow:
-      0 4px 6px rgba(0, 0, 0, 0.3),
-      inset 0 1px 0 rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(139, 92, 246, 0.3);
+    background: var(--accent-primary) !important;
+    color: var(--bg-primary) !important;
+    box-shadow: 0 4px 12px rgba(12, 11, 10, 0.15);
+    border: 1px solid var(--accent-primary);
     border-radius: 9999px;
-    /* Rounded full */
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 600;
   }
 
   .skeuo-btn-primary:hover {
-    background: linear-gradient(145deg, rgba(139, 92, 246, 0.95), rgba(124, 58, 237, 0.9));
-    box-shadow:
-      0 8px 12px rgba(124, 58, 237, 0.3),
-      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    background: var(--accent-secondary) !important;
+    border-color: var(--accent-secondary);
+    box-shadow: 0 6px 16px rgba(12, 11, 10, 0.25);
     transform: translateY(-2px);
-    border-color: rgba(167, 139, 250, 0.5);
   }
 
   .skeuo-btn-primary:active {
     transform: translateY(1px);
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 6px rgba(12, 11, 10, 0.1);
   }
 
-  /* Success Button (Green/WhatsApp) */
+  /* Success Button (Softer Emerald/Green) */
   .skeuo-btn-success {
-    background: linear-gradient(145deg, rgba(22, 163, 74, 0.9), rgba(21, 128, 61, 0.8));
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow:
-      0 4px 6px rgba(0, 0, 0, 0.3),
-      inset 0 1px 0 rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(74, 222, 128, 0.3);
+    background: #15803d !important;
+    color: white !important;
+    box-shadow: 0 4px 12px rgba(21, 128, 61, 0.15);
+    border: 1px solid #166534;
     border-radius: 9999px;
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-    color: white;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 600;
   }
 
   .skeuo-btn-success:hover {
-    background: linear-gradient(145deg, rgba(34, 197, 94, 0.95), rgba(22, 163, 74, 0.9));
-    box-shadow:
-      0 8px 12px rgba(22, 163, 74, 0.3),
-      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    background: #166534 !important;
     transform: translateY(-2px);
-    border-color: rgba(134, 239, 172, 0.5);
+    box-shadow: 0 6px 16px rgba(21, 128, 61, 0.25);
   }
 
-  .skeuo-btn-success:active {
-    transform: translateY(1px);
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
-  }
-
-  /* ICCS Button (Orange/Gold) */
+  /* ICCS Button (Warm Amber/Gold) */
   .skeuo-btn-iccs {
-    background: linear-gradient(145deg, rgba(217, 119, 6, 0.9), rgba(180, 83, 9, 0.8));
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow:
-      0 4px 6px rgba(0, 0, 0, 0.3),
-      inset 0 1px 0 rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(251, 191, 36, 0.3);
+    background: #b45309 !important;
+    color: white !important;
+    box-shadow: 0 4px 12px rgba(180, 83, 9, 0.15);
+    border: 1px solid #92400e;
     border-radius: 9999px;
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-    color: white;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 600;
   }
 
   .skeuo-btn-iccs:hover {
-    background: linear-gradient(145deg, rgba(245, 158, 11, 0.95), rgba(217, 119, 6, 0.9));
-    box-shadow:
-      0 8px 12px rgba(217, 119, 6, 0.3),
-      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    background: #92400e !important;
     transform: translateY(-2px);
-    border-color: rgba(252, 211, 77, 0.5);
+    box-shadow: 0 6px 16px rgba(180, 83, 9, 0.25);
   }
 
-  .skeuo-btn-iccs:active {
-    transform: translateY(1px);
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
-  }
-
-  /* Secondary Button (Cyan) */
+  /* Secondary Button (Neutral border button) */
   .skeuo-btn-secondary {
-    background: linear-gradient(145deg, rgba(8, 145, 178, 0.9), rgba(14, 116, 144, 0.8));
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow:
-      0 4px 6px rgba(0, 0, 0, 0.3),
-      inset 0 1px 0 rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(34, 211, 238, 0.3);
+    background: transparent !important;
+    color: var(--text-primary) !important;
+    box-shadow: none;
+    border: 1px solid var(--border-highlight);
     border-radius: 9999px;
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 600;
   }
 
   .skeuo-btn-secondary:hover {
-    background: linear-gradient(145deg, rgba(34, 211, 238, 0.95), rgba(8, 145, 178, 0.9));
-    box-shadow:
-      0 8px 12px rgba(34, 211, 238, 0.3),
-      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    background: rgba(12, 11, 10, 0.05) !important;
+    border-color: var(--text-primary);
     transform: translateY(-2px);
-    border-color: rgba(103, 232, 249, 0.5);
-  }
-
-  .skeuo-btn-secondary:active {
-    transform: translateY(1px);
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
   }
 
   /* Default/Dark Button */
   .skeuo-btn-default {
-    background: rgba(30, 41, 59, 0.7);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    box-shadow:
-      0 4px 6px rgba(0, 0, 0, 0.3),
-      inset 0 1px 0 rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: #e2e8f0;
+    background: var(--bg-surface) !important;
+    border: 1px solid var(--border-subtle);
+    color: var(--text-primary) !important;
     border-radius: 9999px;
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.25s ease;
   }
 
   .skeuo-btn-default:hover {
-    background: rgba(51, 65, 85, 0.8);
-    box-shadow:
-      0 8px 12px rgba(0, 0, 0, 0.4),
-      inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.2);
+    background: var(--bg-secondary) !important;
+    border-color: var(--border-highlight);
     transform: translateY(-2px);
-    color: white;
   }
 
-  .skeuo-btn-default:active {
-    transform: translateY(1px);
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
-  }
-
-  /* Input Fields (Depressed/Inset) */
+  /* Input Fields */
   .skeuo-input {
-    background: #0f172a;
-    /* Solid darkest base */
+    background: var(--bg-surface) !important;
     box-shadow: var(--shadow-depressed);
-    border: 1px solid rgba(255, 255, 255, 0.03);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    /* Slight light catch at bottom */
-    border-radius: 0.5rem;
-    color: #f8fafc;
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    color: var(--text-primary) !important;
     transition: all 0.2s ease;
   }
 
   .skeuo-input::placeholder {
-    color: #64748b;
+    color: var(--text-muted);
+    opacity: 0.6;
   }
 
   .skeuo-input:focus {
     outline: none;
-    box-shadow:
-      inset 3px 3px 6px rgba(0, 0, 0, 0.6),
-      0 0 0 2px rgba(124, 58, 237, 0.5),
-      /* Focus ring */
-      0 0 10px rgba(124, 58, 237, 0.2);
-    /* Glow */
-    background: #020617;
+    box-shadow: 0 0 0 2px rgba(12, 11, 10, 0.15);
+    background: var(--bg-surface-elevated) !important;
+    border-color: var(--text-primary);
   }
 
   /* Text Effects */
   .skeuo-text-emboss {
-    text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.05), 1px 1px 2px rgba(0, 0, 0, 0.8);
-    color: rgba(241, 245, 249, 0.9);
+    text-shadow: none;
+    color: var(--text-primary);
+  }
+
+  /* ==========================================================================
+     GLOBAL TAILWIND COLOR OVERRIDES
+     Translates Tailwind utility styles from components into light theme values
+     ========================================================================== */
+  
+  /* Background overrides */
+  .bg-dark {
+    background-color: var(--bg-primary) !important;
+  }
+  
+  /* Text overrides */
+  .text-white {
+    color: var(--text-primary) !important;
+  }
+
+  .text-gray-400 {
+    color: var(--text-muted) !important;
+  }
+
+  .text-gray-300 {
+    color: var(--text-secondary) !important;
+  }
+
+  /* Re-force pure white text inside dark backgrounds / actual black buttons */
+  button.text-white,
+  a.text-white,
+  .text-white.bg-primary,
+  .text-white.bg-secondary,
+  .skeuo-btn-primary,
+  .skeuo-btn-success,
+  .skeuo-btn-iccs,
+  [class*="primaryBtn"],
+  [class*="ctaBtn"],
+  [class*="ctaButton"],
+  [class*="whatsappBtn"],
+  [class*="whatsapp-button"],
+  .bg-[#25D366] {
+    color: #FFFFFF !important;
+  }
+
+  /* Make sure icons keep their original color properties if nested */
+  button.text-white svg,
+  a.text-white svg,
+  .skeuo-btn-primary svg {
+    stroke: currentColor;
+    color: inherit;
+  }
+
+  /* Selection highlight */
+  ::selection {
+    background-color: rgba(12, 11, 10, 0.08) !important;
+    color: var(--text-primary) !important;
   }
 }

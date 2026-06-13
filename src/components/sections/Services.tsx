@@ -1,4 +1,5 @@
-import { Globe, Smartphone, Cloud, Zap, Layout } from 'lucide-react';
+import { Globe, Smartphone, Cloud, Zap, Layout, ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
+import { useRef } from 'react';
 import { FadeIn } from '../ui/fade-in';
 import styles from './Services.module.css';
 
@@ -37,6 +38,16 @@ const services = [
 ];
 
 export function Services() {
+    const scrollRef = useRef<HTMLDivElement>(null);
+
+    const scroll = (direction: 'left' | 'right') => {
+        if (scrollRef.current) {
+            const { current } = scrollRef;
+            const scrollAmount = current.clientWidth * 0.8;
+            current.scrollBy({ left: direction === 'left' ? -scrollAmount : scrollAmount, behavior: 'smooth' });
+        }
+    };
+
     return (
         <section id="services" className={styles.section}>
             <div className={styles.container}>
@@ -54,18 +65,30 @@ export function Services() {
                     </FadeIn>
                 </div>
 
-                <div className={styles.grid}>
-                    {services.map((service, index) => (
-                        <FadeIn key={index} delay={index * 0.08}>
-                            <div className={styles.card}>
+                <div className={styles.carouselWrapper}>
+                    <button className={styles.scrollBtn} onClick={() => scroll('left')} aria-label="Scroll left">
+                        <ChevronLeft size={20} />
+                    </button>
+                    
+                    <div className={styles.carousel} ref={scrollRef}>
+                        {services.map((service, index) => (
+                            <div key={index} className={`${styles.card} ${index === 0 ? styles.cardInverted : ''}`}>
+                                <span className={styles.cardNumber}>0{index + 1}</span>
                                 <div className={`${styles.iconWrap} ${styles[service.color as keyof typeof styles]}`}>
                                     {service.icon}
                                 </div>
                                 <h3 className={styles.cardTitle}>{service.title}</h3>
                                 <p className={styles.cardDescription}>{service.description}</p>
+                                <button className={styles.exploreMore}>
+                                    Explore service <ArrowRight size={14} />
+                                </button>
                             </div>
-                        </FadeIn>
-                    ))}
+                        ))}
+                    </div>
+
+                    <button className={styles.scrollBtn} onClick={() => scroll('right')} aria-label="Scroll right">
+                        <ChevronRight size={20} />
+                    </button>
                 </div>
             </div>
         </section>

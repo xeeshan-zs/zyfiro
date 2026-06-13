@@ -10,6 +10,12 @@ export default defineConfig({
             '@': path.resolve(__dirname, './src'),
         },
     },
+    server: {
+        watch: {
+            // Exclude the root /assets folder to avoid EBUSY errors on locked media files
+            ignored: ['**/assets/**'],
+        },
+    },
     build: {
         target: 'esnext',
         emptyOutDir: true,

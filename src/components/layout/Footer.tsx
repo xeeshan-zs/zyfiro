@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Linkedin, Twitter, Github, MessageCircle, ArrowRight, Instagram, Facebook } from 'lucide-react';
+import logoFull from '../../assets/logo-full.png';
 import styles from './Footer.module.css';
 
 export function Footer() {
@@ -41,7 +42,9 @@ export function Footer() {
                 <div className={styles.grid}>
                     {/* Brand */}
                     <div className={styles.brand}>
-                        <a href="/" className={styles.brandName}>ZYFIRO</a>
+                        <a href="/" className={styles.brandLogoLink}>
+                            <img src={logoFull} alt="Zyfiro" className={styles.brandLogoImg} />
+                        </a>
                         <p className={styles.brandTagline}>
                             Building scalable Websites, Desktop Software, and Android Apps — from Pakistan, for the world.
                         </p>

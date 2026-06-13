@@ -2,7 +2,7 @@ import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
-import logo from '../../assets/logo.svg';
+import logoFull from '../../assets/logo-full.png';
 import styles from './Navbar.module.css';
 
 const NAV_LINKS = [
@@ -53,7 +53,7 @@ export function Navbar() {
         <nav className={`${styles.navbar} ${scrolled ? styles.navbarScrolled : ''}`}>
             <div className={styles.container}>
                 <a href="/" className={styles.logoLink}>
-                    <img src={logo} alt="Zyfiro" className={styles.logoImage} />
+                    <img src={logoFull} alt="Zyfiro" className={styles.logoImage} />
                 </a>
 
                 {/* Desktop Nav */}

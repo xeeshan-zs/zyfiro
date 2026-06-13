@@ -18,7 +18,7 @@ export default {
 					DEFAULT: 'hsl(var(--secondary))',
 					foreground: 'hsl(var(--secondary-foreground))'
 				},
-				dark: '#020617',
+				dark: 'var(--bg-primary)',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				card: {
@@ -54,11 +54,11 @@ export default {
 			},
 			fontFamily: {
 				heading: [
-					'Space Grotesk',
-					'sans-serif'
+					'Playfair Display',
+					'serif'
 				],
 				body: [
-					'Inter',
+					'Plus Jakarta Sans',
 					'sans-serif'
 				]
 			},
@@ -74,3 +74,4 @@ export default {
 	},
 	plugins: [tailwindcssAnimate],
 }
+
