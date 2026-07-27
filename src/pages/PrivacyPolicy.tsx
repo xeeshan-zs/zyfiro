@@ -213,7 +213,36 @@ export const PrivacyPolicy = () => {
         <div className={styles.page}>
             <Helmet>
                 <title>Privacy Policy — Zyfiro</title>
-                <meta name="description" content="Privacy Policy for Zyfiro. Learn how we collect, use, and protect your personal data." />
+                <meta name="description" content="Privacy Policy for Zyfiro. Learn how we collect, use, and protect your personal data when using our web design, software, and AI services." />
+                <link rel="canonical" href="https://zyfiro.vercel.app/privacy-policy" />
+                <meta property="og:type" content="article" />
+                <meta property="og:url" content="https://zyfiro.vercel.app/privacy-policy" />
+                <meta property="og:title" content="Privacy Policy — Zyfiro" />
+                <meta property="og:description" content="Privacy Policy for Zyfiro. Learn how we collect, use, and protect your personal data." />
+                <meta property="og:image" content="https://zyfiro.vercel.app/og-image.jpg" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="Privacy Policy — Zyfiro" />
+                <meta name="twitter:description" content="Privacy Policy for Zyfiro. Learn how we collect, use, and protect your personal data." />
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        '@context': 'https://schema.org',
+                        '@type': 'BreadcrumbList',
+                        itemListElement: [
+                            {
+                                '@type': 'ListItem',
+                                position: 1,
+                                name: 'Home',
+                                item: 'https://zyfiro.vercel.app/',
+                            },
+                            {
+                                '@type': 'ListItem',
+                                position: 2,
+                                name: 'Privacy Policy',
+                                item: 'https://zyfiro.vercel.app/privacy-policy',
+                            },
+                        ],
+                    })}
+                </script>
             </Helmet>
             <Navbar />
 

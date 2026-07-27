@@ -1,4 +1,24 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://zyfiro.com/sitemap.xml
+# Crawl-delay for polite crawling
+Crawl-delay: 1
+
+# AI Crawlers & Indexers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+# Sitemaps & LLM Summary
+Sitemap: https://zyfiro.vercel.app/sitemap.xml

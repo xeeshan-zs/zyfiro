@@ -208,7 +208,36 @@ export const TermsOfService = () => {
         <div className={styles.page}>
             <Helmet>
                 <title>Terms of Service — Zyfiro</title>
-                <meta name="description" content="Terms of Service for Zyfiro. Read our service agreement, intellectual property rights, and liability limitations." />
+                <meta name="description" content="Terms of Service for Zyfiro. Read our service agreement, intellectual property rights, and liability limitations for web design, software, and AI services." />
+                <link rel="canonical" href="https://zyfiro.vercel.app/terms-of-service" />
+                <meta property="og:type" content="article" />
+                <meta property="og:url" content="https://zyfiro.vercel.app/terms-of-service" />
+                <meta property="og:title" content="Terms of Service — Zyfiro" />
+                <meta property="og:description" content="Terms of Service for Zyfiro. Read our service agreement, intellectual property rights, and liability limitations." />
+                <meta property="og:image" content="https://zyfiro.vercel.app/og-image.jpg" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="Terms of Service — Zyfiro" />
+                <meta name="twitter:description" content="Terms of Service for Zyfiro. Read our service agreement, intellectual property rights, and liability limitations." />
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        '@context': 'https://schema.org',
+                        '@type': 'BreadcrumbList',
+                        itemListElement: [
+                            {
+                                '@type': 'ListItem',
+                                position: 1,
+                                name: 'Home',
+                                item: 'https://zyfiro.vercel.app/',
+                            },
+                            {
+                                '@type': 'ListItem',
+                                position: 2,
+                                name: 'Terms of Service',
+                                item: 'https://zyfiro.vercel.app/terms-of-service',
+                            },
+                        ],
+                    })}
+                </script>
             </Helmet>
             <Navbar />
 

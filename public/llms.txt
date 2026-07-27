@@ -1,0 +1,32 @@
+# Zyfiro
+
+> Zyfiro is a premier digital engineering agency specializing in bespoke Web Design, Enterprise Software Engineering, Mobile Applications, and AI-driven Solutions. Founded by Zeeshan Sarfraz and Javeria Javaid, Zyfiro delivers world-class software at transparent, accessible pricing with zero-compromise quality.
+
+## Core Capabilities & Services
+
+- **Web Development & Design**: Modern, responsive, high-performance web applications built with React, Vite, Next.js, and TypeScript.
+- **Enterprise Software Engineering**: Scalable desktop, web, and server infrastructure engineered for reliability, security, and high throughput.
+- **Mobile Application Development**: Native and cross-platform mobile apps for Android and iOS using modern UI component architectures.
+- **AI Solutions & Integration**: Artificial intelligence integration, agentic workflows, custom LLM features, and automated backend data processing.
+- **UI/UX Design**: Modern design systems, glassmorphism aesthetics, dynamic micro-animations, and conversion-optimized user journeys.
+
+## Company Information
+
+- **Brand Name**: Zyfiro
+- **Website**: https://zyfiro.vercel.app
+- **Founders**: Zeeshan Sarfraz (Co-Founder & Tech Lead), Javeria Javaid (Co-Founder & Operations)
+- **Primary Contact Email**: zyfiro@gmail.com
+- **Core Values**: Rapid Delivery (Concept to launch in weeks), Zero-Compromise Quality (Enterprise-grade code), Transparent Process (24-hour response guarantee).
+
+## Site Structure & Key Pages
+
+- [Homepage](https://zyfiro.vercel.app/): Primary showcase of services, portfolio projects, client testimonials, founder vision, and interactive project cost estimator.
+- [Privacy Policy](https://zyfiro.vercel.app/privacy-policy): Detailed privacy policy and data governance disclosure.
+- [Terms of Service](https://zyfiro.vercel.app/terms-of-service): Terms and conditions governing Zyfiro website use and service agreements.
+
+## Technical Architecture
+
+- **Frontend Stack**: React 18, TypeScript, Vite, Tailwind CSS, Framer Motion, Radix UI primitives, Lucide React icons, Lenis smooth scroll.
+- **SEO & Search Indexing**: Full JSON-LD structured data (Organization, WebSite, ProfessionalService), Open Graph protocols, canonical URLs, XML sitemap.
+- **Sitemap URL**: https://zyfiro.vercel.app/sitemap.xml
+- **Robots.txt URL**: https://zyfiro.vercel.app/robots.txt
