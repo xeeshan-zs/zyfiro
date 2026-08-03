@@ -211,7 +211,7 @@
     font-family: 'Playfair Display', serif;
     font-size: 3.5rem;
     font-weight: 800;
-    color: rgba(255, 255, 255, 0.08); /* Increased visibility for dark mode */
+    color: rgba(255, 255, 255, 0.20);
     line-height: 1;
     pointer-events: none;
     transition: color 0.3s ease;
@@ -257,7 +257,7 @@
 }
 
 .cardInverted .cardNumber {
-    color: rgba(255, 255, 255, 0.04);
+    color: rgba(255, 255, 255, 0.15);
 }
 
 /* =============================================
