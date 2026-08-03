@@ -2,7 +2,7 @@ import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
-import logoFull from '../../assets/logo-full.png';
+import logoPng from '../../assets/Zyfiro minimal logo with name dark medium_logo with name dark medium.png';
 import styles from './Navbar.module.css';
 
 const NAV_LINKS = [
@@ -52,8 +52,12 @@ export function Navbar() {
     return (
         <nav className={`${styles.navbar} ${scrolled ? styles.navbarScrolled : ''}`}>
             <div className={styles.container}>
-                <a href="/" className={styles.logoLink}>
-                    <img src={logoFull} alt="Zyfiro" className={`${styles.logoImage} ${scrolled ? styles.logoScrolled : ''}`} />
+                <a href="/" className={`flex items-center flex-shrink-0 overflow-hidden relative transition-all duration-300 ${scrolled ? 'w-[130px] md:w-[145px] h-[32px] md:h-[36px]' : 'w-[145px] md:w-[170px] h-[36px] md:h-[43px]'}`}>
+                    <img 
+                        src={logoPng} 
+                        alt="Zyfiro" 
+                        className={`absolute max-w-none transition-all duration-300 object-contain top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ${scrolled ? 'h-[150px] md:h-[170px]' : 'h-[170px] md:h-[200px]'}`} 
+                    />
                 </a>
 
                 {/* Desktop Nav */}

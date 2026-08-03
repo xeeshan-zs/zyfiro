@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Linkedin, Twitter, Github, MessageCircle, ArrowRight, Instagram, Facebook } from 'lucide-react';
-import logoFull from '../../assets/logo-full.png';
+import logoPng from '../../assets/Zyfiro minimal logo with name dark medium_logo with name dark medium.png';
 import styles from './Footer.module.css';
 
 export function Footer() {
@@ -42,8 +42,8 @@ export function Footer() {
                 <div className={styles.grid}>
                     {/* Brand */}
                     <div className={styles.brand}>
-                        <a href="/" className={styles.brandLogoLink}>
-                            <img src={logoFull} alt="Zyfiro" className={styles.brandLogoImg} />
+                        <a href="/" className="flex items-center flex-shrink-0 overflow-hidden relative w-[145px] md:w-[170px] h-[36px] md:h-[43px]">
+                            <img src={logoPng} alt="Zyfiro" className="absolute max-w-none object-contain top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[170px] md:h-[200px]" />
                         </a>
                         <p className={styles.brandTagline}>
                             Building scalable Websites, Desktop Software, and Android Apps — from Pakistan, for the world.
