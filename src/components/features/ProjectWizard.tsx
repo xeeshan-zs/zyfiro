@@ -99,7 +99,7 @@ ${data.name}
     return (
         <div className="w-full skeuo-card p-6 md:p-8 overflow-hidden relative min-h-[500px] flex flex-col">
             {/* Progress Bar */}
-            <div className="absolute top-0 left-0 right-0 h-1 bg-white/5">
+            <div className="absolute top-0 left-0 right-0 h-1 bg-slate-200">
                 <motion.div
                     className="h-full bg-gradient-to-r from-primary to-secondary"
                     initial={{ width: '25%' }}
@@ -121,8 +121,8 @@ ${data.name}
                         className="flex-1 flex flex-col"
                     >
                         <div className="mb-8">
-                            <h3 className="text-2xl font-bold text-white mb-2">What are we building?</h3>
-                            <p className="text-gray-400">Select the core service you need.</p>
+                            <h3 className="text-2xl font-bold text-[#0F172A] mb-2">What are we building?</h3>
+                            <p className="text-slate-500">Select the core service you need.</p>
                         </div>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
@@ -135,18 +135,18 @@ ${data.name}
                                     className={cn(
                                         "p-6 rounded-2xl border text-left transition-all duration-300 group",
                                         data.service === s.id
-                                            ? "bg-primary/20 border-primary shadow-[inset_0_0_20px_rgba(124,58,237,0.3)]"
+                                            ? "bg-primary/10 border-primary shadow-[inset_0_0_20px_rgba(124,58,237,0.15)]"
                                             : "skeuo-card hover:border-primary/50 hover:shadow-glow-primary"
                                     )}
                                 >
                                     <div className={cn(
                                         "p-3 rounded-lg w-fit mb-4 transition-colors",
-                                        data.service === s.id ? "bg-primary text-white shadow-lg" : "bg-slate-800 text-gray-400 group-hover:text-white group-hover:bg-primary/80"
+                                        data.service === s.id ? "bg-primary text-white shadow-lg" : "bg-slate-100 text-slate-500 group-hover:text-white group-hover:bg-primary/80"
                                     )}>
                                         <s.icon size={24} />
                                     </div>
-                                    <h4 className="font-bold text-white mb-1">{s.label}</h4>
-                                    <p className="text-xs text-gray-400">{s.desc}</p>
+                                    <h4 className="font-bold text-[#0F172A] mb-1">{s.label}</h4>
+                                    <p className="text-xs text-slate-500">{s.desc}</p>
                                 </button>
                             ))}
                         </div>
@@ -176,14 +176,14 @@ ${data.name}
                         className="flex-1 flex flex-col"
                     >
                         <div className="mb-8">
-                            <h3 className="text-2xl font-bold text-white mb-2">Scope & Timeline</h3>
-                            <p className="text-gray-400">Help us understand the scale of your vision.</p>
+                            <h3 className="text-2xl font-bold text-[#0F172A] mb-2">Scope & Timeline</h3>
+                            <p className="text-slate-500">Help us understand the scale of your vision.</p>
                         </div>
 
                         <div className="space-y-8 mb-8">
                             {/* Budget */}
                             <div className="space-y-3">
-                                <Label className="text-gray-300 flex items-center gap-2"><DollarSign size={16} /> Estimated Budget</Label>
+                                <Label className="text-slate-600 flex items-center gap-2"><DollarSign size={16} /> Estimated Budget</Label>
                                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                                     {budgets.map((b) => (
                                         <button
@@ -192,8 +192,8 @@ ${data.name}
                                             className={cn(
                                                 "py-3 px-1 rounded-lg text-xs md:text-sm font-medium border transition-all whitespace-nowrap",
                                                 data.budget === b
-                                                    ? "bg-secondary/20 border-secondary text-white shadow-[inset_0_0_10px_rgba(6,182,212,0.3)]"
-                                                    : "skeuo-card hover:border-secondary/50 text-gray-400 hover:text-white"
+                                                    ? "bg-secondary/10 border-secondary text-[#0F172A] shadow-[inset_0_0_10px_rgba(6,182,212,0.15)]"
+                                                    : "skeuo-card hover:border-secondary/50 text-slate-500 hover:text-[#0F172A]"
                                             )}
                                         >
                                             {b}
@@ -204,7 +204,7 @@ ${data.name}
 
                             {/* Timeline */}
                             <div className="space-y-3">
-                                <Label className="text-gray-300 flex items-center gap-2"><Clock size={16} /> Desired Timeline</Label>
+                                <Label className="text-slate-600 flex items-center gap-2"><Clock size={16} /> Desired Timeline</Label>
                                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                                     {timelines.map((t) => (
                                         <button
@@ -213,8 +213,8 @@ ${data.name}
                                             className={cn(
                                                 "py-3 px-2 rounded-lg text-sm font-medium border transition-all",
                                                 data.timeline === t
-                                                    ? "bg-primary/20 border-primary text-white shadow-[inset_0_0_10px_rgba(124,58,237,0.3)]"
-                                                    : "skeuo-card hover:border-primary/50 text-gray-400 hover:text-white"
+                                                    ? "bg-primary/10 border-primary text-[#0F172A] shadow-[inset_0_0_10px_rgba(124,58,237,0.15)]"
+                                                    : "skeuo-card hover:border-primary/50 text-slate-500 hover:text-[#0F172A]"
                                             )}
                                         >
                                             {t}
@@ -225,7 +225,7 @@ ${data.name}
                         </div>
 
                         <div className="mt-auto flex justify-between">
-                            <Button variant="skeuomorphic" onClick={prevStep} className="text-gray-400 hover:text-white">
+                            <Button variant="skeuomorphic" onClick={prevStep} className="text-slate-500 hover:text-[#0F172A]">
                                 <ArrowLeft className="mr-2 w-4 h-4" /> Back
                             </Button>
                             <Button
@@ -252,8 +252,8 @@ ${data.name}
                         className="flex-1 flex flex-col"
                     >
                         <div className="mb-8">
-                            <h3 className="text-2xl font-bold text-white mb-2">Final Details</h3>
-                            <p className="text-gray-400">Where should we send the proposal?</p>
+                            <h3 className="text-2xl font-bold text-[#0F172A] mb-2">Final Details</h3>
+                            <p className="text-slate-500">Where should we send the proposal?</p>
                         </div>
 
                         <div className="space-y-4 mb-8">
@@ -293,7 +293,7 @@ ${data.name}
                         </div>
 
                         <div className="mt-auto flex justify-between">
-                            <Button variant="skeuomorphic" onClick={prevStep} className="text-gray-400 hover:text-white">
+                            <Button variant="skeuomorphic" onClick={prevStep} className="text-slate-500 hover:text-[#0F172A]">
                                 <ArrowLeft className="mr-2 w-4 h-4" /> Back
                             </Button>
                             <Button
@@ -318,11 +318,11 @@ ${data.name}
                         <div className="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center mb-6">
                             <CheckCircle className="w-10 h-10 text-green-500" />
                         </div>
-                        <h3 className="text-3xl font-bold text-white mb-4">Request Received!</h3>
-                        <p className="text-gray-400 max-w-md mb-8">
-                            Thanks, {data.name}! We've received your project details. Our team is reviewing them and will send a preliminary proposal to <strong>{data.email}</strong> within 24 hours.
+                        <h3 className="text-3xl font-bold text-[#0F172A] mb-4">Request Received!</h3>
+                        <p className="text-slate-500 max-w-md mb-8">
+                            Thanks, {data.name}! We've received your project details. Our team is reviewing them and will send a preliminary proposal to <strong className="text-[#0F172A]">{data.email}</strong> within 24 hours.
                         </p>
-                        <Button onClick={() => setStep(1)} variant="skeuomorphic" className="text-white">
+                        <Button onClick={() => setStep(1)} variant="skeuomorphic" className="text-slate-600 hover:text-[#0F172A]">
                             Start New Project
                         </Button>
                     </motion.div>
