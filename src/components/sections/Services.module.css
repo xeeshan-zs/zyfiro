@@ -222,8 +222,8 @@
    INVERTED CARD — First card, solid black
    ============================================= */
 .cardInverted {
-    background: var(--accent-primary);
-    border-color: var(--accent-primary);
+    background: #0F172A;
+    border-color: #0F172A;
     color: #F8FAFC;
 }
 
