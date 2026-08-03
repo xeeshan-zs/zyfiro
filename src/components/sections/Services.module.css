@@ -222,15 +222,15 @@
    INVERTED CARD — First card, solid black
    ============================================= */
 .cardInverted {
-    background: #0C0B0A;
-    border-color: #0C0B0A;
-    color: #F4F0EB;
+    background: var(--accent-primary);
+    border-color: var(--accent-primary);
+    color: #F8FAFC;
 }
 
 .cardInverted:hover {
-    background: #1a1917;
-    border-color: #1a1917;
-    box-shadow: 0 14px 35px rgba(12, 11, 10, 0.28);
+    background: #1E293B;
+    border-color: #1E293B;
+    box-shadow: 0 14px 35px rgba(15, 23, 42, 0.28);
     transform: translateY(-5px);
 }
 
@@ -239,21 +239,21 @@
 }
 
 .cardInverted .cardTitle {
-    color: #F4F0EB;
+    color: #F8FAFC;
 }
 
 .cardInverted .cardDescription {
-    color: rgba(244, 240, 235, 0.65);
+    color: #94A3B8;
 }
 
 .cardInverted .exploreMore {
-    color: rgba(244, 240, 235, 0.75);
-    border-color: rgba(244, 240, 235, 0.15);
+    color: #CBD5E1;
+    border-color: rgba(255, 255, 255, 0.15);
 }
 
 .cardInverted .exploreMore:hover {
-    color: #F4F0EB;
-    border-color: rgba(244, 240, 235, 0.4);
+    color: #F8FAFC;
+    border-color: rgba(255, 255, 255, 0.4);
 }
 
 .cardInverted .cardNumber {
@@ -266,7 +266,7 @@
 .iconWrap {
     width: 3rem;
     height: 3rem;
-    border-radius: 14px;
+    border-radius: var(--radius-inner);
     display: flex;
     align-items: center;
     justify-content: center;
