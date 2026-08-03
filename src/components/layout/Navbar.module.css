@@ -15,7 +15,7 @@
   /* Top state: transparent */
   background: transparent;
   border-bottom: 1px solid transparent;
-  padding: 1.25rem 0;
+  padding: 1rem 0;
 }
 
 /* =============================================
@@ -67,10 +67,16 @@
 
 /* Full logo for navbar */
 .logoImage {
-  height: 5.5rem;
+  height: 2.5rem;
   width: auto;
   object-fit: contain;
   display: block;
+  filter: brightness(0) invert(1);
+  transition: filter 0.3s ease;
+}
+
+.navbarScrolled .logoImage {
+  filter: none;
 }
 
 /* =============================================
@@ -135,7 +141,7 @@
 .ctaButton {
   background: var(--accent-primary) !important;
   color: var(--bg-primary) !important;
-  padding: 0.75rem 1.75rem;
+  padding: 0.625rem 1.5rem;
   border-radius: 9999px;
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 0.9375rem;
