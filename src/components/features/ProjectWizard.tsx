@@ -259,7 +259,7 @@ ${data.name}
                         <div className="space-y-4 mb-8">
                             <div className="grid grid-cols-2 gap-4">
                                 <div className="space-y-2">
-                                    <Label htmlFor="name">Name</Label>
+                                    <Label htmlFor="name" className="text-slate-700">Name</Label>
                                     <Input
                                         id="name"
                                         placeholder="Tony Stark"
@@ -269,7 +269,7 @@ ${data.name}
                                     />
                                 </div>
                                 <div className="space-y-2">
-                                    <Label htmlFor="email">Email</Label>
+                                    <Label htmlFor="email" className="text-slate-700">Email</Label>
                                     <Input
                                         id="email"
                                         type="email"
@@ -281,7 +281,7 @@ ${data.name}
                                 </div>
                             </div>
                             <div className="space-y-2">
-                                <Label htmlFor="details">Additional Details (Optional)</Label>
+                                <Label htmlFor="details" className="text-slate-700">Additional Details (Optional)</Label>
                                 <Textarea
                                     id="details"
                                     placeholder="Tell us a bit more about your project..."
