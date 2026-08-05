@@ -1,96 +1,81 @@
-import { Globe, Smartphone, Cloud, Zap, Layout, ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
-import { useRef } from 'react';
-import { FadeIn } from '../ui/fade-in';
-import styles from './Services.module.css';
+'use client';
 
-const services = [
-    {
-        icon: <Globe size={22} />,
-        color: 'violet',
-        title: 'Web Development',
-        description: 'High-performance web apps built for scalability, SEO, and lightning-fast load times.',
-    },
-    {
-        icon: <Smartphone size={22} />,
-        color: 'blue',
-        title: 'Android Apps',
-        description: 'Custom, high-performance native Android apps built to your exact specifications.',
-    },
-    {
-        icon: <Layout size={22} />,
-        color: 'cyan',
-        title: 'Desktop Software',
-        description: 'Powerful cross-platform desktop applications built with Flutter for every OS.',
-    },
-    {
-        icon: <Cloud size={22} />,
-        color: 'orange',
-        title: 'Firebase Backend',
-        description: 'Real-time, secure serverless backends powering your apps from day one.',
-    },
-    {
-        icon: <Zap size={22} />,
-        color: 'emerald',
-        title: 'Rapid MVP',
-        description: 'Launch your startup idea in weeks, not months, with our agile delivery process.',
-    },
-
-];
+import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
+import { SERVICES } from '@/lib/constants';
+import { FadeIn, StaggerContainer, StaggerItem } from '@/components/ui/FadeIn';
 
 export function Services() {
-    const scrollRef = useRef<HTMLDivElement>(null);
+  return (
+    <section id="services" className="relative py-28 lg:py-36 bg-bg-base overflow-hidden">
+      {/* Background accent */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-accent-violet/5 rounded-full blur-3xl pointer-events-none" />
 
-    const scroll = (direction: 'left' | 'right') => {
-        if (scrollRef.current) {
-            const { current } = scrollRef;
-            const scrollAmount = current.clientWidth * 0.8;
-            current.scrollBy({ left: direction === 'left' ? -scrollAmount : scrollAmount, behavior: 'smooth' });
-        }
-    };
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Section header */}
+        <FadeIn className="mb-16 lg:mb-20">
+          <div className="flex flex-col gap-4">
+            <span className="section-tag">● What We Do</span>
+            <h2 className="font-display text-4xl lg:text-5xl xl:text-6xl font-bold text-text-primary leading-tight">
+              Our <span className="text-gradient">Expertise</span>
+            </h2>
+            <p className="text-text-secondary text-lg max-w-xl leading-relaxed">
+              We don&apos;t just write code — we engineer complete digital ecosystems
+              using the latest technologies.
+            </p>
+          </div>
+        </FadeIn>
 
-    return (
-        <section id="services" className={`${styles.section} darkSection`}>
-            <div className={styles.container}>
-                <div className={styles.header}>
-                    <FadeIn>
-                        <div className={styles.sectionTag}>
-                            <span>●</span> What We Do
-                        </div>
-                        <h2 className={styles.heading}>Our Expertise</h2>
-                    </FadeIn>
-                    <FadeIn delay={0.15}>
-                        <p className={styles.subheading}>
-                            We don't just write code — we engineer complete digital ecosystems using the latest technologies.
-                        </p>
-                    </FadeIn>
-                </div>
+        {/* Services grid */}
+        <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5" staggerDelay={0.1}>
+          {SERVICES.map((service) => {
+            const Icon = service.icon;
+            return (
+              <StaggerItem key={service.number}>
+                <motion.div
+                  className={`relative glass rounded-2xl p-7 card-hover border border-white/[0.07] group h-full flex flex-col`}
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ type: 'spring', stiffness: 400, damping: 25 }}
+                >
+                  {/* Number */}
+                  <span className="absolute top-6 right-7 font-mono text-xs text-text-muted/40 font-bold">
+                    {service.number}
+                  </span>
 
-                <div className={styles.carouselWrapper}>
-                    <button className={styles.scrollBtn} onClick={() => scroll('left')} aria-label="Scroll left">
-                        <ChevronLeft size={20} />
-                    </button>
-                    
-                    <div className={styles.carousel} ref={scrollRef}>
-                        {services.map((service, index) => (
-                            <div key={index} className={`${styles.card} ${index === 0 ? styles.cardInverted : ''}`}>
-                                <span className={styles.cardNumber}>0{index + 1}</span>
-                                <div className={`${styles.iconWrap} ${styles[service.color as keyof typeof styles]}`}>
-                                    {service.icon}
-                                </div>
-                                <h3 className={styles.cardTitle}>{service.title}</h3>
-                                <p className={styles.cardDescription}>{service.description}</p>
-                                <button className={styles.exploreMore}>
-                                    Explore service <ArrowRight size={14} />
-                                </button>
-                            </div>
-                        ))}
-                    </div>
+                  {/* Icon */}
+                  <div className={`w-12 h-12 ${service.bgClass} rounded-xl flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110`}>
+                    <Icon className={`${service.colorClass} w-5 h-5`} />
+                  </div>
 
-                    <button className={styles.scrollBtn} onClick={() => scroll('right')} aria-label="Scroll right">
-                        <ChevronRight size={20} />
-                    </button>
-                </div>
-            </div>
-        </section>
-    );
+                  {/* Content */}
+                  <h3 className="font-semibold text-lg text-text-primary mb-3 font-display">
+                    {service.title}
+                  </h3>
+                  <p className="text-text-secondary text-sm leading-relaxed flex-1">
+                    {service.description}
+                  </p>
+
+                  {/* CTA */}
+                  <motion.button
+                    className={`mt-6 inline-flex items-center gap-1.5 text-sm font-semibold ${service.colorClass} group/btn`}
+                    whileHover={{ x: 4 }}
+                    transition={{ type: 'spring', stiffness: 400, damping: 25 }}
+                  >
+                    Explore service
+                    <ArrowRight
+                      size={14}
+                      className="transition-transform duration-200 group-hover/btn:translate-x-1"
+                    />
+                  </motion.button>
+
+                  {/* Hover glow */}
+                  <div className={`absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${service.glowClass} pointer-events-none`} />
+                </motion.div>
+              </StaggerItem>
+            );
+          })}
+        </StaggerContainer>
+      </div>
+    </section>
+  );
 }

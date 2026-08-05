@@ -1,0 +1,602 @@
+================================================================================
+DATA TO BE DISPLAYED ON ZYFIRO SITE
+================================================================================
+
+================================================================================
+SITE IDENTITY
+================================================================================
+
+Brand Name: Zyfiro
+Tagline: Premium Software Agency
+Domain: https://zyfiro.vercel.app
+Email: zyfiro@gmail.com
+Theme Color: #0B0B0F
+Google Site Verification: jeFQEoDQX94_sVMGvOdz_bN7HEJIg-e6yBQeimy5SJ8
+
+================================================================================
+NAVBAR
+================================================================================
+
+Logo: Zyfiro minimal logo with name dark medium (PNG)
+Navigation Links:
+  - Services (#services)
+  - Vision (#vision)
+  - Work (#work)
+  - Contact (#contact)
+CTA Button: "Start Project" → #contact
+
+================================================================================
+HERO SECTION
+================================================================================
+
+Badge: "Premium Software Agency" (with pulsing dot)
+
+Headline:
+  Web Design,
+  Mobile Apps,
+  AI Automation &
+  Custom Software
+
+Subheadline:
+  "As a premier digital engineering partner, we architect scalable custom software,
+   high-converting web applications, and intelligent AI automations to accelerate
+   your growth."
+
+CTA Buttons:
+  - "Start Your Project" → #contact
+  - "View Our Work" → #work
+
+Floating Cards (desktop only):
+  - AI Automation
+  - Web Applications
+  - Mobile Apps
+  - Custom Software
+  - UI/UX Design
+
+Mockup Images:
+  - mockup-1.png (Web Application Design)
+  - mockup-2.png (Mobile Application Design)
+
+================================================================================
+SERVICES SECTION
+================================================================================
+
+Section Tag: "● What We Do"
+Heading: "Our Expertise"
+Subheading: "We don't just write code — we engineer complete digital ecosystems
+             using the latest technologies."
+
+Services:
+  01 - Web Development
+       "High-performance web apps built for scalability, SEO, and lightning-fast
+        load times."
+       Icon: Globe | Color: violet
+
+  02 - Android Apps
+       "Custom, high-performance native Android apps built to your exact
+        specifications."
+       Icon: Smartphone | Color: blue
+
+  03 - Desktop Software
+       "Powerful cross-platform desktop applications built with Flutter for
+        every OS."
+       Icon: Layout | Color: cyan
+
+  04 - Firebase Backend
+       "Real-time, secure serverless backends powering your apps from day one."
+       Icon: Cloud | Color: orange
+
+  05 - Rapid MVP
+       "Launch your startup idea in weeks, not months, with our agile delivery
+        process."
+       Icon: Zap | Color: emerald
+
+Each card has: "Explore service →" button
+
+================================================================================
+WORK / PORTFOLIO SECTION
+================================================================================
+
+Section Tag: "● Portfolio"
+Heading: "Selected Work."
+Subheading: "A glimpse into the digital products we've engineered."
+
+Filter Strip (decorative):
+  - "Filter By:" label
+  - "All Regions" dropdown
+  - "All Services" dropdown
+
+Project 1 — ICCS Globalized:
+  Banner Label: "ICCS"
+  Status: Live (green dot)
+  Title: "ICCS Globalized"
+  Description: "The official platform for the International Council of
+                Criminology and Security. We engineered this global hub to
+                connect criminologists, legal experts, and security professionals
+                worldwide — facilitating international cooperation, evidence-based
+                policy research, and seamless member collaboration."
+  Tags: React, Vite, Firebase, Tailwind
+  Link: https://iccsglobalized.com
+
+Coming Soon Card:
+  Icon: Rocket
+  Badge: "🔒 Stealth Mode"
+  Title: "Our Own Product"
+  Description: "We're building something of our own — a product crafted from the
+                ground up by the Zyfiro team. Launch incoming."
+  CTA: "Coming Soon ✦"
+
+================================================================================
+FOUNDERS / VISION SECTION
+================================================================================
+
+Section Tag: "● Our Story"
+
+Heading:
+  "Driven by Vision,
+   Powered by Faith."
+
+Lead Text:
+  "We are Zeeshan Sarfraz and Javeria Javaid, the founders of Zyfiro.
+   Our journey isn't just about building software — it's about building a legacy."
+
+Body Text:
+  "We started Zyfiro with a singular mission: provide world-class digital
+   solutions while laying the foundation for the next Big Tech giant. Every line
+   of code is a step towards that future, Inshallah."
+
+Founder Cards:
+  - Zeeshan — Co-Founder & Tech Lead
+  - Javeria — Co-Founder & Operations
+
+Values Panel:
+  Title: "The Zyfiro Standard"
+  Subtitle: "Excellence is not an act, but a habit."
+
+  Values:
+    1. Rapid Delivery
+       "From concept to launch in weeks — without cutting corners."
+       Icon: Zap | Color: emerald
+
+    2. Zero-Compromise Quality
+       "Enterprise-grade code standards on every project, every time."
+       Icon: Star | Color: violet
+
+    3. Transparent Process
+       "Clear communication and honest timelines at every step."
+       Icon: HandshakeIcon | Color: cyan
+
+================================================================================
+CONTACT SECTION
+================================================================================
+
+Section Tag: "● Contact"
+
+Heading:
+  "Let's Build Your Dream App."
+
+Description:
+  "We engineer robust digital solutions across Web, Desktop, and Android
+   platforms. Partner with us for world-class development at transparent,
+   local-market pricing."
+
+Trust Points:
+  - "24-hour response guarantee"
+  - "Transparent, fixed pricing"
+  - "Free initial consultation"
+
+Contact Info:
+  - Email: zyfiro@gmail.com
+  - Response Time: "Within 24 hours — always"
+  - HQ: "Mars 🪐"
+
+WhatsApp CTA:
+  - "Chat on WhatsApp" → https://wa.me/923109233844
+
+================================================================================
+PROJECT WIZARD (Contact Form)
+================================================================================
+
+Step 1 — "What are we building?"
+  Subtitle: "Select the core service you need."
+  Options:
+    - Web Development: "High-performance websites & web apps."
+    - Android App: "Custom native Android solutions."
+    - Desktop App: "Powerful cross-platform software."
+    - UI/UX Design: "World-class interfaces & experiences."
+
+Step 2 — "Scope & Timeline"
+  Subtitle: "Help us understand the scale of your vision."
+  Budget Options:
+    - 20k - 50k PKR
+    - 50k - 100k PKR
+    - 100k - 300k PKR
+    - 300k+ PKR
+  Timeline Options:
+    - < 1 Month
+    - 1-3 Months
+    - 3-6 Months
+    - 6+ Months
+
+Step 3 — "Final Details"
+  Subtitle: "Where should we send the proposal?"
+  Fields:
+    - Name (placeholder: "Tony Stark")
+    - Email (placeholder: "tony@starkindustries.com")
+    - Additional Details (optional, placeholder: "Tell us a bit more about your
+      project...")
+  Submit Button: "Send Request"
+
+Step 4 — Success
+  Title: "Request Received!"
+  Message: "Thanks, {name}! We've received your project details. Our team is
+            reviewing them and will send a preliminary proposal to {email} within
+            24 hours."
+  Button: "Start New Project"
+
+Form submits to: zeeshan.sarfraz@atrons.net
+
+================================================================================
+FOOTER
+================================================================================
+
+CTA Banner:
+  Badge: "● Still thinking it over?"
+  Heading: "Let's talk. No pitch, no pressure."
+  Subtext: "We reply within 24 hours. Tell us what you're building and we'll give
+            you an honest take."
+  Buttons:
+    - "Start a Project" → #contact
+    - "Chat on WhatsApp" → https://wa.me/923109233844
+
+Brand Tagline:
+  "Building scalable Websites, Desktop Software, and Android Apps — from
+   Pakistan, for the world."
+
+Social Links:
+  - LinkedIn: https://www.linkedin.com/company/zyfiro
+  - GitHub: https://github.com/zyfiro-dev
+  - Instagram: https://instagram.com/zyfiro.dev
+  - Facebook: https://www.facebook.com/profile.php?id=61574251996966
+
+Company Links:
+  - About Us → /#vision
+  - Services → /#services
+  - Our Work → /#work
+  - Contact → /#contact
+
+Legal Links:
+  - Privacy Policy → /privacy-policy
+  - Terms of Service → /terms-of-service
+
+Bottom Bar:
+  - "© {year} Zyfiro Inc. All rights reserved."
+  - "Built with ♥ in Pakistan"
+
+================================================================================
+WHATSAPP FLOATING BUTTON
+================================================================================
+
+Link: https://wa.me/923109233844
+Label: "Chat on WhatsApp" (screen reader only)
+Color: #25D366 (green)
+
+================================================================================
+PRIVACY POLICY PAGE
+================================================================================
+
+Hero:
+  Back Link: "← Back to Home"
+  Badge: "Legal"
+  Title: "Privacy Policy."
+  Meta: "Last Updated: February 2026 · 5 min read"
+
+Sections:
+  01 Introduction
+     "Welcome to Zyfiro ("we," "our," or "us"). We respect your privacy and are
+      committed to protecting your personal data. This Privacy Policy explains how
+      we collect, use, and safeguard your information when you visit our website
+      or engage our services."
+     "By using our website or services, you agree to the practices described in
+      this policy. If you disagree with any part of it, please discontinue use of
+      our services."
+     Highlight: "We believe privacy is a fundamental right. We only collect what
+                 we absolutely need, and we never sell your data."
+
+  02 Data We Collect
+     "We may collect the following types of personal data when you interact with
+      our website or project inquiry form:"
+     - Identity Data — your name and any identifiers you provide in our contact
+       forms.
+     - Contact Data — email address and phone number, used solely to respond to
+       your inquiries.
+     - Project Data — project details, budget range, and timeline you share
+       through our Project Wizard.
+     - Technical Data — IP address, browser type and version, time zone, operating
+       system, and basic device info collected automatically via standard web logs.
+     - Usage Data — pages visited, time spent, referral sources, and click
+       patterns to help us improve the website experience.
+     "We do not collect sensitive personal data such as financial account details,
+      government IDs, or health information through this website."
+
+  03 How We Use Your Data
+     "We use the personal data we collect for the following purposes:"
+     - To respond to your project inquiries and provide quotes or proposals.
+     - To communicate about the scope, timeline, and progress of your project.
+     - To improve our website content, performance, and user experience.
+     - To comply with applicable legal obligations.
+     - To send important service-related notifications (never unsolicited
+       marketing).
+     "We will never use your data for automated decision-making that significantly
+      affects you, or for any purpose incompatible with what is listed above."
+
+  04 Data Sharing & Third Parties
+     "We do not sell your personal data. We may share limited data with trusted
+      third-party service providers strictly to operate our business:"
+     - Email services — to send and receive project-related communications (e.g.,
+       Gmail / Google Workspace).
+     - Analytics providers — to understand website usage patterns anonymously.
+     - Hosting providers — to serve the website and store data securely.
+     "All third-party providers are contractually required to protect your data
+      and may only process it on our behalf. We never allow them to use your data
+      for their own purposes."
+
+  05 Data Security
+     "We take data security seriously. We have implemented appropriate technical
+      and organizational measures to protect your personal data against accidental
+      loss, unauthorized access, alteration, or disclosure."
+     - All data is transmitted over HTTPS (TLS encryption).
+     - Access to personal data is strictly limited to authorized personnel who
+       need it for service delivery.
+     - We regularly review our security practices to maintain protection against
+       emerging threats.
+     Highlight: "While we strive for the highest security standards, no system is
+                100% impenetrable. If you suspect a security breach, please contact
+                us immediately at zeeshan.sarfraz@atrons.net."
+
+  06 Cookies
+     "Our website may use cookies — small text files stored on your device — to
+      improve your browsing experience. We use the following types:"
+     - Strictly Necessary — required for the website to function correctly.
+     - Analytics — help us understand how visitors interact with our website
+       (anonymized data only).
+     "You can control or disable cookies through your browser settings at any
+      time. Disabling certain cookies may affect the functionality of the website."
+
+  07 Your Rights
+     "Depending on your jurisdiction, you may have the following rights regarding
+      your personal data:"
+     - Right to Access — request a copy of the personal data we hold about you.
+     - Right to Rectification — request correction of inaccurate or incomplete
+       data.
+     - Right to Erasure — request deletion of your personal data where it is no
+       longer necessary.
+     - Right to Object — object to processing based on legitimate interests.
+     - Right to Data Portability — request a portable copy of your data in a
+       common format.
+     "To exercise any of these rights, contact us at the email below. We will
+      respond within 30 days."
+
+  08 Contact Us
+     "If you have any questions about this Privacy Policy, how we handle your
+      data, or wish to exercise any of your rights, please reach out to us:"
+     - Zeeshan Sarfraz — zeeshan.sarfraz@atrons.net
+     - Javeria Javaid — meetjaveriajavaid@gmail.com
+     "We are committed to resolving any concerns promptly and transparently."
+
+  Bottom Note: "This policy may be updated periodically. Continued use of our
+                services constitutes acceptance."
+  Link: "Terms of Service →"
+
+================================================================================
+TERMS OF SERVICE PAGE
+================================================================================
+
+Page Title: "Terms of Service."
+Meta: "Last Updated: February 2026 · 6 min read"
+
+Sections:
+  01 Agreement to Terms
+     "By accessing or using Zyfiro's website at zyfiro.com, you confirm that you
+      are at least 18 years of age, have read and understood these Terms of
+      Service, and agree to be bound by them."
+     "If you do not agree with any part of these terms, you must discontinue use
+      of our website and services immediately. These terms apply to all visitors,
+      clients, and anyone who accesses or uses our services."
+     Highlight: "These Terms of Service constitute a legally binding agreement
+                between you and Zyfiro Inc."
+
+  02 Our Services
+     "Zyfiro provides software development and digital product services including
+      but not limited to:"
+     - Web Development — custom websites and web applications.
+     - Android Application Development — native Android apps.
+     - Desktop Software — cross-platform desktop applications using Flutter.
+     - Firebase Backend Services — real-time serverless backend infrastructure.
+     - Rapid MVP Development — fast-tracked startup product launches.
+     - UI/UX Design — interface design and user experience consulting.
+     "We reserve the right to modify, suspend, or discontinue any service offering
+      at any time with reasonable notice."
+
+  03 Intellectual Property
+     "All original content on the Zyfiro website — including text, graphics,
+      logos, and code — is the exclusive property of Zyfiro Inc. and is protected
+      by applicable copyright, trademark, and intellectual property laws."
+     "Regarding client projects:"
+     - Upon full payment, clients receive full ownership of the custom code and
+       deliverables developed specifically for their project.
+     - Zyfiro retains the right to use general methodologies, frameworks, and
+       non-client-specific code patterns in future projects.
+     - Open-source components used in development remain subject to their
+       respective licenses.
+     - Zyfiro may showcase completed projects in its portfolio unless otherwise
+       agreed in writing.
+
+  04 User Responsibilities
+     "When using our website or engaging our services, you agree to:"
+     - Provide accurate, complete, and up-to-date information in all project
+       inquiries and communications.
+     - Not use our website for any unlawful purpose or in violation of any
+       regulations.
+     - Not attempt to gain unauthorized access to any part of our systems or
+       infrastructure.
+     - Not upload or transmit any malicious code, viruses, or disruptive content.
+     - Respect agreed payment terms and project timelines in client agreements.
+     - Maintain confidentiality of any proprietary information shared during the
+       course of a project.
+
+  05 Termination
+     "Either party may terminate a service agreement under the following
+      conditions:"
+     - By Client — with written notice. Work completed up to the point of
+       termination will be invoiced pro-rata.
+     - By Zyfiro — if the client breaches these Terms, fails to make payments, or
+       engages in conduct incompatible with a healthy working relationship.
+     - Mutual Agreement — both parties may mutually agree to end the engagement at
+       any time.
+     "Upon termination, all deliverables completed and paid for will be
+      transferred to the client. Unpaid work remains the property of Zyfiro until
+      full payment is received."
+
+  06 Limitation of Liability
+     "To the maximum extent permitted by applicable law, Zyfiro Inc. and its
+      founders, employees, and partners shall not be liable for any indirect,
+      incidental, special, consequential, or punitive damages arising from:"
+     - Loss of profits, revenue, or business opportunities.
+     - Loss of data or unauthorized access to your systems beyond our control.
+     - Delays caused by third-party services, APIs, or infrastructure outside our
+       control.
+     - Any errors or inaccuracies in content published on our website.
+     Highlight: "Our total liability for any claim arising under these Terms shall
+                not exceed the total amount paid by you to Zyfiro in the three
+                months preceding the event giving rise to the claim."
+
+  07 Governing Law
+     "These Terms of Service shall be governed by and construed in accordance with
+      the laws of Pakistan. Any disputes arising from these terms or the use of
+      our services shall be subject to the exclusive jurisdiction of the competent
+      courts of Pakistan."
+     "We encourage all disputes to first be resolved through direct communication.
+      We are committed to finding fair, transparent resolutions without the need
+      for formal proceedings."
+
+  08 Contact Us
+     "If you have questions about these Terms of Service, our services, or need to
+      raise any concerns, please contact us directly:"
+     - Zeeshan Sarfraz — zeeshan.sarfraz@atrons.net
+     - Javeria Javaid — meetjaveriajavaid@gmail.com
+     "We aim to respond to all inquiries within 24 hours."
+
+  Bottom Note: "These terms may be updated periodically. Continued use of our
+                services constitutes acceptance of any changes."
+  Link: "Privacy Policy →"
+
+================================================================================
+SEO / META DATA
+================================================================================
+
+Default Title: "Zyfiro - Web Design, Software & AI Solutions"
+Home Title: "Zyfiro - Web Design, Enterprise Software & AI Solutions"
+Description: "Zyfiro is a premier digital engineering agency specializing in
+              custom web applications, desktop software, mobile app development,
+              and AI solutions. We build legacies."
+Keywords: "web development, software agency, AI solutions, digital design, Zyfiro,
+          custom software engineering, React TypeScript, AI integration"
+Canonical URL: https://zyfiro.vercel.app/
+OG Image: https://zyfiro.vercel.app/og-image.jpg
+Favicon: /favicon.png
+
+================================================================================
+JSON-LD SCHEMA DATA
+================================================================================
+
+Organization Schema:
+  Name: Zyfiro
+  URL: https://zyfiro.vercel.app
+  Logo: https://zyfiro.vercel.app/favicon.png
+  Email: zyfiro@gmail.com
+  Description: "Zyfiro is a premier digital engineering agency specializing in
+                custom web applications, desktop software, mobile app development,
+                and AI solutions."
+  Founders:
+    - Zeeshan Sarfraz — Co-Founder & Tech Lead
+    - Javeria Javaid — Co-Founder & Operations
+  Knows About:
+    - Web Development
+    - Software Engineering
+    - Artificial Intelligence Solutions
+    - UI/UX Design
+    - Mobile Application Engineering
+
+ProfessionalService Schema:
+  Name: Zyfiro
+  Image: https://zyfiro.vercel.app/favicon.png
+  URL: https://zyfiro.vercel.app
+  Email: zyfiro@gmail.com
+  Price Range: $$
+  Description: "Zyfiro is a premium digital engineering agency delivering custom
+                web apps, desktop software, mobile applications, and AI
+                integrations."
+  Offer Catalog:
+    - Custom Web Design & Development
+      "Modern, high-converting websites and web applications engineered with
+       React, Next.js, and TypeScript."
+    - Enterprise Software & Backend Engineering
+      "Scalable desktop applications, APIs, and cloud infrastructure engineered
+       for maximum uptime and security."
+    - AI Solutions & Automation
+      "Custom AI agent integrations, LLM workflows, and data processing
+       automation."
+    - UI/UX Design Systems
+      "Stunning glassmorphism design systems, micro-animations, and
+       conversion-centered user experiences."
+
+================================================================================
+ASSETS USED
+================================================================================
+
+Images:
+  - src/assets/mockup-1.png (Web Application Design mockup)
+  - src/assets/mockup-2.png (Mobile Application Design mockup)
+  - src/assets/logo-full.png
+  - src/assets/logo-icon.svg
+  - src/assets/logo-minimal.png
+  - src/assets/logo.svg
+  - src/assets/react.svg
+  - src/assets/Zyfiro minimal logo with name dark medium_logo with name dark
+    medium.png (primary logo)
+  - src/assets/hero_section.mp4 (hero background video)
+
+External URLs:
+  - https://grainy-gradients.vercel.app/noise.svg (background texture)
+  - https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap
+  - https://fonts.gstatic.com (font preconnect)
+
+================================================================================
+CONTACT INFO SUMMARY
+================================================================================
+
+Company Email: zyfiro@gmail.com
+Zeeshan Sarfraz: zeeshan.sarfraz@atrons.net
+Javeria Javaid: meetjaveriajavaid@gmail.com
+WhatsApp: +92 310 9233844 (https://wa.me/923109233844)
+HQ: Mars 🪐
+
+================================================================================
+TECH STACK (for reference)
+================================================================================
+
+Framework: React 18 + TypeScript
+Build Tool: Vite 7
+Styling: Tailwind CSS 3 + CSS Modules
+Animation: Framer Motion 12
+Routing: React Router DOM 7
+Icons: Lucide React
+SEO: react-helmet-async
+Smooth Scroll: @studio-freight/lenis
+UI Primitives: Radix UI (label, slot)
+Utilities: clsx, tailwind-merge, class-variance-authority
+
+================================================================================
+END OF DATA
+================================================================================
