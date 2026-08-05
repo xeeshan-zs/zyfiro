@@ -3,7 +3,7 @@ import './globals.css';
 import { SmoothScroll } from '@/components/layout/SmoothScroll';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
-import { WhatsAppButton } from '@/components/ui/WhatsAppButton';
+
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://zyfiro.org'),
@@ -178,7 +178,7 @@ export default function RootLayout({
           <Navbar />
           <main>{children}</main>
           <Footer />
-          <WhatsAppButton />
+
         </SmoothScroll>
       </body>
     </html>

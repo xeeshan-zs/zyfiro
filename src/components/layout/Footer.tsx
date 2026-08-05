@@ -155,14 +155,9 @@ export function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-white/[0.05]">
-        <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div className="max-w-7xl mx-auto px-6 py-6 flex items-center justify-center">
           <p className="text-text-muted text-xs">
             © {year} Zyfiro Inc. All rights reserved.
-          </p>
-          <p className="text-text-muted text-xs flex items-center gap-1">
-            Built with
-            <span className="text-red-400">♥</span>
-            in Pakistan
           </p>
         </div>
       </div>
