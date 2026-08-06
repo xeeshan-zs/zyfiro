@@ -80,14 +80,29 @@ export const SERVICES = [
 
 export const PORTFOLIO = [
   {
+    id: 'nectar',
+    label: 'NECTAR',
+    category: 'AI-Powered E-Commerce',
+    status: 'Coming Soon',
+    title: 'Nectar',
+    description:
+      'Modern grocery delivery platform engineered for speed, scalability, and exceptional user experience.',
+    tags: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS'],
+    githubLink: 'https://github.com/xeeshan-zs/z-nectar',
+    liveLink: null,
+    image: '/assets/mockup-1.png',
+  },
+  {
     id: 'iccs',
     label: 'ICCS',
+    category: 'Global Platform',
     status: 'Live',
     title: 'ICCS Globalized',
     description:
       'The official platform for the International Council of Criminology and Security. We engineered this global hub to connect criminologists, legal experts, and security professionals worldwide — facilitating international cooperation, evidence-based policy research, and seamless member collaboration.',
     tags: ['React', 'Vite', 'Firebase', 'Tailwind'],
-    link: 'https://iccsglobalized.com',
+    liveLink: 'https://iccsglobalized.com',
+    image: '/assets/mockup-2.png',
   },
 ];
 

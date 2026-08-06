@@ -40,52 +40,75 @@ export function Work() {
 
         {/* Grid */}
         <StaggerContainer className="grid grid-cols-1 lg:grid-cols-2 gap-6" staggerDelay={0.15}>
-          {/* ICCS Project Card */}
           {PORTFOLIO.map((project) => (
             <StaggerItem key={project.id}>
-              <motion.a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative glass rounded-3xl overflow-hidden border border-white/[0.07] block card-hover"
+              <motion.div
+                className="group relative glass rounded-[24px] lg:rounded-[28px] overflow-hidden border border-white/[0.07] hover:border-accent-violet/50 block card-hover transition-colors duration-500 hover:shadow-[0_0_30px_rgba(124,58,237,0.15)] flex flex-col h-full"
                 whileHover={{ scale: 1.01 }}
                 transition={{ type: 'spring', stiffness: 300, damping: 25 }}
               >
                 {/* Banner */}
-                <div className="relative h-48 bg-gradient-to-br from-accent-violet/20 via-accent-blue/10 to-transparent flex items-center justify-center overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#1a0533]/80 to-[#0a1628]/60" />
-                  {/* Decorative grid */}
-                  <div
-                    className="absolute inset-0"
-                    style={{
-                      backgroundImage: 'linear-gradient(rgba(124,58,237,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(124,58,237,0.1) 1px, transparent 1px)',
-                      backgroundSize: '30px 30px',
-                    }}
-                  />
-                  <span className="relative z-10 font-display text-6xl font-bold text-white/10 tracking-widest select-none">
-                    {project.label}
-                  </span>
+                <div className="relative h-56 lg:h-64 bg-gradient-to-br from-accent-violet/20 via-accent-blue/10 to-transparent flex items-center justify-center overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#1a0533]/80 to-[#0a1628]/60 z-0" />
+                  
+                  {project.image ? (
+                    <>
+                      <img 
+                        src={project.image} 
+                        alt={project.title} 
+                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 z-0" 
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-bg-card via-bg-card/40 to-transparent z-0" />
+                    </>
+                  ) : (
+                    <>
+                      {/* Decorative grid */}
+                      <div
+                        className="absolute inset-0 z-0"
+                        style={{
+                          backgroundImage: 'linear-gradient(rgba(124,58,237,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(124,58,237,0.1) 1px, transparent 1px)',
+                          backgroundSize: '30px 30px',
+                        }}
+                      />
+                      <span className="relative z-10 font-display text-6xl font-bold text-white/10 tracking-widest select-none">
+                        {project.label}
+                      </span>
+                    </>
+                  )}
+
                   {/* Status badge */}
-                  <div className="absolute top-4 right-4 flex items-center gap-1.5 bg-accent-emerald/15 border border-accent-emerald/30 px-3 py-1 rounded-full">
+                  <div className="absolute top-4 right-4 flex items-center gap-1.5 bg-accent-emerald/15 border border-accent-emerald/30 px-3 py-1 rounded-full z-10">
                     <span className="w-1.5 h-1.5 rounded-full bg-accent-emerald animate-pulse" />
                     <span className="text-accent-emerald text-xs font-semibold">{project.status}</span>
                   </div>
-                  {/* External link icon */}
-                  <div className="absolute top-4 left-4 w-8 h-8 bg-white/10 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <ExternalLink size={14} className="text-white" />
-                  </div>
+
+                  {/* Category badge */}
+                  {project.category && (
+                    <div className="absolute top-4 left-4 z-10">
+                      <div className="bg-black/40 backdrop-blur-md border border-white/10 px-3 py-1 rounded-full">
+                        <span className="text-white text-xs font-semibold">{project.category}</span>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* External link icon (if no buttons shown) */}
+                  {!project.githubLink && !project.liveLink && (
+                    <div className="absolute top-4 left-4 w-8 h-8 bg-white/10 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                      <ExternalLink size={14} className="text-white" />
+                    </div>
+                  )}
                 </div>
 
                 {/* Content */}
-                <div className="p-7">
+                <div className="p-7 flex flex-col flex-1">
                   <h3 className="font-display text-2xl font-bold text-text-primary mb-3 group-hover:text-gradient transition-all duration-300">
                     {project.title}
                   </h3>
-                  <p className="text-text-secondary text-sm leading-relaxed mb-5">
+                  <p className="text-text-secondary text-sm leading-relaxed mb-6 flex-1">
                     {project.description}
                   </p>
                   {/* Tags */}
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 mb-8">
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
@@ -95,8 +118,40 @@ export function Work() {
                       </span>
                     ))}
                   </div>
+
+                  {/* Buttons */}
+                  <div className="flex flex-wrap items-center gap-4 mt-auto">
+                    {project.liveLink ? (
+                      <a 
+                        href={project.liveLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-primary inline-flex items-center justify-center px-6 py-2.5 rounded-xl text-sm font-semibold transition-all hover:shadow-[0_0_20px_rgba(124,58,237,0.3)]"
+                      >
+                        Live Demo
+                      </a>
+                    ) : (
+                      <button 
+                        disabled
+                        className="glass inline-flex items-center justify-center px-6 py-2.5 rounded-xl text-sm font-semibold text-text-muted cursor-not-allowed border border-white/[0.05]"
+                      >
+                        Coming Soon
+                      </button>
+                    )}
+
+                    {project.githubLink && (
+                      <a 
+                        href={project.githubLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-ghost inline-flex items-center justify-center px-6 py-2.5 rounded-xl text-sm font-semibold border border-white/10 hover:bg-white/5 transition-all hover:shadow-[0_0_15px_rgba(255,255,255,0.1)]"
+                      >
+                        View Source
+                      </a>
+                    )}
+                  </div>
                 </div>
-              </motion.a>
+              </motion.div>
             </StaggerItem>
           ))}
 
