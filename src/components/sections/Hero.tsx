@@ -148,7 +148,7 @@ export function Hero() {
             <div className="relative w-full max-w-[400px] h-[260px] glass rounded-2xl overflow-hidden border border-white/[0.08] shadow-2xl">
               <Image
                 src="/assets/mockup-1.png"
-                alt="Web Application Design mockup"
+                alt="Mobile Application Design mockup"
                 fill
                 className="object-cover"
                 sizes="400px"
@@ -156,7 +156,7 @@ export function Hero() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-bg-base/70 to-transparent" />
               <div className="absolute bottom-4 left-5">
-                <span className="text-xs font-semibold text-text-secondary tracking-wide">Web Application</span>
+                <span className="text-xs font-semibold text-text-secondary tracking-wide">Mobile Application</span>
               </div>
             </div>
 
@@ -164,14 +164,14 @@ export function Hero() {
             <div className="relative w-[75%] h-[180px] glass rounded-2xl overflow-hidden border border-white/[0.08] shadow-2xl">
               <Image
                 src="/assets/mockup-2.png"
-                alt="Mobile Application Design mockup"
+                alt="Web Application Design mockup"
                 fill
                 className="object-cover"
                 sizes="300px"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-bg-base/70 to-transparent" />
               <div className="absolute bottom-4 left-5">
-                <span className="text-xs font-semibold text-text-secondary tracking-wide">Mobile Application</span>
+                <span className="text-xs font-semibold text-text-secondary tracking-wide">Web Application</span>
               </div>
             </div>
 
