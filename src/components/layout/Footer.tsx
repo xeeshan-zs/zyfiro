@@ -75,7 +75,7 @@ export function Footer() {
           {/* Brand column */}
           <div className="lg:col-span-2">
             <Link href="/" className="inline-block mb-4" aria-label="Zyfiro">
-              <div className="relative w-36 h-10">
+              <div className="relative w-64 h-20 sm:w-72 sm:h-24">
                 <Image
                   src="/assets/logo-full.png"
                   alt="Zyfiro"

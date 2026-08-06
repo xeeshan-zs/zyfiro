@@ -53,7 +53,7 @@ export function Navbar() {
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group" aria-label="Zyfiro Home">
-            <div className="relative w-36 h-10">
+            <div className="relative w-64 h-20 sm:w-72 sm:h-24">
               <Image
                 src="/assets/logo-full.png"
                 alt="Zyfiro"
