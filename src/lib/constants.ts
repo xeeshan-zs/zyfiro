@@ -42,7 +42,7 @@ export const SERVICES = [
     description: 'Scalable software engineered for startups, enterprises, and growing businesses.',
     icon: Code2,
     badge: 'ENGINEERING',
-    image: '/assets/services/custom-software.jpg',
+    image: '/assets/services/custom_software_development.png',
   },
   {
     number: '02',
@@ -50,7 +50,7 @@ export const SERVICES = [
     description: 'AI chatbots, automation, intelligent workflows, predictive analytics, and generative AI.',
     icon: Sparkles,
     badge: 'AI SOLUTIONS',
-    image: '/assets/services/ai-solutions.jpg',
+    image: '/assets/services/AI_solutions.png',
   },
   {
     number: '03',
@@ -58,7 +58,7 @@ export const SERVICES = [
     description: 'Fast, secure, responsive web applications using modern frameworks.',
     icon: Globe,
     badge: 'WEB APPS',
-    image: '/assets/services/web-applications.jpg',
+    image: '/assets/services/web_applications.png',
   },
   {
     number: '04',
@@ -66,7 +66,7 @@ export const SERVICES = [
     description: 'Cross-platform Android and iOS apps with premium user experiences.',
     icon: Smartphone,
     badge: 'APP SOLUTIONS',
-    image: '/assets/services/mobile-apps.jpg',
+    image: '/assets/services/mbl_app.png',
   },
   {
     number: '05',
@@ -74,7 +74,7 @@ export const SERVICES = [
     description: 'Human-centered digital experiences designed for clarity, usability, and engagement.',
     icon: Palette,
     badge: 'EXPERIENCE',
-    image: '/assets/services/ui-ux-design.jpg',
+    image: '/assets/services/ui-ux.png',
   },
 ];
 
