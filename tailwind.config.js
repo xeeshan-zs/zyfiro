@@ -9,31 +9,31 @@ module.exports = {
     extend: {
       colors: {
         bg: {
-          base: '#0B0B0F',
-          card: '#111117',
-          hover: '#16161F',
+          base: '#F7F8FB',
+          card: '#FFFFFF',
+          hover: '#EEF2F7',
         },
         accent: {
-          violet: '#7C3AED',
-          'violet-light': '#A78BFA',
-          blue: '#3B82F6',
-          cyan: '#06B6D4',
-          emerald: '#10B981',
+          violet: '#6D5DFC',
+          'violet-light': '#8B7CFF',
+          blue: '#2563EB',
+          cyan: '#0891B2',
+          emerald: '#059669',
           orange: '#F97316',
         },
         text: {
-          primary: '#F9FAFB',
-          secondary: '#9CA3AF',
-          muted: '#6B7280',
+          primary: '#101828',
+          secondary: '#475467',
+          muted: '#667085',
         },
         border: {
-          DEFAULT: 'rgba(255,255,255,0.08)',
-          hover: 'rgba(255,255,255,0.16)',
+          DEFAULT: 'rgba(16,24,40,0.10)',
+          hover: 'rgba(16,24,40,0.18)',
         },
       },
       fontFamily: {
-        display: ['"Playfair Display"', 'Georgia', 'serif'],
-        sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
+        display: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

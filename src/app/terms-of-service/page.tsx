@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowLeft, FileText } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Terms of Service',
@@ -110,14 +109,14 @@ export default function TermsOfServicePage() {
           href="/"
           className="inline-flex items-center gap-2 text-text-muted text-sm hover:text-text-primary transition-colors mb-10 group"
         >
-          <ArrowLeft size={15} className="transition-transform group-hover:-translate-x-1 duration-200" />
+          <span className="transition-transform group-hover:-translate-x-1 duration-200">←</span>
           Back to Home
         </Link>
 
         {/* Hero */}
         <div className="mb-14">
           <div className="inline-flex items-center gap-2 glass px-3 py-1.5 rounded-full mb-5">
-            <FileText size={12} className="text-accent-cyan" />
+            <span className="text-accent-cyan text-xs font-semibold">●</span>
             <span className="text-accent-cyan text-xs font-semibold">Legal</span>
           </div>
           <h1 className="font-display text-4xl lg:text-5xl font-bold text-text-primary mb-4">
@@ -131,7 +130,7 @@ export default function TermsOfServicePage() {
         {/* Sections */}
         <div className="space-y-12">
           {sections.map((section) => (
-            <div key={section.number} className="border-t border-white/[0.06] pt-10">
+            <div key={section.number} className="border-t border-black/[0.08] pt-10">
               <div className="flex gap-4 mb-4">
                 <span className="font-mono text-xs text-text-muted/40 font-bold mt-1">{section.number}</span>
                 <h2 className="font-display text-xl font-bold text-text-primary">{section.title}</h2>
@@ -164,7 +163,7 @@ export default function TermsOfServicePage() {
         </div>
 
         {/* Bottom note */}
-        <div className="mt-14 pt-10 border-t border-white/[0.06]">
+        <div className="mt-14 pt-10 border-t border-black/[0.08]">
           <p className="text-text-muted text-sm mb-4">
             These terms may be updated periodically. Continued use of our services constitutes acceptance of any changes.
           </p>

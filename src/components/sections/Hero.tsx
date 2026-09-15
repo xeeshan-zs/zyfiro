@@ -1,210 +1,150 @@
 'use client';
 
-import dynamic from 'next/dynamic';
 import Image from 'next/image';
-import { motion, type Variants } from 'framer-motion';
-import { ArrowRight, Play } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { ArrowRight, CheckCircle2, Code2, Database, Sparkles } from 'lucide-react';
 
-const ThreeBackground = dynamic(
-  () => import('@/components/three/ThreeBackground').then((m) => m.ThreeBackground),
-  { ssr: false }
-);
-
-const FLOATING_TAGS = [
-  { label: 'AI Automation',   color: 'from-violet-500/20 to-purple-600/10',  border: 'border-violet-500/30',  delay: 0   },
-  { label: 'Web Applications',color: 'from-blue-500/20 to-blue-600/10',      border: 'border-blue-500/30',    delay: 0.5 },
-  { label: 'Mobile Apps',     color: 'from-cyan-500/20 to-cyan-600/10',      border: 'border-cyan-500/30',    delay: 1.0 },
-  { label: 'Custom Software', color: 'from-emerald-500/20 to-emerald-600/10',border: 'border-emerald-500/30', delay: 1.5 },
-  { label: 'UI/UX Design',    color: 'from-orange-500/20 to-orange-600/10',  border: 'border-orange-500/30',  delay: 2.0 },
+const STATS = [
+  ['24h', 'average response'],
+  ['5+', 'service disciplines'],
+  ['Global', 'delivery mindset'],
 ];
 
-const containerVariants: Variants = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.12, delayChildren: 0.3 } },
-};
-
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 30 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.7, ease: [0.21, 0.47, 0.32, 0.98] as [number, number, number, number] },
-  },
-};
-
-const mockupVariants: Variants = {
-  hidden: { opacity: 0, x: 60 },
-  show: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.9, delay: 0.6, ease: [0.21, 0.47, 0.32, 0.98] as [number, number, number, number] },
-  },
-};
+const WORKFLOW = [
+  { label: 'Design', icon: Sparkles, tone: 'bg-violet-50 text-accent-violet' },
+  { label: 'Build', icon: Code2, tone: 'bg-sky-50 text-accent-blue' },
+  { label: 'Scale', icon: Database, tone: 'bg-emerald-50 text-accent-emerald' },
+];
 
 export function Hero() {
   return (
-    <section
-      id="hero"
-      className="relative min-h-screen flex items-center overflow-hidden bg-bg-base"
-    >
-      {/* ── Three.js canvas (full background) ─────────────────────────── */}
-      <ThreeBackground />
+    <section id="hero" className="relative min-h-screen overflow-hidden px-5 pb-24 pt-6 sm:px-6 md:pt-40 lg:pt-44">
+      <div className="absolute left-1/2 top-24 h-[34rem] w-[34rem] -translate-x-1/2 rounded-full bg-white/60 blur-3xl" />
 
-      {/* ── Overlays ───────────────────────────────────────────────────── */}
-      <div className="absolute inset-0 bg-gradient-radial from-accent-violet/10 via-transparent to-transparent pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-b from-bg-base/30 via-transparent to-bg-base pointer-events-none" />
+      <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-14 lg:grid-cols-[1.02fr_0.98fr]">
+        <div className="max-w-3xl">
+          <div className="mb-10 inline-flex items-center gap-3 rounded-2xl border border-white/80 bg-white/78 px-3 py-2 shadow-[0_18px_40px_rgba(16,24,40,0.08),inset_0_1px_0_rgba(255,255,255,0.95)] backdrop-blur-xl md:hidden">
+            <span className="relative h-10 w-10 overflow-hidden rounded-2xl bg-white shadow-[inset_0_1px_0_rgba(255,255,255,0.9)]">
+              <Image src="/assets/logo-icon.png" alt="Zyfiro" fill sizes="40px" className="object-contain p-1.5" priority />
+            </span>
+            <span className="text-base font-extrabold tracking-tight text-text-primary">Zyfiro</span>
+          </div>
+          <div className="section-tag mb-6">
+            Digital product studio
+          </div>
+          <h1 className="text-4xl font-extrabold leading-[1.04] tracking-tight text-text-primary xs:text-5xl sm:text-6xl lg:text-7xl">
+            Professional software, designed with restraint and built for scale.
+          </h1>
+          <p className="mt-6 max-w-2xl text-base leading-7 text-text-secondary sm:mt-7 sm:text-lg sm:leading-8">
+            Zyfiro creates refined web platforms, mobile applications, AI workflows, and custom business software for teams that need clarity, speed, and dependable execution.
+          </p>
 
-      {/* Grid lines */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: `
-            linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)
-          `,
-          backgroundSize: '60px 60px',
-          maskImage: 'radial-gradient(ellipse 80% 70% at 50% 50%, black 30%, transparent 100%)',
-        }}
-      />
-
-      {/* ── Main content grid ──────────────────────────────────────────── */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pt-32 pb-24 lg:pt-36 lg:pb-28">
-        <div className="grid lg:grid-cols-2 gap-12 xl:gap-16 items-center">
-
-          {/* ── LEFT — text ────────────────────────────────────────────── */}
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate="show"
-            className="flex flex-col"
-          >
-            {/* Headline */}
-            <motion.h1
-              variants={itemVariants}
-              className="font-display text-5xl sm:text-6xl xl:text-7xl font-bold leading-[1.08] tracking-tight text-text-primary mb-6"
+          <div className="mt-8 flex flex-wrap gap-3 sm:mt-9">
+            <a
+              href="#contact"
+              id="hero-cta-primary"
+              className="rounded-full px-6 py-3 text-sm font-semibold btn-primary"
             >
-              Web Design,{' '}
-              <span className="text-gradient">Mobile Apps,</span>
-              <br />
-              AI Automation &{' '}
-              <br className="hidden sm:block" />
-              <span className="text-gradient-warm">Custom Software</span>
-            </motion.h1>
-
-            {/* Subheadline */}
-            <motion.p
-              variants={itemVariants}
-              className="text-text-secondary text-lg leading-relaxed max-w-xl mb-9"
+              Start Your Project <ArrowRight size={17} className="ml-2" />
+            </a>
+            <a
+              href="#work"
+              id="hero-cta-secondary"
+              className="rounded-full px-6 py-3 text-sm font-semibold btn-ghost"
             >
-              As a premier digital engineering partner, we architect scalable custom software,
-              high-converting web applications, and intelligent AI automations to accelerate
-              your growth.
-            </motion.p>
+              View Work
+            </a>
+          </div>
 
-            {/* CTA Buttons */}
-            <motion.div variants={itemVariants} className="flex flex-wrap gap-4 mb-10">
-              <a
-                href="#contact"
-                id="hero-cta-primary"
-                className="btn-primary inline-flex items-center gap-2 px-7 py-4 rounded-xl text-base font-semibold"
-              >
-                Start Your Project
-                <ArrowRight size={18} />
-              </a>
-              <a
-                href="#work"
-                id="hero-cta-secondary"
-                className="btn-ghost inline-flex items-center gap-2 px-7 py-4 rounded-xl text-base font-semibold"
-              >
-                <Play size={16} className="fill-current" />
-                View Our Work
-              </a>
-            </motion.div>
-
-            {/* Floating Tech Tags */}
-            <motion.div variants={itemVariants} className="flex flex-wrap gap-2.5">
-              {FLOATING_TAGS.map(({ label, color, border, delay }) => (
-                <motion.span
-                  key={label}
-                  initial={{ opacity: 0, scale: 0.85 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: delay + 1.2, duration: 0.4, type: 'spring' }}
-                  className={`bg-gradient-to-br ${color} border ${border} backdrop-blur-sm px-3.5 py-1.5 rounded-full text-xs font-semibold text-text-secondary`}
-                >
-                  {label}
-                </motion.span>
-              ))}
-            </motion.div>
-          </motion.div>
-
-          {/* ── RIGHT — mockup images (desktop only) ───────────────────── */}
-          <motion.div
-            variants={mockupVariants}
-            initial="hidden"
-            animate="show"
-            className="hidden lg:flex flex-col gap-5 items-end"
-          >
-            {/* Mockup 1 — larger */}
-            <div className="relative w-full max-w-[400px] h-[260px] glass rounded-2xl overflow-hidden border border-white/[0.08] shadow-2xl">
-              <Image
-                src="/assets/mockup-1.png"
-                alt="Mobile Application Design mockup"
-                fill
-                className="object-cover"
-                sizes="400px"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-bg-base/70 to-transparent" />
-              <div className="absolute bottom-4 left-5">
-                <span className="text-xs font-semibold text-text-secondary tracking-wide">Mobile Application</span>
+          <div className="mt-8 grid max-w-xl grid-cols-3 gap-2 sm:mt-10 sm:gap-3">
+            {STATS.map(([value, label]) => (
+              <div key={value} className="rounded-2xl border border-white/75 bg-white/62 px-3 py-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] sm:px-4 sm:py-4">
+                <p className="text-base font-bold text-text-primary sm:text-lg">{value}</p>
+                <p className="mt-1 text-[10px] font-semibold leading-4 text-text-muted sm:text-xs">{label}</p>
               </div>
-            </div>
-
-            {/* Mockup 2 — smaller, offset right */}
-            <div className="relative w-[75%] h-[180px] glass rounded-2xl overflow-hidden border border-white/[0.08] shadow-2xl">
-              <Image
-                src="/assets/mockup-2.png"
-                alt="Web Application Design mockup"
-                fill
-                className="object-cover"
-                sizes="300px"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-bg-base/70 to-transparent" />
-              <div className="absolute bottom-4 left-5">
-                <span className="text-xs font-semibold text-text-secondary tracking-wide">Web Application</span>
-              </div>
-            </div>
-
-            {/* Decorative stat badges */}
-            <div className="flex gap-3 w-full justify-end">
-              <div className="glass border border-white/[0.07] rounded-xl px-4 py-2.5 text-center">
-                <p className="text-text-primary font-bold text-lg leading-none">100%</p>
-                <p className="text-text-muted text-xs mt-1">Client Satisfaction</p>
-              </div>
-              <div className="glass border border-white/[0.07] rounded-xl px-4 py-2.5 text-center">
-                <p className="text-text-primary font-bold text-lg leading-none">24h</p>
-                <p className="text-text-muted text-xs mt-1">Response Time</p>
-              </div>
-              <div className="glass border border-white/[0.07] rounded-xl px-4 py-2.5 text-center">
-                <p className="text-accent-emerald font-bold text-lg leading-none">Live</p>
-                <p className="text-text-muted text-xs mt-1">Projects Online</p>
-              </div>
-            </div>
-          </motion.div>
-
+            ))}
+          </div>
         </div>
-      </div>
 
-      {/* ── Scroll indicator ───────────────────────────────────────────── */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 2.2, duration: 0.6 }}
-      >
-        <span className="text-text-muted text-xs tracking-widest uppercase font-medium">Scroll</span>
-        <div className="w-px h-10 bg-gradient-to-b from-accent-violet/60 to-transparent animate-pulse" />
-      </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: 42 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.75, delay: 0.35, ease: [0.21, 0.47, 0.32, 0.98] }}
+          className="relative mt-2 sm:mt-0"
+        >
+          <div className="relative overflow-hidden rounded-[1.6rem] p-2 glass-strong sm:rounded-[2rem] sm:p-3">
+            <div className="relative min-h-[31rem] overflow-hidden rounded-[1.3rem] bg-[#f8fafc] p-3 sm:aspect-[4/3] sm:min-h-0 sm:rounded-[1.5rem] sm:p-5">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(109,93,252,0.16),transparent_18rem),radial-gradient(circle_at_90%_20%,rgba(8,145,178,0.14),transparent_16rem)]" />
+              <div className="relative flex h-full flex-col rounded-[1.15rem] border border-white bg-white/72 p-4 shadow-[0_24px_70px_rgba(16,24,40,0.12)] backdrop-blur-xl sm:rounded-[1.25rem] sm:p-5">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-[0.16em] text-text-muted">Zyfiro OS</p>
+                    <h3 className="mt-2 text-xl font-extrabold tracking-tight text-text-primary sm:text-2xl">Product command center</h3>
+                  </div>
+                  <div className="flex gap-1.5">
+                    <span className="h-2.5 w-2.5 rounded-full bg-red-300" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-amber-300" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-emerald-300" />
+                  </div>
+                </div>
+
+                <div className="mt-5 grid flex-1 gap-3 sm:mt-7 sm:grid-cols-[0.9fr_1.1fr] sm:gap-4">
+                  <div className="space-y-3">
+                    {WORKFLOW.map(({ label, icon: Icon, tone }) => (
+                      <div key={label} className="flex items-center gap-3 rounded-2xl bg-white p-3 shadow-[0_12px_26px_rgba(16,24,40,0.06)]">
+                        <span className={`flex h-10 w-10 items-center justify-center rounded-xl ${tone}`}>
+                          <Icon size={18} />
+                        </span>
+                        <div>
+                          <p className="text-sm font-bold text-text-primary">{label}</p>
+                          <p className="text-xs text-text-muted">Validated workflow</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="rounded-2xl bg-text-primary p-4 text-white shadow-[0_18px_40px_rgba(16,24,40,0.18)]">
+                    <div className="flex items-center justify-between">
+                      <p className="text-xs font-bold uppercase tracking-[0.16em] text-white/50">Delivery health</p>
+                      <span className="rounded-full bg-white/10 px-2 py-1 text-xs font-bold text-white">Live</span>
+                    </div>
+                    <div className="mt-5 flex h-24 items-end gap-2 sm:mt-6 sm:h-32">
+                      {[42, 64, 52, 78, 70, 92].map((height, index) => (
+                        <span
+                          key={index}
+                          className="flex-1 rounded-t-lg bg-white"
+                          style={{ height: `${height}%`, opacity: 0.35 + index * 0.08 }}
+                        />
+                      ))}
+                    </div>
+                    <div className="mt-5 grid grid-cols-2 gap-3">
+                      <div className="rounded-xl bg-white/10 p-3">
+                        <p className="text-xl font-extrabold">98%</p>
+                        <p className="text-xs text-white/55">UX clarity</p>
+                      </div>
+                      <div className="rounded-xl bg-white/10 p-3">
+                        <p className="text-xl font-extrabold">A+</p>
+                        <p className="text-xs text-white/55">Build quality</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="relative mx-4 -mt-8 rounded-2xl border border-white/80 bg-white/94 p-4 shadow-[0_24px_60px_rgba(16,24,40,0.18),inset_0_1px_0_rgba(255,255,255,0.95)] backdrop-blur-md sm:absolute sm:-bottom-8 sm:left-auto sm:right-8 sm:mx-0 sm:mt-0 sm:w-80 sm:p-5">
+            {['Clean UI architecture', 'Responsive implementation', 'AI-ready workflows'].map((item) => (
+              <div key={item} className="flex items-center gap-3 py-1.5 text-sm font-bold text-text-primary">
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-50 text-accent-emerald">
+                  <CheckCircle2 size={16} />
+                </span>
+                {item}
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
     </section>
   );
 }

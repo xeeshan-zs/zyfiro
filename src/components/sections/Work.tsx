@@ -1,204 +1,115 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { ExternalLink, Rocket, Lock } from 'lucide-react';
+import Image from 'next/image';
+import { ExternalLink, LockKeyhole, Rocket } from 'lucide-react';
 import { PORTFOLIO } from '@/lib/constants';
 import { FadeIn, StaggerContainer, StaggerItem } from '@/components/ui/FadeIn';
 
 export function Work() {
   return (
-    <section id="work" className="relative py-28 lg:py-36 bg-bg-base overflow-hidden">
-      {/* Background */}
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-accent-blue/5 rounded-full blur-3xl pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-6">
-        {/* Header */}
-        <FadeIn className="mb-16">
-          <div className="flex flex-col gap-4">
-            <span className="section-tag">● Portfolio</span>
-            <h2 className="font-display text-4xl lg:text-5xl xl:text-6xl font-bold text-text-primary">
-              Selected <span className="text-gradient">Work.</span>
-            </h2>
-            <p className="text-text-secondary text-lg max-w-xl leading-relaxed">
-              A glimpse into the digital products we&apos;ve engineered.
-            </p>
-          </div>
+    <section id="work" className="section-shell overflow-hidden px-5 sm:px-6">
+      <div className="mx-auto max-w-6xl">
+        <FadeIn className="mb-10 max-w-3xl sm:mb-14">
+          <span className="section-tag">Selected work</span>
+          <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-text-primary sm:text-5xl">
+            Practical product work, presented with clarity.
+          </h2>
+          <p className="mt-4 text-sm leading-7 text-text-secondary sm:mt-5 sm:text-base sm:leading-8">
+            A concise look at platforms and products shaped through strategy, interface design, and modern engineering.
+          </p>
         </FadeIn>
 
-        {/* Filter strip — decorative */}
-        <FadeIn delay={0.1} className="mb-8">
-          <div className="flex items-center gap-3 flex-wrap">
-            <span className="text-text-muted text-xs font-semibold uppercase tracking-widest">Filter By:</span>
-            <button className="glass px-4 py-1.5 rounded-full text-xs font-medium text-text-secondary border border-white/[0.07] hover:border-white/[0.15] transition-colors cursor-not-allowed opacity-60">
-              All Regions
-            </button>
-            <button className="glass px-4 py-1.5 rounded-full text-xs font-medium text-text-secondary border border-white/[0.07] hover:border-white/[0.15] transition-colors cursor-not-allowed opacity-60">
-              All Services
-            </button>
-          </div>
-        </FadeIn>
-
-        {/* Grid */}
-        <StaggerContainer className="grid grid-cols-1 lg:grid-cols-2 gap-6" staggerDelay={0.15}>
+        <StaggerContainer className="grid gap-5 lg:grid-cols-2" staggerDelay={0.1}>
           {PORTFOLIO.map((project) => (
             <StaggerItem key={project.id}>
-              <motion.div
-                className="group relative glass rounded-[24px] lg:rounded-[28px] overflow-hidden border border-white/[0.07] hover:border-accent-violet/50 block card-hover transition-colors duration-500 hover:shadow-[0_0_30px_rgba(124,58,237,0.15)] flex flex-col h-full"
-                whileHover={{ scale: 1.01 }}
-                transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-              >
-                {/* Banner */}
-                <div className="relative h-56 lg:h-64 bg-gradient-to-br from-accent-violet/20 via-accent-blue/10 to-transparent flex items-center justify-center overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#1a0533]/80 to-[#0a1628]/60 z-0" />
-                  
-                  {project.image ? (
-                    <>
-                      <img 
-                        src={project.image} 
-                        alt={project.title} 
-                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 z-0" 
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-bg-card via-bg-card/40 to-transparent z-0" />
-                    </>
-                  ) : (
-                    <>
-                      {/* Decorative grid */}
-                      <div
-                        className="absolute inset-0 z-0"
-                        style={{
-                          backgroundImage: 'linear-gradient(rgba(124,58,237,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(124,58,237,0.1) 1px, transparent 1px)',
-                          backgroundSize: '30px 30px',
-                        }}
-                      />
-                      <span className="relative z-10 font-display text-6xl font-bold text-white/10 tracking-widest select-none">
-                        {project.label}
-                      </span>
-                    </>
+              <article className="flex h-full flex-col overflow-hidden rounded-[1.4rem] bg-white shadow-[0_16px_38px_rgba(16,24,40,0.08)] ring-1 ring-black/[0.04] card-hover sm:rounded-3xl sm:shadow-[0_20px_55px_rgba(16,24,40,0.08)]">
+                <div className="relative h-48 overflow-hidden bg-bg-hover sm:h-72">
+                  {project.image && (
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      sizes="(min-width: 1024px) 560px, 100vw"
+                      className="object-cover transition-transform duration-500 hover:scale-105"
+                    />
                   )}
-
-                  {/* Status badge */}
-                  <div className="absolute top-4 right-4 flex items-center gap-1.5 bg-accent-emerald/15 border border-accent-emerald/30 px-3 py-1 rounded-full z-10">
-                    <span className="w-1.5 h-1.5 rounded-full bg-accent-emerald animate-pulse" />
-                    <span className="text-accent-emerald text-xs font-semibold">{project.status}</span>
+                  <div className="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent" />
+                  <div className="absolute left-4 top-4 rounded-full bg-white/86 px-3 py-1 text-[10px] font-bold text-text-secondary backdrop-blur sm:left-5 sm:top-5 sm:text-xs">
+                    {project.category}
                   </div>
-
-                  {/* Category badge */}
-                  {project.category && (
-                    <div className="absolute top-4 left-4 z-10">
-                      <div className="bg-black/40 backdrop-blur-md border border-white/10 px-3 py-1 rounded-full">
-                        <span className="text-white text-xs font-semibold">{project.category}</span>
-                      </div>
-                    </div>
-                  )}
-
-                  {/* External link icon (if no buttons shown) */}
-                  {!project.githubLink && !project.liveLink && (
-                    <div className="absolute top-4 left-4 w-8 h-8 bg-white/10 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
-                      <ExternalLink size={14} className="text-white" />
-                    </div>
-                  )}
+                  <div className="absolute right-4 top-4 rounded-full bg-white/86 px-3 py-1 text-[10px] font-bold text-accent-emerald backdrop-blur sm:right-5 sm:top-5 sm:text-xs">
+                    {project.status}
+                  </div>
                 </div>
 
-                {/* Content */}
-                <div className="p-7 flex flex-col flex-1">
-                  <h3 className="font-display text-2xl font-bold text-text-primary mb-3 group-hover:text-gradient transition-all duration-300">
+                <div className="flex flex-1 flex-col p-5 sm:p-7">
+                  <h3 className="text-xl font-bold tracking-tight text-text-primary sm:text-2xl">
                     {project.title}
                   </h3>
-                  <p className="text-text-secondary text-sm leading-relaxed mb-6 flex-1">
+                  <p className="mt-3 flex-1 text-sm leading-6 text-text-secondary sm:mt-4 sm:leading-7">
                     {project.description}
                   </p>
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-2 mb-8">
+
+                  <div className="mt-5 flex flex-wrap gap-2 sm:mt-6">
                     {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-3 py-1 text-xs font-semibold rounded-full bg-white/[0.06] text-text-muted border border-white/[0.06]"
-                      >
+                      <span key={tag} className="rounded-full bg-bg-base px-3 py-1 text-xs font-semibold text-text-muted">
                         {tag}
                       </span>
                     ))}
                   </div>
 
-                  {/* Buttons */}
-                  <div className="flex flex-wrap items-center gap-4 mt-auto">
+                  <div className="mt-6 grid gap-3 sm:mt-8 sm:flex sm:flex-wrap">
                     {project.liveLink ? (
-                      <a 
+                      <a
                         href={project.liveLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="btn-primary inline-flex items-center justify-center px-6 py-2.5 rounded-xl text-sm font-semibold transition-all hover:shadow-[0_0_20px_rgba(124,58,237,0.3)]"
+                        className="rounded-full px-5 py-2.5 text-center text-sm font-semibold btn-primary"
                       >
-                        Live Demo
+                        Live Demo <ExternalLink size={15} className="ml-2" />
                       </a>
                     ) : (
-                      <button 
-                        disabled
-                        className="glass inline-flex items-center justify-center px-6 py-2.5 rounded-xl text-sm font-semibold text-text-muted cursor-not-allowed border border-white/[0.05]"
-                      >
+                      <button disabled className="rounded-full px-5 py-2.5 text-sm font-semibold text-text-muted btn-ghost">
                         Coming Soon
                       </button>
                     )}
 
                     {project.githubLink && (
-                      <a 
+                      <a
                         href={project.githubLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="btn-ghost inline-flex items-center justify-center px-6 py-2.5 rounded-xl text-sm font-semibold border border-white/10 hover:bg-white/5 transition-all hover:shadow-[0_0_15px_rgba(255,255,255,0.1)]"
+                        className="rounded-full px-5 py-2.5 text-center text-sm font-semibold btn-ghost"
                       >
                         View Source
                       </a>
                     )}
                   </div>
                 </div>
-              </motion.div>
+              </article>
             </StaggerItem>
           ))}
 
-          {/* Coming Soon / Stealth Mode Card */}
           <StaggerItem>
-            <motion.div
-              className="group relative glass rounded-3xl overflow-hidden border border-white/[0.07] h-full card-hover"
-              whileHover={{ scale: 1.01 }}
-              transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-            >
-              {/* Animated banner */}
-              <div className="relative h-48 overflow-hidden bg-gradient-to-br from-bg-card to-bg-base flex items-center justify-center">
-                <div className="absolute inset-0 bg-gradient-to-br from-accent-orange/10 to-accent-violet/10" />
-                {/* Animated orbit rings */}
-                <div className="relative w-24 h-24">
-                  <div className="absolute inset-0 rounded-full border border-accent-violet/20 animate-ping" style={{ animationDuration: '3s' }} />
-                  <div className="absolute inset-2 rounded-full border border-accent-cyan/20 animate-ping" style={{ animationDuration: '2.5s', animationDelay: '0.5s' }} />
-                  <div className="w-full h-full rounded-full bg-gradient-to-br from-accent-violet/20 to-accent-cyan/20 flex items-center justify-center border border-white/10">
-                    <Rocket size={32} className="text-text-secondary" />
-                  </div>
+            <article className="flex h-full min-h-[20rem] flex-col justify-between rounded-[1.4rem] p-6 neo card-hover sm:min-h-[28rem] sm:rounded-3xl sm:p-8">
+              <div>
+                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-text-primary shadow-[10px_10px_24px_rgba(148,163,184,0.2),-10px_-10px_24px_rgba(255,255,255,0.9)] sm:mb-8 sm:h-14 sm:w-14">
+                  <Rocket size={24} />
                 </div>
-                <div className="absolute top-4 right-4 flex items-center gap-1.5 bg-white/5 border border-white/10 px-3 py-1 rounded-full">
-                  <Lock size={10} className="text-text-muted" />
-                  <span className="text-text-muted text-xs font-semibold">Stealth Mode</span>
+                <div className="inline-flex items-center gap-2 rounded-full bg-white/70 px-3 py-1 text-xs font-bold text-text-muted">
+                  <LockKeyhole size={13} /> In development
                 </div>
-              </div>
-
-              {/* Content */}
-              <div className="p-7">
-                <h3 className="font-display text-2xl font-bold text-text-primary mb-3">
+                <h3 className="mt-5 text-2xl font-bold tracking-tight text-text-primary sm:text-3xl">
                   Our Own Product
                 </h3>
-                <p className="text-text-secondary text-sm leading-relaxed mb-6">
-                  We&apos;re building something of our own — a product crafted from the ground up
-                  by the Zyfiro team. Launch incoming.
+                <p className="mt-4 max-w-md text-sm leading-7 text-text-secondary">
+                  A Zyfiro-built product is currently being designed and engineered internally. The same standards we bring to client work are shaping it from the ground up.
                 </p>
-                <button
-                  disabled
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-text-muted cursor-not-allowed opacity-60"
-                >
-                  Coming Soon ✦
-                </button>
               </div>
-
-              {/* Shimmer overlay */}
-              <div className="absolute inset-0 shimmer opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none rounded-3xl" />
-            </motion.div>
+              <p className="mt-8 text-xs font-bold uppercase tracking-[0.16em] text-text-muted sm:mt-10">
+                Launch incoming
+              </p>
+            </article>
           </StaggerItem>
         </StaggerContainer>
       </div>

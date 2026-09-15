@@ -1,143 +1,118 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
-import Image from 'next/image';
+import type { ElementType } from 'react';
+import { ArrowUpRight } from 'lucide-react';
 import { SERVICES } from '@/lib/constants';
 import { FadeIn, StaggerContainer, StaggerItem } from '@/components/ui/FadeIn';
 
-export function Services() {
-  return (
-    <section id="services" className="relative py-28 lg:py-36 bg-[#09090B] overflow-hidden">
-      {/* Background accent */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-accent-violet/10 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute top-1/2 left-1/4 -translate-x-1/2 w-[600px] h-[400px] bg-accent-blue/5 rounded-full blur-[100px] pointer-events-none" />
-
-      {/* Tiny glowing particles can be handled by the layout's global particles, but we can add some subtle grid here */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        {/* Section header */}
-        <FadeIn className="mb-16 lg:mb-20 flex flex-col items-center text-center">
-          <div className="flex flex-col gap-4 items-center max-w-[700px]">
-            <span className="text-xs font-semibold tracking-[0.2em] text-accent-violet uppercase">
-              OUR EXPERTISE
-            </span>
-            <h2 className="font-display text-4xl lg:text-5xl font-bold text-white leading-tight">
-              Engineering Intelligent Digital Experiences
-            </h2>
-            <p className="text-[#A1A1AA] text-lg leading-relaxed">
-              We help startups, businesses, and organizations transform ideas into powerful digital products through AI, custom software, and modern engineering.
-            </p>
-          </div>
-        </FadeIn>
-
-        {/* Bento Grid */}
-        <StaggerContainer className="flex flex-col gap-6" staggerDelay={0.15}>
-          {/* Top Row: 1 large left, 2 medium right */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-            
-            {/* 1. Custom Software - Large Card */}
-            <StaggerItem className="lg:col-span-7 h-[400px] lg:h-[600px]">
-              <ServiceCard service={SERVICES[0]} isLarge />
-            </StaggerItem>
-
-            {/* Right Column: 2 stacked cards */}
-            <div className="lg:col-span-5 flex flex-col gap-6 h-[800px] lg:h-[600px]">
-              <StaggerItem className="flex-1">
-                <ServiceCard service={SERVICES[1]} />
-              </StaggerItem>
-              <StaggerItem className="flex-1">
-                <ServiceCard service={SERVICES[2]} />
-              </StaggerItem>
-            </div>
-          </div>
-
-          {/* Bottom Row: 2 horizontal cards */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 h-[800px] lg:h-[400px]">
-            <StaggerItem className="h-[400px]">
-              <ServiceCard service={SERVICES[3]} />
-            </StaggerItem>
-            <StaggerItem className="h-[400px]">
-              <ServiceCard service={SERVICES[4]} />
-            </StaggerItem>
-          </div>
-        </StaggerContainer>
+function ServiceVisual({ index, icon: Icon }: { index: number; icon: ElementType }) {
+  const variants = [
+    <div key="software" className="grid h-full grid-cols-3 gap-2 p-4 sm:gap-3 sm:p-5">
+      {[0, 1, 2, 3, 4, 5].map((item) => (
+        <span key={item} className="rounded-2xl bg-white/72 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)]" />
+      ))}
+      <span className="absolute bottom-4 left-4 right-4 h-10 rounded-2xl bg-text-primary/90 sm:bottom-5 sm:left-5 sm:right-5 sm:h-12" />
+    </div>,
+    <div key="ai" className="relative h-full p-4 sm:p-5">
+      {[18, 34, 50, 66, 82].map((left, item) => (
+        <span
+          key={left}
+          className="absolute h-4 w-4 rounded-full bg-white shadow-[0_12px_30px_rgba(16,24,40,0.16)]"
+          style={{ left: `${left}%`, top: `${item % 2 === 0 ? 34 : 58}%` }}
+        />
+      ))}
+      <span className="absolute left-[22%] right-[18%] top-1/2 h-px bg-text-primary/20" />
+      <span className="absolute left-1/2 top-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-[1.25rem] bg-text-primary text-white shadow-[0_22px_45px_rgba(16,24,40,0.22)] sm:h-20 sm:w-20 sm:rounded-[1.4rem]">
+        <Icon size={24} />
+      </span>
+    </div>,
+    <div key="web" className="h-full p-4 sm:p-5">
+      <div className="h-full rounded-[1.4rem] bg-white p-4 shadow-[0_18px_40px_rgba(16,24,40,0.1)]">
+        <div className="mb-4 flex gap-1.5">
+          <span className="h-2.5 w-2.5 rounded-full bg-red-300" />
+          <span className="h-2.5 w-2.5 rounded-full bg-amber-300" />
+          <span className="h-2.5 w-2.5 rounded-full bg-emerald-300" />
+        </div>
+        <div className="grid grid-cols-[0.75fr_1fr] gap-3">
+          <span className="h-20 rounded-2xl bg-text-primary/90 sm:h-24" />
+          <span className="h-20 rounded-2xl bg-bg-base sm:h-24" />
+          <span className="col-span-2 h-9 rounded-xl bg-bg-base" />
+        </div>
       </div>
-    </section>
+    </div>,
+    <div key="mobile" className="relative h-full p-4 sm:p-5">
+      <span className="absolute left-7 top-7 h-28 w-16 rotate-[-8deg] rounded-[1.25rem] bg-white shadow-[0_18px_45px_rgba(16,24,40,0.12)] sm:left-8 sm:top-8 sm:h-32 sm:w-20 sm:rounded-[1.4rem]" />
+      <span className="absolute right-8 top-4 h-36 w-20 rotate-[7deg] rounded-[1.45rem] bg-text-primary shadow-[0_24px_50px_rgba(16,24,40,0.22)] sm:right-10 sm:top-5 sm:h-40 sm:w-24 sm:rounded-[1.6rem]" />
+      <span className="absolute bottom-7 left-1/2 h-10 w-32 -translate-x-1/2 rounded-2xl bg-white/80 sm:bottom-8 sm:h-12 sm:w-36" />
+    </div>,
+    <div key="design" className="grid h-full grid-cols-2 gap-2 p-4 sm:gap-3 sm:p-5">
+      <span className="rounded-[1.4rem] bg-[#101828]" />
+      <span className="rounded-[1.4rem] bg-[#6d5dfc]" />
+      <span className="rounded-[1.4rem] bg-[#0891b2]" />
+      <span className="rounded-[1.4rem] bg-white shadow-[inset_0_1px_0_rgba(255,255,255,0.9)]" />
+    </div>,
+  ];
+
+  return (
+    <div className="relative mb-5 h-36 overflow-hidden rounded-2xl bg-[linear-gradient(135deg,#eef2f7,#ffffff)] sm:mb-8 sm:h-48">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(109,93,252,0.20),transparent_13rem),radial-gradient(circle_at_90%_20%,rgba(8,145,178,0.18),transparent_12rem)]" />
+      <div className="absolute inset-0">{variants[index] ?? variants[0]}</div>
+      <div className="absolute left-3 top-3 flex h-10 w-10 items-center justify-center rounded-2xl bg-white/86 text-text-primary shadow-[0_14px_34px_rgba(16,24,40,0.12)] backdrop-blur sm:left-4 sm:top-4 sm:h-11 sm:w-11">
+        <Icon size={18} />
+      </div>
+    </div>
   );
 }
 
-function ServiceCard({ service, isLarge = false }: { service: any; isLarge?: boolean }) {
-  const Icon = service.icon;
-
+export function Services() {
   return (
-    <motion.div
-      className="group relative w-full h-full rounded-[28px] overflow-hidden flex flex-col justify-between"
-      style={{
-        backgroundColor: 'rgba(20, 20, 25, 0.65)',
-        backdropFilter: 'blur(18px)',
-        border: '1px solid rgba(255, 255, 255, 0.08)',
-        boxShadow: '0 20px 40px -10px rgba(0,0,0,0.5)',
-      }}
-      whileHover={{
-        y: -8,
-        scale: 1.01,
-        borderColor: 'rgba(124, 58, 237, 0.3)',
-      }}
-      transition={{ duration: 0.5, ease: 'easeOut' }}
-    >
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
-        <motion.div
-          className="w-full h-full relative"
-          transition={{ duration: 0.5, ease: 'easeOut' }}
-        >
-          <Image
-            src={service.image}
-            alt={service.title}
-            fill
-            className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-          />
-          {/* Dark Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/15 to-black/75" />
-        </motion.div>
-      </div>
-
-      {/* Content */}
-      <div className="relative z-10 p-8 h-full flex flex-col justify-between">
-        {/* Top: Badge & Icon */}
-        <div className="flex items-start justify-between">
-          <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md">
-            <span className="text-[10px] font-bold text-white tracking-widest uppercase">
-              {service.badge}
-            </span>
+    <section id="services" className="section-shell overflow-hidden px-5 sm:px-6">
+      <div className="mx-auto max-w-6xl">
+        <FadeIn className="mb-10 grid gap-5 sm:mb-14 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+          <div>
+            <span className="section-tag">Services</span>
+            <h2 className="mt-5 text-3xl font-extrabold leading-tight tracking-tight text-text-primary sm:text-5xl">
+              End-to-end digital product capability.
+            </h2>
           </div>
-          <div className="w-10 h-10 rounded-full bg-white/5 backdrop-blur-md border border-white/10 flex items-center justify-center">
-            <Icon className="w-5 h-5 text-white" />
-          </div>
-        </div>
-
-        {/* Bottom: Text & CTA */}
-        <div className="flex flex-col gap-3">
-          <h3 className={`font-display font-bold text-white ${isLarge ? 'text-3xl lg:text-4xl' : 'text-2xl lg:text-3xl'}`}>
-            {service.title}
-          </h3>
-          <p className="text-[#A1A1AA] text-sm lg:text-base line-clamp-3">
-            {service.description}
+          <p className="max-w-2xl text-sm leading-7 text-text-secondary sm:text-base sm:leading-8 lg:justify-self-end">
+            From first concept to launch and iteration, we design and engineer software that gives businesses a sharper operating edge.
           </p>
-          
-          {/* Hidden CTA that appears on hover/is part of the flow */}
-          <div className="mt-4 flex">
-            <button className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-r from-[#7C3AED] to-[#A855F7] text-white shadow-[0_0_15px_rgba(124,58,237,0.5)] transition-all duration-300 group-hover:shadow-[0_0_25px_rgba(168,85,247,0.7)] group-hover:scale-110">
-              <ArrowRight className="w-4 h-4" />
-            </button>
-          </div>
-        </div>
+        </FadeIn>
+
+        <StaggerContainer className="grid gap-4 md:grid-cols-2 lg:grid-cols-3" staggerDelay={0.08}>
+          {SERVICES.map((service, index) => {
+            const Icon = service.icon;
+            const featured = index === 0;
+
+            return (
+              <StaggerItem key={service.title} className={featured ? 'md:col-span-2' : ''}>
+                <article className="group relative h-full overflow-hidden rounded-[1.4rem] bg-white p-4 shadow-[0_16px_38px_rgba(16,24,40,0.08)] ring-1 ring-black/[0.04] card-hover sm:rounded-3xl sm:p-6 sm:shadow-[0_20px_55px_rgba(16,24,40,0.08)]">
+                  <ServiceVisual index={index} icon={Icon} />
+
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <p className="text-xs font-bold uppercase tracking-[0.16em] text-text-muted">
+                        {service.badge}
+                      </p>
+                      <h3 className="mt-2 text-xl font-bold tracking-tight text-text-primary sm:mt-3 sm:text-2xl">
+                        {service.title}
+                      </h3>
+                    </div>
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-bg-base text-text-primary transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 sm:h-10 sm:w-10">
+                      <ArrowUpRight size={18} />
+                    </span>
+                  </div>
+
+                  <p className="mt-3 text-sm leading-6 text-text-secondary sm:mt-4 sm:leading-7">
+                    {service.description}
+                  </p>
+                </article>
+              </StaggerItem>
+            );
+          })}
+        </StaggerContainer>
       </div>
-      
-      {/* Border Glow */}
-      <div className="absolute inset-0 rounded-[28px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 shadow-[inset_0_0_20px_rgba(124,58,237,0.2)] pointer-events-none" />
-    </motion.div>
+    </section>
   );
 }

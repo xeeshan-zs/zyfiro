@@ -2,7 +2,6 @@ import {
   Globe,
   Smartphone,
   Layout,
-  Cloud,
   Zap,
   Star,
   Handshake,
@@ -17,7 +16,7 @@ export const SITE = {
   url: 'https://zyfiro.org',
   email: 'zyfiro@gmail.com',
   whatsapp: 'https://wa.me/923109233844',
-  hq: 'Mars 🪐',
+  hq: 'Pakistan, serving clients globally',
   formEmail: 'zeeshan.sarfraz@atrons.net',
   googleVerification: 'jeFQEoDQX94_sVMGvOdz_bN7HEJIg-e6yBQeimy5SJ8',
   social: {
@@ -30,8 +29,9 @@ export const SITE = {
 
 export const NAV_LINKS = [
   { label: 'Services', href: '#services' },
-  { label: 'Vision', href: '#vision' },
   { label: 'Work', href: '#work' },
+  { label: 'Process', href: '#process' },
+  { label: 'Vision', href: '#vision' },
   { label: 'Contact', href: '#contact' },
 ];
 
