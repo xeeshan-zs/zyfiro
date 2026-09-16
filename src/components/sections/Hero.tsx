@@ -21,8 +21,8 @@ export function Hero() {
     <section id="hero" className="relative min-h-screen overflow-hidden px-5 pb-24 pt-6 sm:px-6 md:pt-40 lg:pt-44">
       <div className="absolute left-1/2 top-24 h-[34rem] w-[34rem] -translate-x-1/2 rounded-full bg-white/60 blur-3xl" />
 
-      <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-14 lg:grid-cols-[1.02fr_0.98fr]">
-        <div className="max-w-3xl">
+      <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-2 lg:gap-16">
+        <div className="max-w-2xl">
           <div className="mb-10 inline-flex items-center gap-3 rounded-2xl border border-white/80 bg-white/78 px-3 py-2 shadow-[0_18px_40px_rgba(16,24,40,0.08),inset_0_1px_0_rgba(255,255,255,0.95)] backdrop-blur-xl md:hidden">
             <span className="relative h-10 w-10 overflow-hidden rounded-2xl bg-white shadow-[inset_0_1px_0_rgba(255,255,255,0.9)]">
               <Image src="/assets/logo-icon.png" alt="Zyfiro" fill sizes="40px" className="object-contain p-1.5" priority />
@@ -55,7 +55,7 @@ export function Hero() {
 
           <div className="mt-8 grid max-w-xl grid-cols-3 gap-2 sm:mt-10 sm:gap-3">
             {STATS.map(([value, label]) => (
-              <div key={value} className="rounded-2xl border border-white/75 bg-white/62 px-3 py-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] sm:px-4 sm:py-4">
+              <div key={value} className="rounded-2xl border border-white/75 bg-white/62 px-3 py-3 shadow-[0_8px_30px_rgba(16,24,40,0.08),inset_0_1px_0_rgba(255,255,255,0.9)] sm:px-4 sm:py-4">
                 <p className="text-base font-bold text-text-primary sm:text-lg">{value}</p>
                 <p className="mt-1 text-[10px] font-semibold leading-4 text-text-muted sm:text-xs">{label}</p>
               </div>
@@ -69,7 +69,7 @@ export function Hero() {
           transition={{ duration: 0.75, delay: 0.35, ease: [0.21, 0.47, 0.32, 0.98] }}
           className="relative mt-2 sm:mt-0"
         >
-          <div className="relative overflow-hidden rounded-[1.6rem] p-2 glass-strong sm:rounded-[2rem] sm:p-3">
+          <div className="relative overflow-hidden rounded-[1.6rem] p-2 glass-strong shadow-2xl sm:rounded-[2rem] sm:p-3">
             <div className="relative min-h-[31rem] overflow-hidden rounded-[1.3rem] bg-[#f8fafc] p-3 sm:aspect-[4/3] sm:min-h-0 sm:rounded-[1.5rem] sm:p-5">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(109,93,252,0.16),transparent_18rem),radial-gradient(circle_at_90%_20%,rgba(8,145,178,0.14),transparent_16rem)]" />
               <div className="relative flex h-full flex-col rounded-[1.15rem] border border-white bg-white/72 p-4 shadow-[0_24px_70px_rgba(16,24,40,0.12)] backdrop-blur-xl sm:rounded-[1.25rem] sm:p-5">

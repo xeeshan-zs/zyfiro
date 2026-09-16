@@ -7,7 +7,7 @@ import { FadeIn, StaggerContainer, StaggerItem } from '@/components/ui/FadeIn';
 
 export function Work() {
   return (
-    <section id="work" className="section-shell overflow-hidden px-5 sm:px-6">
+    <section id="work" className="section-shell overflow-hidden px-5 sm:px-6 !pt-10 sm:!pt-12">
       <div className="mx-auto max-w-6xl">
         <FadeIn className="mb-10 max-w-3xl sm:mb-14">
           <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-text-primary sm:text-5xl">
@@ -33,10 +33,10 @@ export function Work() {
                     />
                   )}
                   <div className="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent" />
-                  <div className="absolute left-4 top-4 rounded-full bg-white/86 px-3 py-1 text-[10px] font-bold text-text-secondary backdrop-blur sm:left-5 sm:top-5 sm:text-xs">
+                  <div className="absolute left-4 top-4 rounded-full bg-white shadow-sm px-3 py-1 text-[10px] font-bold text-text-primary sm:left-5 sm:top-5 sm:text-xs">
                     {project.category}
                   </div>
-                  <div className="absolute right-4 top-4 rounded-full bg-white/86 px-3 py-1 text-[10px] font-bold text-accent-emerald backdrop-blur sm:right-5 sm:top-5 sm:text-xs">
+                  <div className="absolute right-4 top-4 rounded-full bg-white shadow-sm px-3 py-1 text-[10px] font-bold text-emerald-600 sm:right-5 sm:top-5 sm:text-xs">
                     {project.status}
                   </div>
                 </div>
@@ -51,7 +51,7 @@ export function Work() {
 
                   <div className="mt-5 flex flex-wrap gap-2 sm:mt-6">
                     {project.tags.map((tag) => (
-                      <span key={tag} className="rounded-full bg-bg-base px-3 py-1 text-xs font-semibold text-text-muted">
+                      <span key={tag} className="rounded-full bg-bg-base px-3 py-1 text-xs font-semibold text-text-primary">
                         {tag}
                       </span>
                     ))}

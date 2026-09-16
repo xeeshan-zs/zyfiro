@@ -57,7 +57,7 @@ function ServiceVisual({ index, icon: Icon }: { index: number; icon: ElementType
     <div className="relative mb-5 h-36 overflow-hidden rounded-2xl bg-[linear-gradient(135deg,#eef2f7,#ffffff)] sm:mb-8 sm:h-48">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(109,93,252,0.20),transparent_13rem),radial-gradient(circle_at_90%_20%,rgba(8,145,178,0.18),transparent_12rem)]" />
       <div className="absolute inset-0">{variants[index] ?? variants[0]}</div>
-      <div className="absolute left-3 top-3 flex h-10 w-10 items-center justify-center rounded-2xl bg-white/86 text-text-primary shadow-[0_14px_34px_rgba(16,24,40,0.12)] backdrop-blur sm:left-4 sm:top-4 sm:h-11 sm:w-11">
+      <div className={`absolute left-3 top-3 flex h-10 w-10 items-center justify-center rounded-2xl ${index === 4 ? 'bg-white shadow-md' : 'bg-white/86 shadow-[0_14px_34px_rgba(16,24,40,0.12)]'} text-text-primary backdrop-blur sm:left-4 sm:top-4 sm:h-11 sm:w-11`}>
         <Icon size={18} />
       </div>
     </div>
@@ -66,7 +66,7 @@ function ServiceVisual({ index, icon: Icon }: { index: number; icon: ElementType
 
 export function Services() {
   return (
-    <section id="services" className="section-shell overflow-hidden px-5 sm:px-6">
+    <section id="services" className="section-shell overflow-hidden px-5 sm:px-6 !pb-10 sm:!pb-12">
       <div className="mx-auto max-w-6xl">
         <FadeIn className="mb-10 grid gap-5 sm:mb-14 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
           <div>
