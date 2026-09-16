@@ -10,7 +10,6 @@ export function Work() {
     <section id="work" className="section-shell overflow-hidden px-5 sm:px-6">
       <div className="mx-auto max-w-6xl">
         <FadeIn className="mb-10 max-w-3xl sm:mb-14">
-          <span className="section-tag">Selected work</span>
           <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-text-primary sm:text-5xl">
             Practical product work, presented with clarity.
           </h2>

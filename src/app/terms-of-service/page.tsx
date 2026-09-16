@@ -14,7 +14,7 @@ const sections = [
       'By accessing or using Zyfiro\'s website at zyfiro.org, you confirm that you are at least 18 years of age, have read and understood these Terms of Service, and agree to be bound by them.',
       'If you do not agree with any part of these terms, you must discontinue use of our website and services immediately. These terms apply to all visitors, clients, and anyone who accesses or uses our services.',
     ],
-    highlight: 'These Terms of Service constitute a legally binding agreement between you and Zyfiro Inc.',
+    highlight: 'These Terms of Service constitute a legally binding agreement between you and Zyfiro.',
   },
   {
     number: '02',
@@ -34,7 +34,7 @@ const sections = [
     number: '03',
     title: 'Intellectual Property',
     content: [
-      'All original content on the Zyfiro website — including text, graphics, logos, and code — is the exclusive property of Zyfiro Inc. and is protected by applicable copyright, trademark, and intellectual property laws.',
+      'All original content on the Zyfiro website — including text, graphics, logos, and code — is the exclusive property of Zyfiro and is protected by applicable copyright, trademark, and intellectual property laws.',
       'Regarding client projects:',
     ],
     list: [
@@ -72,7 +72,7 @@ const sections = [
     number: '06',
     title: 'Limitation of Liability',
     content: [
-      'To the maximum extent permitted by applicable law, Zyfiro Inc. and its founders, employees, and partners shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from:',
+      'To the maximum extent permitted by applicable law, Zyfiro and its founders, employees, and partners shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from:',
     ],
     list: [
       'Loss of profits, revenue, or business opportunities.',

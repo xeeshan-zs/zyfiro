@@ -102,7 +102,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-white/10 px-6 py-5 text-center text-xs text-white/45 sm:px-10">
-          © {year} Zyfiro Inc. All rights reserved.
+          © {year} Zyfiro. All rights reserved.
         </div>
       </div>
     </footer>

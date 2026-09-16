@@ -80,7 +80,6 @@ export function Process() {
     <section id="process" className="section-shell overflow-hidden px-5 sm:px-6">
       <div className="mx-auto max-w-6xl">
         <FadeIn className="mx-auto mb-10 max-w-3xl text-center sm:mb-14">
-          <span className="section-tag mx-auto">Process</span>
           <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-text-primary sm:text-5xl">
             A calm process for ambitious product work.
           </h2>

@@ -29,9 +29,6 @@ export function Hero() {
             </span>
             <span className="text-base font-extrabold tracking-tight text-text-primary">Zyfiro</span>
           </div>
-          <div className="section-tag mb-6">
-            Digital product studio
-          </div>
           <h1 className="text-4xl font-extrabold leading-[1.04] tracking-tight text-text-primary xs:text-5xl sm:text-6xl lg:text-7xl">
             Professional software, designed with restraint and built for scale.
           </h1>
@@ -133,7 +130,7 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="relative mx-4 -mt-8 rounded-2xl border border-white/80 bg-white/94 p-4 shadow-[0_24px_60px_rgba(16,24,40,0.18),inset_0_1px_0_rgba(255,255,255,0.95)] backdrop-blur-md sm:absolute sm:-bottom-8 sm:left-auto sm:right-8 sm:mx-0 sm:mt-0 sm:w-80 sm:p-5">
+          <div className="relative mx-4 -mt-8 rounded-2xl border border-white/80 bg-white p-4 shadow-[0_24px_60px_rgba(16,24,40,0.18),inset_0_1px_0_rgba(255,255,255,0.95)] backdrop-blur-md sm:absolute sm:-bottom-8 sm:left-auto sm:right-8 sm:mx-0 sm:mt-0 sm:w-80 sm:p-5">
             {['Clean UI architecture', 'Responsive implementation', 'AI-ready workflows'].map((item) => (
               <div key={item} className="flex items-center gap-3 py-1.5 text-sm font-bold text-text-primary">
                 <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-50 text-accent-emerald">

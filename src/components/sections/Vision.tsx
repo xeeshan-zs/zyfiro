@@ -13,7 +13,6 @@ export function Vision() {
     <section id="vision" className="section-shell overflow-hidden px-5 sm:px-6">
       <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
         <FadeIn>
-          <span className="section-tag">Our story</span>
           <h2 className="mt-5 text-3xl font-extrabold leading-tight tracking-tight text-text-primary sm:text-5xl">
             A focused studio with a long-term vision.
           </h2>

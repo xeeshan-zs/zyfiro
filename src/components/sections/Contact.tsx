@@ -280,7 +280,6 @@ export function Contact() {
     <section id="contact" className="section-shell overflow-hidden px-5 pb-28 sm:px-6">
       <div className="mx-auto max-w-6xl">
         <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="mb-10 max-w-3xl sm:mb-12">
-          <span className="section-tag">Contact</span>
           <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-text-primary sm:text-5xl">
             Tell us what you want to build.
           </h2>

@@ -70,7 +70,6 @@ export function Services() {
       <div className="mx-auto max-w-6xl">
         <FadeIn className="mb-10 grid gap-5 sm:mb-14 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
           <div>
-            <span className="section-tag">Services</span>
             <h2 className="mt-5 text-3xl font-extrabold leading-tight tracking-tight text-text-primary sm:text-5xl">
               End-to-end digital product capability.
             </h2>
